@@ -1,0 +1,46 @@
+{
+  "name": "grade_news",
+  "version": "1.0.0",
+  "description": "sentiment analysis for news api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-prebuild": "rimraf build",
+    "build": "tsc --project ./",
+    "start": "node build/server.js",
+    "heroku-postbuild": "npm run build && cd client && npm install && npm run build",
+    "dev": "nodemon server.ts",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [
+    "auth0",
+    "sentiment",
+    "analysis",
+    "api"
+  ],
+  "author": "kpuwal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.1.0",
+    "nodemon": "^2.0.12",
+    "pg": "^8.7.1",
+    "pg-promise": "^10.11.0",
+    "rimraf": "^3.0.2",
+    "sentiment": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.3.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "nodemon": "^2.0.10",
+    "ts-node": "^10.1.0",
+    "ts-postgres": "^1.1.3",
+    "typescript": "^4.3.5"
+  }
+}
