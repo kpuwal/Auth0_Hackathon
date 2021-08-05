@@ -1,6 +1,6 @@
 const Navigation = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">GradeNews!</a>
         <button
@@ -16,7 +16,7 @@ const Navigation = () => {
         <div className="collapse navbar-collapse text-right" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">Home</a>
+              <a className="nav-link active" aria-current="page" href="/">About</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/statistics">Statistics</a>
