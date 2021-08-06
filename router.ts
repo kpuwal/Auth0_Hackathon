@@ -1,15 +1,14 @@
 import { requiresAuth } from 'express-openid-connect';
-import { Request, Response } from 'express';
+import { displayProfile, loginToApp } from './server/api_controllers/auth0';
+// import { aggregateStats } from './server/api_controllers/db';
 
 const Router = require('express-promise-router');
 const router = new Router();
 
 // router.post('/sources', sourcesRequest);
 // router.post('/headlines', headlinesRequest);
-// router.get('/statistics', aggregateStats);
-
-router.get('/profile', requiresAuth(), (req: Request, res: Response) => {
-  res.send(JSON.stringify(req.oidc.user));
-})
+router.get('/logintoapp', loginToApp);
+router.get('/statistics',requiresAuth());
+router.get('/profile', requiresAuth(), displayProfile);
 
 module.exports = router;

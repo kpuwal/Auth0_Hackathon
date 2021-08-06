@@ -4,6 +4,7 @@ const { auth } = require('express-openid-connect');
 const path = require('path');
 const app = express();
 const router = require('./router');
+
 const PORT = process.env.PORT || 3000;
 
 const config = {
@@ -12,7 +13,11 @@ const config = {
   secret: process.env.SECRET,
   baseURL: 'http://localhost:5000',
   clientID: process.env.CLIENT_ID,
-  issuerBaseURL: process.env.BASE_URL
+  issuerBaseURL: process.env.BASE_URL,
+  routes: {
+    login: false,
+    
+  }
 };
 
 app.set('trust proxy', 'loopback');
