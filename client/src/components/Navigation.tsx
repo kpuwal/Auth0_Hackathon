@@ -22,7 +22,7 @@ const Navigation = () => {
               <a className="nav-link" href="/statistics">Statistics</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/login">Sign In</a>
+            <a href="http://localhost:5000/auth/login">Sign In</a>
             </li>
           </ul>
         </div>
