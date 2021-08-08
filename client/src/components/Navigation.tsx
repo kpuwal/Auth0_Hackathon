@@ -1,4 +1,10 @@
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
+
 const Navigation = () => {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
@@ -22,7 +28,7 @@ const Navigation = () => {
               <a className="nav-link" href="/statistics">Statistics</a>
             </li>
             <li className="nav-item">
-            <a href={"/auth/login"}>Sign In</a>
+              { isAuthenticated ? <LoginButton /> : <LogoutButton /> }
             </li>
           </ul>
         </div>
