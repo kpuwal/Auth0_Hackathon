@@ -1,9 +1,15 @@
-import { Request, Response } from 'express';
+const jwt = require('express-jwt');
+const jwks = require('jwks-rsa');
 
-export const displayProfile = (request: Request, response: Response) => {
-    response.send(JSON.stringify(request.oidc.user));
-}
-
-export const loginToApp = (request: Request, response: Response) => {
-  response.oidc.login({ returnTo: '/' })
-}
+// Auth0 configuration
+export const authenticated = jwt({
+  secret: jwks.expressJwtSecret({
+      cache: true,
+      rateLimit: true,
+      jwksRequestsPerMinute: 5,
+      jwksUri: 'https://dev-vbba6ora.us.auth0.com/.well-known/jwks.json'
+}),
+audience: 'https://api-grade-news',
+issuer: 'https://dev-vbba6ora.us.auth0.com/',
+algorithms: ['RS256']
+});
