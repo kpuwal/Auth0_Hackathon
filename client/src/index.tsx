@@ -8,18 +8,18 @@ import store from './redux/store';
 import * as dotenv from "dotenv";
 dotenv.config();
 
-// const auth0Domain = process.env.REACT_APP_DOMAIN!;
-// const auth0ClientId = process.env.REACT_APP_CLIENT_ID!;
+const auth0Domain = process.env.REACT_APP_DOMAIN!;
+const auth0ClientId = process.env.REACT_APP_CLIENT_ID!;
 
 ReactDOM.render(
   <Provider store={store}>
     <Auth0Provider
-    domain='dev-vbba6ora.us.auth0.com'
-    clientId='EbgOAAS1zI9dTGlFRn8VtmJ2sKXmcGyM'
-    redirectUri={window.location.origin}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+      domain={auth0Domain}
+      clientId={auth0ClientId}
+      redirectUri={window.location.origin}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
     </Auth0Provider>
   </Provider>,
   document.getElementById('root')
