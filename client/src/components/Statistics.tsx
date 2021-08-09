@@ -1,6 +1,10 @@
+import { useAuth0 } from '@auth0/auth0-react';
+
 const Statistics = () => {
+  const { isAuthenticated } = useAuth0();
+
   return (
-    <div>Statistics</div>
+    isAuthenticated ? (<div>hello from stats</div>) : (<div>login</div>)
   )
 }
 

@@ -1,26 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
 import App from './App';
-import { Provider } from 'react-redux';
-import { Auth0Provider } from '@auth0/auth0-react';
 import store from './redux/store';
-import * as dotenv from "dotenv";
-dotenv.config();
+import Auth0ProviderWithHistory from './components/auth/Auth0ProviderWithHistory';
 
-const auth0Domain = process.env.REACT_APP_DOMAIN!;
-const auth0ClientId = process.env.REACT_APP_CLIENT_ID!;
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import './css/index.css';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Auth0Provider
-      domain={auth0Domain}
-      clientId={auth0ClientId}
-      redirectUri={window.location.origin}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Auth0Provider>
+    <BrowserRouter>
+      <Auth0ProviderWithHistory>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Auth0ProviderWithHistory>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
