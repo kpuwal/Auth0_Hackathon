@@ -4,15 +4,16 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import Loading from './Loading';
 
 type Props = {
-  component: React.ComponentType<RouteComponentProps>
+  component: React.ComponentType<RouteComponentProps>,
+  path: string
 }
 
-const ProtectedRoute: React.FC<Props> = ({ component, ...args }) => (
+const ProtectedRoute: React.FC<Props> = ({ component, path }) => (
   <Route
     component={withAuthenticationRequired(component, {
       onRedirecting: () => <Loading />,
     })}
-    {...args}
+    {...path}
   />
 );
 
