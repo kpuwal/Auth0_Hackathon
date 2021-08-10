@@ -8,12 +8,12 @@ type Props = {
   path: string
 }
 
-const ProtectedRoute: React.FC<Props> = ({ component, path }) => (
+const ProtectedRoute: React.FC<Props> = ({ component, ...args }) => (
   <Route
     component={withAuthenticationRequired(component, {
       onRedirecting: () => <Loading />,
     })}
-    {...path}
+    {...args}
   />
 );
 

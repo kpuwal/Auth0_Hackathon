@@ -1,11 +1,10 @@
-import LoginButton from "./auth/LoginButton";
-import LogoutButton from "./auth/LogoutButton";
+import AuthNav from "./auth/AuthNav";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navigation = () => {
-  const { isAuthenticated } = useAuth0();
-
-  console.log('is authenticated? ', isAuthenticated);
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log("ia authenticated? ", isAuthenticated)
+  console.log("is loading? ", isLoading)
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
@@ -23,6 +22,7 @@ const Navigation = () => {
         </button>
         <div className="collapse navbar-collapse text-right" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto">
+            
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/about">About</a>
             </li>
@@ -30,7 +30,10 @@ const Navigation = () => {
               <a className="nav-link" href="/statistics">Statistics</a>
             </li>
             <li className="nav-item">
-              { !isAuthenticated ? <LoginButton /> : <LogoutButton /> }
+              <a className="nav-link" href="/profile">Profile</a>
+            </li>
+            <li className="nav-item">
+              <AuthNav />
             </li>
           </ul>
         </div>
