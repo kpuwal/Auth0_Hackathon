@@ -5,8 +5,11 @@ const app = express();
 const helmet = require('helmet');
 const hpp = require('hpp');
 const csurf = require('csurf');
+const cors = require('cors');
 const appRouter = require('./router');
 const rateLimit = require("express-rate-limit");
+
+const clientOrigins = process.env.CLIENT_ORIGIN_URL;
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -18,7 +21,7 @@ const PORT = process.env.PORT || 3000;
 app.set('trust proxy', 1);
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-
+app.use(cors({ origin: clientOrigins }))
 app.use(express.static(path.resolve("./") + "/build/client"));
 
 /* Security Configs */
@@ -26,7 +29,7 @@ app.use(helmet());
 app.use(hpp());
 
 app.use('/', appRouter);
-app.use(csurf());
+// app.use(csurf());
 app.use(limiter);
 
 app.listen(PORT, () => {

@@ -2,7 +2,7 @@ import AuthNav from "./auth/AuthNav";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navigation = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading } = useAuth0();
   console.log("ia authenticated? ", isAuthenticated)
   console.log("is loading? ", isLoading)
 
