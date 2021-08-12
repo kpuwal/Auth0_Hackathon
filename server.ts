@@ -2,12 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const app = express();
+const rateLimit = require("express-rate-limit");
 const helmet = require('helmet');
 const hpp = require('hpp');
 const csurf = require('csurf');
 const cors = require('cors');
 const appRouter = require('./router');
-const rateLimit = require("express-rate-limit");
 
 const clientOrigins = process.env.CLIENT_ORIGIN_URL;
 
@@ -29,7 +29,7 @@ app.use(helmet());
 app.use(hpp());
 
 app.use('/', appRouter);
-// app.use(csurf());
+app.use(csurf());
 app.use(limiter);
 
 app.listen(PORT, () => {

@@ -1,5 +1,7 @@
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
+const domain = process.env.AUTH0_DOMAIN;
+const audience = process.env.AUTH0_AUDIENCE;
 
 // Auth0 configuration
 export const authenticated = jwt({
@@ -7,9 +9,9 @@ export const authenticated = jwt({
       cache: true,
       rateLimit: true,
       jwksRequestsPerMinute: 5,
-      jwksUri: 'https://dev-vbba6ora.us.auth0.com/.well-known/jwks.json'
+      jwksUri: `https://${domain}/.well-known/jwks.json`
 }),
-audience: 'https://api-grade-news',
-issuer: 'https://dev-vbba6ora.us.auth0.com/',
+audience,
+issuer: `https://${domain}/`,
 algorithms: ['RS256']
 });
