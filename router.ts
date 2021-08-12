@@ -1,11 +1,12 @@
-import { aggregateStats } from "./server/api_controllers/db";
+const { aggregateStats } = require("./server/api_controllers/db");
 const { authenticated } = require('./server/api_controllers/auth0');
+const { sourcesRequest, headlinesRequest } = require('./server/api_controllers/news');
 
 const Router = require('express-promise-router');
 const router = new Router();
 
-// router.post('/sources', sourcesRequest);
-// router.post('/headlines', headlinesRequest);
+router.post('/sources', sourcesRequest);
+router.post('/headlines', headlinesRequest);
 
 router.get('/statistics', authenticated, aggregateStats);
 
