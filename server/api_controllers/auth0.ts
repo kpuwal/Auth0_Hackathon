@@ -3,7 +3,6 @@ const jwks = require('jwks-rsa');
 const domain = process.env.AUTH0_DOMAIN;
 const audience = process.env.AUTH0_AUDIENCE;
 
-// Auth0 configuration
 export const authenticated = jwt({
   secret: jwks.expressJwtSecret({
       cache: true,

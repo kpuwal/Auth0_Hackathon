@@ -50,7 +50,7 @@ const Statistics = () => {
           <h6 className="muted">Result</h6>
           <div className="container-fluid">
             <div className="row">
-              <code className="col-12 text-light bg-dark p-4">{message}</code>
+              <div>got stuff</div>
             </div>
           </div>
         </div>
