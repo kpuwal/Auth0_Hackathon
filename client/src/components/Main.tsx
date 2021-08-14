@@ -1,4 +1,5 @@
 import MoodBar from './main/MoodBar';
+import CountriesBar from './main/CountriesBar';
 
 const Main = () => {
   return (
@@ -6,6 +7,7 @@ const Main = () => {
   <div className="row">
     <div className="col-4">
       <MoodBar />
+      <CountriesBar />
     </div>
     <div className="col-sm">
       One of three columns

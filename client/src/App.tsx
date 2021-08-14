@@ -1,4 +1,4 @@
-import './css/App.css';
+import './css/App.module.css';
 import Navigation from './components/Navigation';
 import Main from './components/Main';
 import Statistics from './components/Statistics';

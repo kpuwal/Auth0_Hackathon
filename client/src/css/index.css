@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:wght@400;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  background: #f7f5f3;
+
+  font-family: 'Open Sans', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,3 +19,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  font-family: Abril Fatface;
+  padding-bottom: 5vh;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: #f7f5f3;
+  /* border-style: none; */
+  border: .5px solid #a1a8b8;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a {
+  color: #ea6262;
+}
+
+
+
+
