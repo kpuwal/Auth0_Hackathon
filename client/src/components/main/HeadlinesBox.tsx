@@ -44,7 +44,7 @@ const HeadlinesBox = () => {
                 {article.source.name} <span className={styles.headlineTime}> {convertDate(article.publishedAt)}
                 </span>
               </h6>
-              <h5>{article.title}</h5>
+              <h5 style={{fontWeight: 'bold', fontSize: '15px'}}>{article.title}</h5>
               <p className={styles.headlinesContent}>
                 {trimContentTxt(article.content)}
                 <a href={article.url}>Read more</a>
