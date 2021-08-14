@@ -1,5 +1,6 @@
 import MoodBar from './main/MoodBar';
 import CountriesBar from './main/CountriesBar';
+import TitlesBar from './main/TitlesBar';
 
 const Main = () => {
   return (
@@ -8,6 +9,7 @@ const Main = () => {
     <div className="col-4">
       <MoodBar />
       <CountriesBar />
+      <TitlesBar />
     </div>
     <div className="col-sm">
       One of three columns
