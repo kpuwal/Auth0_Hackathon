@@ -1,18 +1,21 @@
-import { useAppDispatch } from '../../redux/store';
+import { RootState, useAppDispatch } from '../../redux/store';
+import { useSelector } from 'react-redux';
 import { activateMood } from '../../redux/slices/activeSlice';
 import styles from '../../css/App.module.css';
+import '../../css/MoodBar.css'
 
-const posIcon = (active: boolean) => <span className={active ? styles.icon : styles.iconIn}>sentiment_satisfied_alt</span>
-const neuIcon = (active: boolean) => <span className={active ? styles.icon : styles.iconIn}>&#xE87C;</span>
-const negIcon = (active: boolean) => <span className={active ? styles.icon : styles.iconIn}>sentiment_very_dissatisfied</span>
+const posIcon = (active: boolean) => <span className="icon" id={active ? "activeIcon" : "inactiveIcon"}>sentiment_satisfied_alt</span>
+const neuIcon = (active: boolean) => <span className="icon" id={active ? "activeIcon" : "inactiveIcon"}>&#xE87C;</span>
+const negIcon = (active: boolean) => <span className="icon" id={active ? "activeIcon" : "inactiveIcon"}>sentiment_very_dissatisfied</span>
 
 const MOODS = [ 
-  { label: "positive", icon: posIcon, active: true }, 
-  { label: "neutral", icon: neuIcon, active: false },
-  { label: "negative", icon: negIcon, active: false },
+  { label: "positive", icon: posIcon }, 
+  { label: "neutral", icon: neuIcon },
+  { label: "negative", icon: negIcon },
 ];
 
 const MoodBar = () => {
+  const activeMood = useSelector((state: RootState) => state.active.mood);
   const dispatch = useAppDispatch();
   return (
     <>
@@ -20,11 +23,15 @@ const MoodBar = () => {
       <ul>
         {MOODS.map((mood, idx) => 
           <li className={styles.inlineItem} key={idx}>
-            <div className={mood.active ? styles.speechBubbleAc : styles.speechBubbleIn}>{mood.label}</div>
+            <div
+              className="speechBubble"
+              id={idx === activeMood ? "active" : "inactive"}>
+              {mood.label}
+            </div>
             <button
               className={styles.moodButton}
               onClick={() => dispatch(activateMood(idx))} >
-              {mood.icon(mood.active)}
+              {mood.icon(idx === activeMood)}
             </button>
           </li>
         )}
