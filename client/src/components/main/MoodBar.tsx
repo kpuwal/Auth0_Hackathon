@@ -1,7 +1,7 @@
 import { RootState, useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { activateMood } from '../../redux/slices/activeSlice';
-import styles from '../../css/App.module.css';
+// import styles from '../../css/App.module.css';
 import '../../css/MoodBar.css'
 
 const posIcon = (active: boolean) => <span className="icon" id={active ? "activeIcon" : "inactiveIcon"}>sentiment_satisfied_alt</span>
@@ -19,17 +19,17 @@ const MoodBar = () => {
   const dispatch = useAppDispatch();
   return (
     <>
-      <div className={styles.barLabel}>by mood</div>
+      <div className="barLabel">by mood</div>
       <ul>
         {MOODS.map((mood, idx) => 
-          <li className={styles.inlineItem} key={idx}>
+          <li className="inlineIcon" key={idx}>
             <div
               className="speechBubble"
               id={idx === activeMood ? "active" : "inactive"}>
               {mood.label}
             </div>
             <button
-              className={styles.moodButton}
+              className="moodButton"
               onClick={() => dispatch(activateMood(idx))} >
               {mood.icon(idx === activeMood)}
             </button>
