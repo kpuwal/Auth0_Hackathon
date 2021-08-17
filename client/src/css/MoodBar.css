@@ -16,24 +16,24 @@
 }
 
 #activeIcon {
-  color: #080808;
+  color: #1f1f1f;
 }
 
 #inactiveIcon {
-  color: #d6d4d2;
+  color: #e9e5dd;
 }
 
 .speechBubble {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 10px;
-  color: #f8f7f7;
+  color: #ffffff;
   width: 52px;
   height: 18px;
   text-align: center;
   position: relative;
   border-width: 2px;
-  border-color: #030303;
+  border-color: #1f1f1f;
 }
 
 .speechBubble::before {
@@ -51,20 +51,20 @@
 }
 
 #active {
-  background: #030303;
-	border-top-color: #030303;
+  background: #1f1f1f;
+	border-top-color: #1f1f1f;
 }
 
 #active::before {
-	border-top-color: #030303;
+	border-top-color: #1f1f1f;
 }
 
 #inactive {
-  background: #d6d4d2;
+  background: #e9e5dd;
 }
 
 #inactive::before {
-	border-top-color: #d6d4d2;
+	border-top-color: #e9e5dd;
 }
 
 .moodButton {

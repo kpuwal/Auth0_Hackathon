@@ -30,46 +30,24 @@
   height: 220vh;
 } 
 
-.countryIcon {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 14px;  /* Preferred icon size */
-  display: inline-block;
-  /* line-height: 1; */
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  color: #959596;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
 .articleContainer {
   border-bottom: .5px solid #e4e2e0;
-  padding-left: 3vh;
-  padding-right: 3vh;
   padding-bottom: 1vh;
   padding-top: 3vh;
 }
 
+.articleSource {
+  padding-bottom: 2vh;
+  font-size: small;
+}
+
 .headlineTime {
   color: #a1a8b8;
+  /* font-size: x-small; */
 }
 
 .headlinesContent {
-  font-size: 11px;
+  font-size: small;
 }
 
 .filterLine {

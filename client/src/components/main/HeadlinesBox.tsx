@@ -1,10 +1,7 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { INewsApiArticle } from '../../../../server/types';
-import styles from '../../css/App.module.css';
-
-// const MONTHS = ["January", "February", "March", "April", "May", "June",
-// "July", "August", "September", "October", "November", "December"];
+import '../../css/HeadlinesBox.css';
 
 const HeadlinesBox = () => {
   const activeTab = useSelector((state: RootState) => state.active.mood);
@@ -16,13 +13,13 @@ const HeadlinesBox = () => {
       {
         ARTICLES[activeTab].map((article: INewsApiArticle, idx) => 
           <li key={idx}>
-            <div className={styles.articleContainer}>
-              <h6>
-                {article.source.name} <span className={styles.headlineTime}> {article.time}
+            <div className="articleContainer">
+              <div className="headlineSource">
+                {article.source.name} <span className="headlineTime"> {article.time}
                 </span>
-              </h6>
-              <h5 style={{fontWeight: 'bold', fontSize: '15px'}}>{article.title}</h5>
-              <p className={styles.headlinesContent}>
+              </div>
+              <div className="headlineTitle">{article.title}</div>
+              <p className="headlineContent">
                 {article.content}
                 <a href={article.url}>Read more</a>
               </p>
