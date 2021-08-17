@@ -7,6 +7,7 @@ import { fetchHeadlines } from '../../redux/slices/newsSlice';
 const TitlesBar = () => {
   const TITLES = useSelector((state: RootState) => state.news.titles);
   const country = useSelector((state: RootState) => state.active.country.iso);
+  const activeTitle = useSelector((state: RootState) => state.active.title);
   const dispatch = useAppDispatch();
 
   const handleHeadlines = (title: string) => {
@@ -24,6 +25,7 @@ const TitlesBar = () => {
             <li className={styles.inlineItem} key={idx}>
               <button
                 className={styles.button}
+                id={title === activeTitle ? "activated" : "deactivated"}
                 onClick={() => handleHeadlines(title)}>
                 {title}
               </button>
