@@ -30,6 +30,7 @@ export interface INewsApiArticle {
 	urlToImage: string | null;
 	publishedAt: string;
 	content: string | null;
+  time: string,
   analysed: {
     score: number;
     comparative: number;
