@@ -1,4 +1,5 @@
-import { useAppDispatch } from '../../redux/store';
+import { RootState, useAppDispatch } from '../../redux/store';
+import { useSelector } from 'react-redux';
 import { activateCountry } from '../../redux/slices/activeSlice';
 import { fetchTitles } from '../../redux/slices/newsSlice';
 import styles from '../../css/App.module.css';
@@ -16,6 +17,7 @@ const COUNTRIES: countryType[] = [
 ]
 
 const CountriesBar = () => {
+  const activeCountry = useSelector((state: RootState) => state.active.country);
   const dispatch = useAppDispatch();
   const getTitles = (country: countryType) => {
     dispatch(fetchTitles(country.iso))
@@ -30,6 +32,7 @@ const CountriesBar = () => {
           <li className={styles.inlineItem} key={idx}>
             <button
               className={styles.button}
+              id={country.iso === activeCountry.iso ? "activated" : "deactivated"}
               onClick={() => getTitles(country)} >
                 {country.label}
             </button>

@@ -45,6 +45,16 @@ button {
   padding-right: 10px;
 }
 
+#activated {
+  background: #030303;
+  color: #f7f5f3;
+}
+
+#deactivated {
+  background: #f7f5f3;
+  color: #030303;
+}
+
 a {
   color: #ea6262;
 }
