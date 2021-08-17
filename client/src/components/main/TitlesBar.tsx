@@ -1,4 +1,3 @@
-import styles from '../../css/App.module.css';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux/store';
 import { activateTitle } from '../../redux/slices/activeSlice';
@@ -16,15 +15,15 @@ const TitlesBar = () => {
   }
 
   return (
-    <div className={styles.buttonsContainer}>
+    <div className="buttonsContainer">
       {TITLES.length !== 0 ?
       <>
-        <span className={styles.barLabel}>by titles</span>
+        <span className="barLabel">by titles</span>
         <ul>
           {TITLES.map((title: string, idx: number) => 
-            <li className={styles.inlineItem} key={idx}>
+            <li className="inlineItem" key={idx}>
               <button
-                className={styles.button}
+                className="button"
                 id={title === activeTitle ? "activated" : "deactivated"}
                 onClick={() => handleHeadlines(title)}>
                 {title}

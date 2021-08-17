@@ -2,7 +2,6 @@ import { RootState, useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { activateCountry } from '../../redux/slices/activeSlice';
 import { fetchTitles } from '../../redux/slices/newsSlice';
-import styles from '../../css/App.module.css';
 
 type countryType = {
   iso: string,
@@ -25,13 +24,13 @@ const CountriesBar = () => {
   }
 
   return (
-    <div className={styles.buttonsContainer}>
-      <div className={styles.barLabel}>by coutries</div>
+    <div className="buttonsContainer">
+      <div className="barLabel">by coutries</div>
       <ul>
         {COUNTRIES.map((country, idx) => 
-          <li className={styles.inlineItem} key={idx}>
+          <li className="inlineItem" key={idx}>
             <button
-              className={styles.button}
+              className="button"
               id={country.iso === activeCountry.iso ? "activated" : "deactivated"}
               onClick={() => getTitles(country)} >
                 {country.label}

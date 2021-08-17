@@ -6,7 +6,8 @@
 
 body {
   margin: 0;
-  background: #f7f5f3;
+  /* background: #f7f5f3; */
+  background: #ffffff;
 
   font-family: 'Open Sans', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -32,8 +33,9 @@ ul {
 }
 
 button {
-  background: #f7f5f3;
+  /* background: #f7f5f3; */
   /* border-style: none; */
+  background: #ffffff;
   border: .5px solid #a1a8b8;
   border-radius: 4px;
   font-family: 'Open Sans', sans-serif;
@@ -47,11 +49,14 @@ button {
 
 #activated {
   background: #030303;
-  color: #f7f5f3;
+  border: .5px solid #030303;
+  /* color: #f7f5f3; */
+  color: #ffffff;
 }
 
 #deactivated {
-  background: #f7f5f3;
+  /* background: #f7f5f3; */
+  background: #ffffff;
   color: #030303;
 }
 
@@ -59,6 +64,29 @@ a {
   color: #ea6262;
 }
 
+.inlineItem {
+  display: inline-block;
+}
 
+.headerLabel {
+  font-weight: 700;
+  font-size: 15px;
+  color: #d6d4d2;
+  padding-left: 1vh;
+  padding-bottom: 2vh;
+  font-family: 'Open Sans', sans-serif;
+}
 
+.barLabel {
+  font-weight: 700;
+  font-size: 11px;
+  color: #d6d4d2;
+  padding-left: 1vh;
+  padding-bottom: 2vh;
+  font-family: 'Open Sans', sans-serif;
+}
 
+.buttonsContainer {
+  padding-top: 1vh;
+  padding-bottom: 5vh;
+}

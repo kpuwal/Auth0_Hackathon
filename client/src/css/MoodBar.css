@@ -67,19 +67,6 @@
 	border-top-color: #d6d4d2;
 }
 
-.barLabel {
-  font-weight: 700;
-  font-size: 11px;
-  color: #d6d4d2;
-  padding-left: 1vh;
-  padding-bottom: 2vh;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.inlineIcon {
-  display: inline-block;
-}
-
 .moodButton {
   width: 50px;
   margin-right: 10px;

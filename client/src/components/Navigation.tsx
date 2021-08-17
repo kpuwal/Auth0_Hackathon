@@ -22,15 +22,17 @@ const Navigation = () => {
         </button>
         <div className="collapse navbar-collapse text-right" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto">
-            
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/about">About</a>
+              <a className="nav-link active" aria-current="page" href="/">home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/statistics">Statistics</a>
+              <a className="nav-link active" aria-current="page" href="/about">about</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/profile">Profile</a>
+              <a className="nav-link" href="/statistics">statistics</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/profile">profile</a>
             </li>
             <li className="nav-item">
               <AuthNav />
