@@ -6,11 +6,14 @@ const initialState: statsInitStateType = {
   byTitles: []
 }
 
-const fetchResource = async (url: string) => {
+const fetchResource = async (url: string, token: string) => {
   try {
     const statsData = await fetch(url, {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      }
     })
     return statsData.json();
   } catch(err) { return err };
@@ -18,8 +21,8 @@ const fetchResource = async (url: string) => {
 
 export const fetchStatistics = createAsyncThunk(
   'stats',
-  async () => {
-    return fetchResource('/statistics');
+  async (token: string) => {
+    return fetchResource('/statistics', token);
   }
 )
 
