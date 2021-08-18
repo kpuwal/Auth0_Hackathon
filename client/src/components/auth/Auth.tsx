@@ -1,16 +1,19 @@
-import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
+import { useLocation } from "react-router-dom";
 
 const Auth = () => {
+  const { pathname } = useLocation();
+
   return (
     <ul className="navbar-nav ms-auto">
       <li className="nav-item align-button">
-        <a className="nav-link" href="/statistics">statistics</a>
+        <a className="nav-link" id={pathname === '/statistics' ? "active" : "inactive"} href="/statistics">statistics</a>
       </li>
       <li className="nav-item align-button">
-        <a className="nav-link" href="/profile">profile</a>
+        <a className="nav-link" id={pathname === '/profile' ? "active" : "inactive"} href="/profile">profile</a>
       </li>
       <li className="nav-item align-button">
-        <LoginButton />
+        <LogoutButton />
       </li>
     </ul>
   )

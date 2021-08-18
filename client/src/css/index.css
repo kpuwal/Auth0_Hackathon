@@ -65,6 +65,16 @@ a {
   color: #ea6262;
 }
 
+a#active {
+  color: #1f1f1f;
+  font-weight: bold;
+  background: #ffffff;
+}
+
+a#inactive {
+  background: #ffffff;
+}
+
 .logo {
   font-family: 'Newsreader';
   font-weight: 700;

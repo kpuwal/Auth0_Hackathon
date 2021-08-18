@@ -1,10 +1,8 @@
 import AuthNav from "./auth/AuthNav";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useLocation } from "react-router-dom";
 
 const Navigation = () => {
-  const { isAuthenticated, isLoading } = useAuth0();
-  console.log("ia authenticated? ", isAuthenticated)
-  console.log("is loading? ", isLoading)
+  const { pathname } = useLocation();
 
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-light bgColor">
@@ -23,12 +21,12 @@ const Navigation = () => {
         <div className="collapse navbar-collapse text-right align-button" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active align-button" aria-current="page" href="/">home</a>
+              <a className="nav-link" id={pathname === '/' ? "active" : "inactive"} aria-current="page" href="/">home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link align-button" aria-current="page" href="/about">about</a>
+              <a className="nav-link" id={pathname === '/about' ? "active" : "inactive"} aria-current="page" href="/about">about</a>
             </li>
-            <li className="nav-item align-button">
+            <li className="nav-item">
               <AuthNav />
             </li>
           </ul>
