@@ -23,6 +23,7 @@ const App = () => {
           <ProtectedRoute path="/statistics" component={Statistics} />
           <ProtectedRoute path="/profile" component={Profile} />
           <Route path="/about" component={About} />
+          <Route render={() => <h1>404: page not found</h1>} />
         </Switch>
     </>
   );

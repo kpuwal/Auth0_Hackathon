@@ -23,7 +23,6 @@ const TitlesBar = () => {
           {TITLES.map((title: string, idx: number) => 
             <li className="inlineItem" key={idx}>
               <button
-                className="button"
                 id={title === activeTitle ? "activated" : "deactivated"}
                 onClick={() => handleHeadlines(title)}>
                 {title}

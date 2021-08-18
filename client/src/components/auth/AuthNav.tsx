@@ -1,5 +1,5 @@
+import Auth from './Auth';
 import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
 import { useAuth0, withAuth0 } from '@auth0/auth0-react';
 
 const AuthNav = () => {
@@ -7,7 +7,7 @@ const AuthNav = () => {
 
   return (
     <>
-      {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+      {isAuthenticated ? <Auth /> : <LoginButton />}
     </>
   )
 }

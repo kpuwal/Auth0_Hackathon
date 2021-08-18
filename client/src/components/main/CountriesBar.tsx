@@ -30,7 +30,6 @@ const CountriesBar = () => {
         {COUNTRIES.map((country, idx) => 
           <li className="inlineItem" key={idx}>
             <button
-              className="button"
               id={country.iso === activeCountry.iso ? "activated" : "deactivated"}
               onClick={() => getTitles(country)} >
                 {country.label}

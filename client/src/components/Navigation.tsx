@@ -20,21 +20,15 @@ const Navigation = () => {
           aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse text-right" id="navbarNavDropdown">
+        <div className="collapse navbar-collapse text-right align-button" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">home</a>
+              <a className="nav-link active align-button" aria-current="page" href="/">home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/about">about</a>
+              <a className="nav-link align-button" aria-current="page" href="/about">about</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/statistics">statistics</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/profile">profile</a>
-            </li>
-            <li className="nav-item">
+            <li className="nav-item align-button">
               <AuthNav />
             </li>
           </ul>

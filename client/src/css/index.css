@@ -12,7 +12,7 @@ body {
 }
 
 .navbar.bgColor {
-  padding-left: 0;
+  left: 0;
   margin-left: 4%;
   margin-right: 4%;
   background: #ffffff;
@@ -37,8 +37,6 @@ ul {
 }
 
 button {
-  /* background: #f7f5f3; */
-  /* border-style: none; */
   background: #ffffff;
   border: .5px solid #a1a8b8;
   border-radius: 5px;
@@ -67,15 +65,27 @@ a {
   color: #ea6262;
 }
 
+.logo {
+  font-family: 'Newsreader';
+  font-weight: 700;
+  font-size: 30px;
+  color: #080808;
+  text-decoration: none;
+}
+
 .inlineItem {
   display: inline-block;
+}
+
+.nav-button {
+  margin-left: 2vh;
+  margin-top: 1.5vh;
 }
 
 .headerLabel {
   font-weight: 700;
   font-size: 15px;
   color: #e9e5dd;
-  /* padding-left: 1vh; */
   padding-bottom: 3vh;
   font-family: 'Open Sans', sans-serif;
   line-height: 20px;
@@ -85,8 +95,6 @@ a {
   font-weight: 700;
   font-size: 11px;
   color: #e9e5dd;
-  /* padding-left: 1vh; */
-  /* padding-bottom: 1vh; */
   font-family: 'Open Sans', sans-serif;
 }
 
