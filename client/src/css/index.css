@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:wght@400;600;700&display=swap');
 
 body {
-  margin: 0;
-  /* background: #f7f5f3; */
-  background: #ffffff;
-
+  padding-top: 18vh;
   font-family: 'Open Sans', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar.bgColor {
+  padding-left: 0;
+  margin-left: 4%;
+  margin-right: 4%;
+  background: #ffffff;
+  border-bottom: 4px solid #1f1f1f;
+  height: 12vh;
 }
 
 code {
@@ -36,15 +40,15 @@ button {
   /* background: #f7f5f3; */
   /* border-style: none; */
   background: #ffffff;
-  border: .5px solid #1f1f1f;
+  border: .5px solid #a1a8b8;
   border-radius: 5px;
   font-family: 'Open Sans', sans-serif;
   font-size: x-small;
   font-weight: 700;
-  margin-right: 10px;
-  margin-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-right: 6px;
+  margin-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 button#activated {
@@ -72,7 +76,7 @@ a {
   font-size: 15px;
   color: #e9e5dd;
   /* padding-left: 1vh; */
-  padding-bottom: 2vh;
+  padding-bottom: 3vh;
   font-family: 'Open Sans', sans-serif;
   line-height: 20px;
 }
@@ -82,38 +86,23 @@ a {
   font-size: 11px;
   color: #e9e5dd;
   /* padding-left: 1vh; */
-  padding-bottom: 2vh;
+  /* padding-bottom: 1vh; */
   font-family: 'Open Sans', sans-serif;
 }
 
 .buttonsContainer {
   padding-top: 1vh;
-  padding-bottom: 5vh;
+  padding-bottom: 1vh;
 }
 
-.fennelIcon {
-  font-family: 'Material Icons Outlined';
-  font-weight: normal;
-  font-style: normal;
-  color: #e9e5dd;
-  font-size: 24px;
-  margin-left: -10px;
-  display: inline-block;
-  vertical-align: text-top;
-  text-transform: none; 
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
-}
-
-#headlines-container {
-  width: 100%;
-  height: 540px;
+.headlines-container {
   overflow: scroll;
-  /* overflow-y: hidden; */
+  margin-left: 50%;
+}
+
+.filter-container {
+  position: fixed;
+  width: 45%;
+  overflow: scroll;
+  left: 3%;
 }

@@ -18,7 +18,7 @@ const MoodBar = () => {
   const dispatch = useAppDispatch();
   return (
     <>
-      <div className="barLabel">by mood</div>
+      <span className="barLabel">by mood</span>
       <ul>
         {MOODS.map((mood, idx) => 
           <li className="inlineItem" key={idx}>

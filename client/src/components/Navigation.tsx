@@ -7,9 +7,9 @@ const Navigation = () => {
   console.log("is loading? ", isLoading)
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light bgColor">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">GradeNews!</a>
+        <a className="logo" href="/">GradeNews!</a>
         <button
           className="navbar-toggler"
           type="button"

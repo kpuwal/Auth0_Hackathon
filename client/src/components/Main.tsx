@@ -4,23 +4,20 @@ import TitlesBar from './main/TitlesBar';
 import HeadlinesBox from './main/HeadlinesBox';
 
 const Main = () => {
-  const fennelIcon = <span className="fennelIcon">
-  filter_alt
-  </span>
   return (
     <div className="container">
-  <div className="row">
-    <div className="col-sm">
-      <div className="headerLabel">{fennelIcon} Filter:</div>
-      <MoodBar />
-      <CountriesBar />
-      <TitlesBar />
+      <div className="row">
+        <div className="col-6 filter-container">
+          <div className="headerLabel">Filter:</div>
+          <MoodBar />
+          <CountriesBar />
+          <TitlesBar />
+        </div>
+        <div className="col-6 headlines-container">
+          <HeadlinesBox />
+        </div>
+      </div>
     </div>
-    <div className="col-sm" id="headlines-container">
-      <HeadlinesBox />
-    </div>
-  </div>
-</div>
   );
 }
 
