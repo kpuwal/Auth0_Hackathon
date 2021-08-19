@@ -2,8 +2,10 @@ import MoodBar from './main/MoodBar';
 import CountriesBar from './main/CountriesBar';
 import TitlesBar from './main/TitlesBar';
 import HeadlinesBox from './main/HeadlinesBox';
+import useFetchStats from '../hooks/useFetchStats';
 
 const Main = () => {
+  useFetchStats();
   return (
     <div className="container">
       <div className="row">

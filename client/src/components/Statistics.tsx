@@ -4,24 +4,31 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../redux/store';
 import { fetchStatistics } from '../redux/slices/statsSlice';
 
+import useFetchStats from '../hooks/useFetchStats';
+
 const Statistics = () => {
+  // const countries = useSelector((state: RootState) => state.stats.byCountries);
+  // const titles = useSelector((state: RootState) => state.stats.byTitles);
+
+  // console.log("countries ", countries);
+  // console.log("titles ", titles)
+  // const dispatch = useAppDispatch();
+  // const { getAccessTokenSilently } = useAuth0();
+
+  // useEffect(() => {
+  //   const getData = async () => { 
+  //     try {
+  //     const token = await getAccessTokenSilently();
+  //     dispatch(fetchStatistics(token));
+  //   } catch {}}
+  //   getData();
+  // }, [dispatch, getAccessTokenSilently]);
+  useFetchStats();
   const countries = useSelector((state: RootState) => state.stats.byCountries);
   const titles = useSelector((state: RootState) => state.stats.byTitles);
 
   console.log("countries ", countries);
   console.log("titles ", titles)
-  const dispatch = useAppDispatch();
-  const { getAccessTokenSilently } = useAuth0();
-
-  useEffect(() => {
-    const getData = async () => { 
-      try {
-      const token = await getAccessTokenSilently();
-      dispatch(fetchStatistics(token));
-    } catch {}}
-    getData();
-  }, [dispatch, getAccessTokenSilently]);
-
   // const callSecureApi = async () => {
   //   try {
   //     const token = await getAccessTokenSilently();
