@@ -85,3 +85,15 @@ type headlinesType = {
 export type axiosRequestType = INewsApiSourcesResponse | INewsApiHeadlinesResponse;
 
 export type configType = sourcesType | headlinesType;
+
+export interface Icountries {
+  country: string;
+  mood: string;
+  count: string;
+}
+
+export interface Ititles {
+  source: string;
+  mood: string;
+  count: string;
+}

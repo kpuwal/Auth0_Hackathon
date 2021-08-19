@@ -7,7 +7,7 @@ const Navigation = () => {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-light bgColor">
       <div className="container-fluid">
-        <a className="logo" href="/">GradeNews!</a>
+        <a className="logo" href="/">GradeNews</a>
         <button
           className="navbar-toggler"
           type="button"
