@@ -9,26 +9,6 @@ const Statistics = () => {
 
   console.log("countries ", countries);
   console.log("titles ", titles)
-  // const callSecureApi = async () => {
-  //   try {
-  //     const token = await getAccessTokenSilently();
-
-  //     const response = await fetch(
-  //       `${serverUrl}/statistics`,
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //       }
-  //     );
-
-  //     const responseData = await response.json();
-  //       console.log("responseData ", responseData)
-  //     setMessage(responseData.message);
-  //   } catch (error) {
-  //     setMessage(error.message);
-  //   }
-  // };
 
   return (
     <div className="container">
