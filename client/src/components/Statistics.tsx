@@ -13,7 +13,7 @@ const Statistics = () => {
 
   return (
     <div className="container">
-      <h1>External API</h1>
+      <h2>Country mood:</h2>
       <div className="bar-group">
       {
         countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} country={country.country} sum={country.sum} />)
