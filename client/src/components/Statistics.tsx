@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import useFetchStats from '../hooks/useFetchStats';
+import BarGroup from './stats/BarGroup';
 
 const Statistics = () => {
   useFetchStats();
@@ -13,6 +14,9 @@ const Statistics = () => {
   return (
     <div className="container">
       <h1>External API</h1>
+      {
+        countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} country={country.country} sum={country.sum} />)
+      }
     </div>
   );
 };

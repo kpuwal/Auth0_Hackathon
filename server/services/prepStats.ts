@@ -25,7 +25,8 @@ export const prepStatsCountries = (data: Icountries[]) => {
 
     const sum = findSum(flatMood);
     const percentage = convertToPercent(flatMood, sum);
-    return {country, moods: percentage, sum};
+    const newObj = Object.assign(percentage[0], percentage[1], percentage[2]);
+    return {country, moods: newObj, sum};
   })
   return flattened;
 }

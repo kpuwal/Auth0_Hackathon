@@ -1,16 +1,28 @@
 import { INewsApiArticle } from '../../../server/types';
 
+export type countryProp = {
+  country: string,
+  moods: { 
+    positive: number,
+    neutral: number,
+    negative: number 
+  },
+  sum: number,
+}
+
+export type titleProp = {
+  source: string,
+  moods: { 
+    positive: number,
+    neutral: number,
+    negative: number 
+  },
+  sum: number,
+}
+
 export interface statsInitStateType {
-  byCountries: {
-    country: string,
-    mood: string,
-    count: number,
-  }[],
-  byTitles: {
-    country: string,
-    mood: string,
-    count: number,
-  }[]
+  byCountries: countryProp[],
+  byTitles: titleProp[],
 }
 
 export interface IData {
