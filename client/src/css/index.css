@@ -124,3 +124,8 @@ a#inactive {
   overflow: scroll;
   left: 3%;
 }
+
+.bar-group {
+  margin-left: 50;
+  background-color: "yellow";
+}

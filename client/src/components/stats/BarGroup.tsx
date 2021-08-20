@@ -2,15 +2,17 @@ import { countryProp } from '../../redux/types';
 
 const BarGroup = ({ moods, country, sum }: countryProp) => {
   return (
-    <svg>
-      <g className="bar-group">
-        <text className="name-label" x="6px" y="10px" alignmentBaseline="middle" >{country}</text>
-        <rect x={0} y={10} width={10} height={moods.positive} fill="#1f1f1f" />
-        <rect x={20} y={10} width={10} height={moods.neutral} fill="green" />
-        <rect x={40} y={10} width={10} height={moods.negative} fill="red" />
-       <text className="value-label" x={20- 8} y="10px" alignmentBaseline="middle" >30</text>
-    </g>
-  </svg>
+    <svg width="25%" height="100%" viewBox="0 0 250 150">
+      <g transform="matrix(1 0 0 -1 100 100)" className="bar-group">
+        <rect x={-80} y={0} width={20} height={moods.positive} fill="#1f1f1f" />
+        <rect x={-55} y={0} width={20} height={moods.neutral} fill="green" />
+        <rect x={-30} y={0} width={20} height={moods.negative} fill="red" />
+      </g>
+      <g>
+        <text className="name-label" x="0px" y="10px" alignmentBaseline="middle" >{country}</text>
+      </g>
+      <g><text className="name-label" x="0px" y="130px" alignmentBaseline="middle" >{sum}</text></g>
+    </svg>
   )
 }
 
