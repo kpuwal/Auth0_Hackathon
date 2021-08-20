@@ -93,7 +93,7 @@ export interface Icountries {
 }
 
 export interface Ititles {
-  source: string;
+  source?: string;
   mood: string;
   count: string;
 }

@@ -1,4 +1,5 @@
 import { Icountries, Ititles } from '../types';
+
 type dataProps = {mood: string, count: number};
 
 const findSum = (data: dataProps[]) => {
@@ -23,8 +24,8 @@ export const prepStatsCountries = (data: Icountries[]) => {
       })
 
     const sum = findSum(flatMood);
-    const procentage = convertToPercent(flatMood, sum);
-    return {country, moods: procentage};
+    const percentage = convertToPercent(flatMood, sum);
+    return {country, moods: percentage, sum};
   })
   return flattened;
 }
@@ -40,7 +41,7 @@ export const prepStatsTitles = (data: Ititles[]) => {
     
     const sum = findSum(flatMood);
     const procentage = convertToPercent(flatMood, sum);
-    return {source, moods: procentage};
+    return {source, moods: procentage, sum};
   })
   return flattened;
 }
