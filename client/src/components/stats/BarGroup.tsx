@@ -8,18 +8,18 @@ const BarGroup = ({ moods, country, sum }: countryProp) => {
         <rect x={-70} y={0} width={20} height={90} fill="#f1f1f1" rx="3" ry="3" />
         <rect x={-45} y={0} width={20} height={90} fill="#f1f1f1" rx="3" ry="3" />
         <rect x={-20} y={0} width={20} height={90} fill="#f1f1f1" rx="3" ry="3" />
-        <rect x={-70} y={0} width={20} height={moods.positive * 0.9} rx="3" ry="3" fill="#1f1f1f" />
-        <rect x={-45} y={0} width={20} height={moods.neutral * 0.9} rx="3" ry="3" fill="#1f1f1f" />
-        <rect x={-20} y={0} width={20} height={moods.negative * 0.9} rx="3" ry="3" fill="#1f1f1f" />
+        <rect x={-70} y={0} width={20} height={!isNaN(moods.positive) ? moods.positive * 0.9 : 0} rx="3" ry="3" fill="#1f1f1f" />
+        <rect x={-45} y={0} width={20} height={!isNaN(moods.neutral) ? moods.neutral * 0.9 : 0} rx="3" ry="3" fill="#1f1f1f" />
+        <rect x={-20} y={0} width={20} height={!isNaN(moods.negative) ? moods.negative * 0.9 : 0} rx="3" ry="3" fill="#1f1f1f" />
       </g>
       <g>
-        <text className="mood-label" x="31px" y={95 - moods.positive} alignmentBaseline="middle" >{moods.positive}%</text>
+        <text className="mood-label" x="31px" y={!isNaN(moods.positive) ? 95 - moods.positive : -10} alignmentBaseline="middle" >{moods.positive}%</text>
       </g>
       <g>
-        <text className="mood-label" x="56px" y={95 - moods.neutral} alignmentBaseline="middle" >{moods.neutral}%</text>
+        <text className="mood-label" x="56px" y={!isNaN(moods.neutral) ? 95 - moods.neutral : -10} alignmentBaseline="middle" >{moods.neutral}%</text>
       </g>
       <g>
-        <text className="mood-label" x="81px" y={95 - moods.negative} alignmentBaseline="middle" >{moods.negative}%</text>
+        <text className="mood-label" x="81px" y={!isNaN(moods.negative) ? 95 - moods.negative : -10} alignmentBaseline="middle" >{moods.negative}%</text>
       </g>
       <g>
         <text className="name-label" x="0px" y="10px" alignmentBaseline="middle" >{country}</text>
