@@ -22,7 +22,7 @@ export const prepStatsCountries = (data: Icountries[]) => {
       .map(a => {
         return {mood: a.mood, count: parseInt(a.count)}
       })
-
+      console.log(flatMood)
     const sum = findSum(flatMood);
     const percentage = convertToPercent(flatMood, sum);
     const newObj = Object.assign(percentage[0], percentage[1], percentage[2]);
@@ -41,8 +41,9 @@ export const prepStatsTitles = (data: Ititles[]) => {
       })
     
     const sum = findSum(flatMood);
-    const procentage = convertToPercent(flatMood, sum);
-    return {source, moods: procentage, sum};
+    const percentage = convertToPercent(flatMood, sum);
+    const newObj = Object.assign(percentage[0], percentage[1], percentage[2]);
+    return {source, moods: newObj, sum};
   })
   return flattened;
 }

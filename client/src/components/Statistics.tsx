@@ -13,11 +13,22 @@ const Statistics = () => {
 
   return (
     <div className="container">
-      <h2>Country mood:</h2>
-      <div className="bar-group">
-      {
-        countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} country={country.country} sum={country.sum} />)
-      }
+      <div className="row">
+        <div className="col-4 info-container fixed-top">
+          <h4>filter by country mood:</h4>
+          <h4>Newspaper title mood:</h4>
+        </div>
+        <div className="col-8 charts-container">
+          <div className="chart-box">
+          {
+            countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} country={country.country} sum={country.sum} />)
+          }
+        </div>
+        <div className="chart-box"></div>
+          {
+            titles.map((country, idx) => <BarGroup key={idx} moods={country.moods} country={country.source} sum={country.sum} />)
+          }
+        </div>
       </div>
     </div>
   );

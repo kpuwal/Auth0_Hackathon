@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:wght@400;600;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding-top: 18vh;
   font-family: 'Open Sans', 'Roboto', 'Oxygen',
@@ -114,14 +118,34 @@ a#inactive {
 }
 
 .headlines-container {
-  overflow: scroll;
+  overflow: auto;
   margin-left: 50%;
 }
 
 .filter-container {
-  position: fixed;
+  /* position: fixed; */
   width: 45%;
-  overflow: scroll;
+  /* overflow: scroll; */
+  padding-top: 18vh;
+  left: 3%;
+}
+
+.charts-container {
+  overflow: auto;
+  margin-left: 50%;
+}
+
+.chart-box {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  /* padding-left: 15%; */
+}
+
+.info-container {
+  /* position: fixed; */
+  width: 45%;
+  /* overflow: scroll; */
+  padding-top: 18vh;
   left: 3%;
 }
 

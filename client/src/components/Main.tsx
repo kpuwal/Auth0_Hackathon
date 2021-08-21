@@ -9,7 +9,7 @@ const Main = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-6 filter-container">
+        <div className="col-6 filter-container fixed-top">
           <div className="headerLabel">Filter:</div>
           <MoodBar />
           <CountriesBar />
