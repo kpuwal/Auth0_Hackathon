@@ -1,4 +1,19 @@
-import { Icountries, Ititles } from '../types';
+import { Icountries, Ititles, Idate } from '../types';
+
+export const MONTHS: string[] = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 type dataProps = {mood: string, count: number};
 
@@ -22,7 +37,7 @@ export const prepStatsCountries = (data: Icountries[]) => {
       .map(a => {
         return {mood: a.mood, count: parseInt(a.count)}
       })
-      console.log(flatMood)
+
     const sum = findSum(flatMood);
     const percentage = convertToPercent(flatMood, sum);
     const newObj = Object.assign(percentage[0], percentage[1], percentage[2]);
@@ -48,3 +63,46 @@ export const prepStatsTitles = (data: Ititles[]) => {
   return flattened;
 }
 
+const convertDate = (date: string | number) => {
+  const mydate = new Date(date);
+  const month =  mydate.getMonth();
+  return month;
+}
+
+const groupByMonth = (dates: Idate[]) => {
+  const map = new Map();
+  dates.forEach((item) => {
+       const key = item.stamp;
+       const collection = map.get(key);
+       if (!collection) {
+           map.set(key, [item]);
+       } else {
+           collection.push(item);
+       }
+  });
+  return map;
+}
+
+type statsProp = {stamp: number, mood: string};
+
+const filterMoods = (data: any) => {
+  let filtered = [];
+  for (const key in data) {
+    const positives = data[key].filter((item: statsProp) => item.mood === "positive");
+    const neutrals = data[key].filter((item: statsProp) => item.mood === "neutral");
+    const negatives = data[key].filter((item: statsProp) => item.mood === "negative");
+    filtered.push({
+      stamp: key,
+      positive: positives.length,
+      neutral: neutrals.length,
+      negative: negatives.length,
+    })
+  }
+  return filtered;
+}
+
+export const prepStatsDates = (data: Idate[]) => {
+  data.forEach(item => item.stamp = convertDate(item.stamp));
+  const obj = Object.fromEntries(groupByMonth(data));
+  return filterMoods(obj);
+}
