@@ -7,11 +7,9 @@ const Statistics = () => {
   useFetchStats();
   const countries = useSelector((state: RootState) => state.stats.byCountries);
   const titles = useSelector((state: RootState) => state.stats.byTitles);
-  const dates = useSelector((state: RootState) => state.stats.byDates);
 
   // console.log("countries ", countries);
   // console.log("titles ", titles)
-  console.log("dates ", dates)
 
   return (
     <div className="container">

@@ -22,7 +22,7 @@ const BarGroup = ({ moods, country, sum }: countryProp) => {
         <text className="mood-label" x="81px" y={!isNaN(moods.negative) ? 95 - moods.negative : -10} alignmentBaseline="middle" >{moods.negative}%</text>
       </g>
       <g>
-        <text className="name-label" x="0px" y="10px" alignmentBaseline="middle" >{country}</text>
+        <text className="name-label" x="0px" y="5px" alignmentBaseline="middle" >{country}</text>
       </g>
       <g>
         <text className="name-label" x="0px" y="130px" alignmentBaseline="middle">no of headlines analysed: </text>
