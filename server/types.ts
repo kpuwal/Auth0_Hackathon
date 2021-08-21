@@ -98,7 +98,7 @@ export interface Ititles {
   count: string;
 }
 
-export type Idate = {
+export type Idates = {
   stamp: number,
   mood: string,
   count: string,

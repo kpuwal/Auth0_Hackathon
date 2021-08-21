@@ -5,7 +5,7 @@ export type countryProp = {
   moods: { 
     positive: number,
     neutral: number,
-    negative: number 
+    negative: number, 
   },
   sum: number,
 }
@@ -15,14 +15,22 @@ export type titleProp = {
   moods: { 
     positive: number,
     neutral: number,
-    negative: number 
+    negative: number,
   },
   sum: number,
+}
+
+export type dateProp = {
+  stamp: string,
+  positive: number,
+  neutral: number,
+  negative: number,
 }
 
 export interface statsInitStateType {
   byCountries: countryProp[],
   byTitles: titleProp[],
+  byDates: dateProp[],
 }
 
 export interface IData {

@@ -3,7 +3,8 @@ import { statsInitStateType } from '../types';
 
 const initialState: statsInitStateType = {
   byCountries: [],
-  byTitles: []
+  byTitles: [],
+  byDates: []
 }
 
 const fetchResource = async (url: string, token: string) => {
@@ -34,6 +35,8 @@ export const statsSlice = createSlice({
     builder.addCase(fetchStatistics.fulfilled, (state, action) => {
       state.byCountries = action.payload.byCountries
       state.byTitles = action.payload.byTitles
+      state.byDates = action.payload.byDates
+
     })
   },
 })

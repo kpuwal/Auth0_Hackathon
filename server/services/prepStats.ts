@@ -1,20 +1,6 @@
-import { Icountries, Ititles, Idate } from '../types';
+import { Icountries, Ititles, Idates } from '../types';
 
-export const MONTHS: string[] = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-
+type statsProp = {stamp: number, mood: string};
 type dataProps = {mood: string, count: number};
 
 const findSum = (data: dataProps[]) => {
@@ -69,7 +55,7 @@ const convertDate = (date: string | number) => {
   return month;
 }
 
-const groupByMonth = (dates: Idate[]) => {
+const groupByMonth = (dates: Idates[]) => {
   const map = new Map();
   dates.forEach((item) => {
        const key = item.stamp;
@@ -82,8 +68,6 @@ const groupByMonth = (dates: Idate[]) => {
   });
   return map;
 }
-
-type statsProp = {stamp: number, mood: string};
 
 const filterMoods = (data: any) => {
   let filtered = [];
@@ -101,8 +85,8 @@ const filterMoods = (data: any) => {
   return filtered;
 }
 
-export const prepStatsDates = (data: Idate[]) => {
+export const prepStatsDates = (data: Idates[]) => {
   data.forEach(item => item.stamp = convertDate(item.stamp));
-  const obj = Object.fromEntries(groupByMonth(data));
-  return filterMoods(obj);
+  const mapToObj = Object.fromEntries(groupByMonth(data));
+  return filterMoods(mapToObj);
 }
