@@ -126,7 +126,7 @@ a#inactive {
 }
 
 text.name-label {
-  font-size: 10px;
+  font-size: 8px;
 }
 
 text.mood-label {
@@ -141,4 +141,9 @@ text.name-label-bold {
 
 svg.emoji-label {
   position: absolute;
+}
+
+.positive-label {
+  padding-top: 30px;
+  font-size: 10px;
 }
