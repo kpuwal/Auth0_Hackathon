@@ -31,9 +31,9 @@ const BarGroup = ({ moods, country, sum }: countryProp) => {
       <g>
         <text className="name-label-bold" x="100px" y="130px" alignmentBaseline="middle">{" "}{sum}</text>
       </g>
-      <HappyIcn scale={0.6} posX={32} posY={103} />
-      <NeutralIcn scale={0.6} posX={58} posY={103} />
-      <NegativeIcn scale={0.6} posX={83} posY={103} />
+      <HappyIcn scale={0.6} posX={32} posY={103} opacity={1} />
+      <NeutralIcn scale={0.6} posX={58} posY={103} opacity={1} />
+      <NegativeIcn scale={0.6} posX={83} posY={103} opacity={1} />
     </svg>
   </>
   )
