@@ -23,6 +23,20 @@ const restructureData = (data: dateProp[], defaultDataStructure: dateProp[]) => 
   return defaultDataStructure;
 }
 
+const findMax = (data: dateProp[]) => {
+  const pos = Math.max.apply(Math, data.map(obj => {return obj.positive}));
+  const neu = Math.max.apply(Math, data.map(obj => {return obj.neutral}));
+  const neg = Math.max.apply(Math, data.map(obj => {return obj.negative}));
+  const maxAll = [
+    { name: "positive", data: pos },
+    { name: "neutral", data: neu },
+    { name: "negative", data: neg },
+  ]
+  const foundNo = Math.max.apply(Math, maxAll.map(obj => {return obj.data}));
+  const obj = maxAll.find(obj => { return obj.data === foundNo; })
+  return obj;
+}
+
 const rotateData = (data: dateProp[]) => {
   const positives = data.map(a => a.positive);
   const neutrals = data.map(a => a.neutral);
@@ -31,6 +45,7 @@ const rotateData = (data: dateProp[]) => {
     positive: positives,
     neutral: neutrals,
     negative: negatives,
+    max: findMax(data),
   }
 }
 
