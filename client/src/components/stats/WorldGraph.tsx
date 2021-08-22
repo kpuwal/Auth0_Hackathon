@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-// import { dateProp } from '../../redux/types';
+import { prepData } from './helper';
 
 const WorldGraph = () => {
   const dates = useSelector((state: RootState) => state.stats.byDates);
@@ -9,7 +9,8 @@ const WorldGraph = () => {
   const negatives = dates.map(a => a.negative);
   // const stamps = dates.map(a => a.stamp);
 
-  console.log(dates)
+  const newData = prepData(dates)
+  console.log(newData)
 
   const calculatePoints = (data: number[]) => {
     let collection: any = [];
