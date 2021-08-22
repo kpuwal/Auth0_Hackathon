@@ -1,5 +1,7 @@
 import { dateProp } from '../../redux/types';
 
+const positionX = 80;
+
 const initValues: dateProp[] = [
   {stamp: "0", positive: 0, neutral: 0, negative: 0},
   {stamp: "1", positive: 0, neutral: 0, negative: 0},
@@ -23,19 +25,48 @@ const restructureData = (data: dateProp[], defaultDataStructure: dateProp[]) => 
   return defaultDataStructure;
 }
 
-const findMax = (data: dateProp[]) => {
-  const pos = Math.max.apply(Math, data.map(obj => {return obj.positive}));
-  const neu = Math.max.apply(Math, data.map(obj => {return obj.neutral}));
-  const neg = Math.max.apply(Math, data.map(obj => {return obj.negative}));
-  const maxAll = [
-    { name: "positive", data: pos },
-    { name: "neutral", data: neu },
-    { name: "negative", data: neg },
-  ]
-  const foundNo = Math.max.apply(Math, maxAll.map(obj => {return obj.data}));
-  const obj = maxAll.find(obj => { return obj.data === foundNo; })
-  return obj;
+const findMaxInMonth = (data: dateProp[]) => {
+  console.log("data ", data)
+  const maxCollection = data.map((item, idx) => {
+   const monthObj = [
+     { name: "positive", data: item.positive },
+     { name: "neutral", data: item.neutral },
+     { name: "negative", data: item.negative },
+    ];
+  
+   const foundNo = Math.max.apply(Math, monthObj.map(obj => {return obj.data}));const maxNo = monthObj.find(obj => {return obj.data === foundNo});
+   
+   return {
+     month: idx,
+     mood: maxNo?.name,
+     posY: foundNo,
+     posX: positionX * idx,
+   }
+  })
+  return maxCollection;
 }
+
+// const findMax = (data: dateProp[]) => {
+//   const pos = Math.max.apply(Math, data.map(obj => {return obj.positive}));
+//   const neu = Math.max.apply(Math, data.map(obj => {return obj.neutral}));
+//   const neg = Math.max.apply(Math, data.map(obj => {return obj.negative}));
+//   const maxAll = [
+//     { name: "positive", data: pos },
+//     { name: "neutral", data: neu },
+//     { name: "negative", data: neg },
+//   ]
+//   const foundNo = Math.max.apply(Math, maxAll.map(obj => {return obj.data}));
+//   // const maxNo = maxAll.find(obj => {return obj.data === foundNo})
+//   const maxObj = data.find(obj => {return obj.positive === foundNo || obj.negative === foundNo || obj.neutral === foundNo});
+//   console.log(maxObj)
+//   // const x = parseInt(maxObj?.stamp)
+//   // return {
+//   //   maxY: foundNo,
+//   //   maxY: maxObj.stamp
+//   // };
+//   findMaxInMonth(data)
+//   return maxObj
+// }
 
 const rotateData = (data: dateProp[]) => {
   const positives = data.map(a => a.positive);
@@ -45,12 +76,23 @@ const rotateData = (data: dateProp[]) => {
     positive: positives,
     neutral: neutrals,
     negative: negatives,
-    max: findMax(data),
+    max: findMaxInMonth(data),
   }
+}
+
+const calculatePoints = (data: number[]) => {
+  let collection: any = [];
+  data.forEach((item, idx) => {
+    collection.push(`${positionX * idx}, ${item} `)
+  })
+  return collection.join(" ");
 }
 
 export const prepData = (data: dateProp[]) => {
   const restructured = restructureData(data, initValues);
   const rotated = rotateData(restructured);
-  return rotated;
+  const posPoints = calculatePoints(rotated.positive);
+  const neuPoints = calculatePoints(rotated.neutral);
+  const negPoints = calculatePoints(rotated.negative);
+  return {posPoints, neuPoints, negPoints, max: rotated.max};
 }
