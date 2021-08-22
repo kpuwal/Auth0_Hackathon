@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import useFetchStats from '../hooks/useFetchStats';
 import BarGroup from './stats/BarGroup';
+import WorldGraph from './stats/WorldGraph';
 
 const Statistics = () => {
   useFetchStats();
@@ -19,6 +20,9 @@ const Statistics = () => {
           <h4>Newspaper title mood:</h4>
         </div>
         <div className="col-8 charts-container">
+        <div>
+          <WorldGraph />
+        </div>
           <div className="chart-box">
           {
             countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} country={country.country} sum={country.sum} />)
