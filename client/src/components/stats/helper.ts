@@ -46,28 +46,6 @@ const findMaxInMonth = (data: dateProp[]) => {
   return maxCollection;
 }
 
-// const findMax = (data: dateProp[]) => {
-//   const pos = Math.max.apply(Math, data.map(obj => {return obj.positive}));
-//   const neu = Math.max.apply(Math, data.map(obj => {return obj.neutral}));
-//   const neg = Math.max.apply(Math, data.map(obj => {return obj.negative}));
-//   const maxAll = [
-//     { name: "positive", data: pos },
-//     { name: "neutral", data: neu },
-//     { name: "negative", data: neg },
-//   ]
-//   const foundNo = Math.max.apply(Math, maxAll.map(obj => {return obj.data}));
-//   // const maxNo = maxAll.find(obj => {return obj.data === foundNo})
-//   const maxObj = data.find(obj => {return obj.positive === foundNo || obj.negative === foundNo || obj.neutral === foundNo});
-//   console.log(maxObj)
-//   // const x = parseInt(maxObj?.stamp)
-//   // return {
-//   //   maxY: foundNo,
-//   //   maxY: maxObj.stamp
-//   // };
-//   findMaxInMonth(data)
-//   return maxObj
-// }
-
 const rotateData = (data: dateProp[]) => {
   const positives = data.map(a => a.positive);
   const neutrals = data.map(a => a.neutral);
@@ -80,7 +58,7 @@ const rotateData = (data: dateProp[]) => {
   }
 }
 
-const calculatePoints = (data: number[]) => {
+const calculatePolylinePoints = (data: number[]) => {
   let collection: any = [];
   data.forEach((item, idx) => {
     collection.push(`${positionX * idx}, ${item} `)
@@ -91,8 +69,8 @@ const calculatePoints = (data: number[]) => {
 export const prepData = (data: dateProp[]) => {
   const restructured = restructureData(data, initValues);
   const rotated = rotateData(restructured);
-  const posPoints = calculatePoints(rotated.positive);
-  const neuPoints = calculatePoints(rotated.neutral);
-  const negPoints = calculatePoints(rotated.negative);
+  const posPoints = calculatePolylinePoints(rotated.positive);
+  const neuPoints = calculatePolylinePoints(rotated.neutral);
+  const negPoints = calculatePolylinePoints(rotated.negative);
   return {posPoints, neuPoints, negPoints, max: rotated.max};
 }
