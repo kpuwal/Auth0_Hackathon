@@ -9,21 +9,15 @@ const WorldGraph = () => {
   const dates = useSelector((state: RootState) => state.stats.byDates);
   const data = prepData(dates);
 
-  // const peak = Math.max.apply(Math, data.max.map(obj => {return obj.posY}));
-  // console.log(peak)
-  // const maxNo = data.max.find(obj => {return obj.posY === peak});
-
-  // console.log(maxNo)
-
   return (
     <svg width="550px" height="200px" viewBox={`-20 0 940 400`}>
       <GraphGrid />
       {
-        data.max.map((item, idx) => renderMaxIcon(item.mood || "empty", 1.6, item.posX || 0, item.posY || 0, item.txtVal, idx))
+        data.max.map((item, idx) => renderMaxIcon(item.mood || "empty", 1.6, item.posX || 0, item.posY || 0, item.txtVal, idx, false))
       }
-       {/* {
-        renderMaxIcon(maxNo?.mood || "empty", 1.6, maxNo?.posX || 0, maxNo?.posY || 0, 0, true)
-      } */}
+       {
+        renderMaxIcon(data.maxMain.mood || "empty", 1.6, data.maxMain.posX || 0, data.maxMain.posY || 0,data.maxMain.txtVal, 0, true)
+      }
       {/* positive mood graph */}
       <g transform="matrix(1 0 0 -1 10 340)">
         <polyline points={data.posPoints} style={{fill: "none", opacity: .2, stroke: "#1f1f1f", strokeWidth: 5}} />

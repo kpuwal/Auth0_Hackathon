@@ -49,8 +49,28 @@ const findMaxInMonth = (data: dateProp[]) => {
   return maxCollection;
 }
 
-const maxInMonthMoodIconPositions = (data: dateProp[]) => {
+type maxProp = {
+  month: number,
+  mood: string | undefined,
+  posY: number,
+  posX: number,
+}
+
+const findMaxMain = (data: maxProp[]) => {
+  const maxNo = Math.max.apply(Math, data.map(obj => {return obj.posY})) || 0;
+  const maxObj = data.find(obj => {return obj.posY === maxNo}) || data[0];
+  return {
+    month: maxObj?.month,
+    mood: maxObj?.mood,
+    posY: graphHeight - maxObj.posY,
+    posX: maxObj.posX - halfIconWidth,
+    txtVal: maxObj?.posY,
+  }
+}
+
+const findGraphIconPoints = (data: dateProp[]) => {
   const maxValues = findMaxInMonth(data);
+  const maxMain = findMaxMain(maxValues);
   const maxValPositions = maxValues.map(item => {
     return {
       month: item.month,
@@ -60,7 +80,10 @@ const maxInMonthMoodIconPositions = (data: dateProp[]) => {
       txtVal: item.posY,
     }
   })
-  return maxValPositions;
+  return {
+    max: maxValPositions,
+    maxMain,
+  };
 }
 
 const rotateData = (data: dateProp[]) => {
@@ -82,12 +105,18 @@ const calculatePolylinePoints = (data: number[]) => {
   return collection.join(" ");
 }
 
-export const prepData = (data: dateProp[]) => {
-  const restructured = restructureData(data, initValues);
-  const maxMonthArr = maxInMonthMoodIconPositions(restructured);
-  const rotated = rotateData(restructured);
+const findGraphPoints = (data: dateProp[]) => {
+  const rotated = rotateData(data);
   const posPoints = calculatePolylinePoints(rotated.positive);
   const neuPoints = calculatePolylinePoints(rotated.neutral);
   const negPoints = calculatePolylinePoints(rotated.negative);
-  return {posPoints, neuPoints, negPoints, max: maxMonthArr};
+  return { posPoints, neuPoints, negPoints }
+}
+
+export const prepData = (data: dateProp[]) => {
+  const restructured = restructureData(data, initValues);
+  const graphPoints = findGraphPoints(restructured);
+  const graphIconPoints = findGraphIconPoints(restructured);
+  
+  return {...graphPoints, ...graphIconPoints};
 }
