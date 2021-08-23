@@ -25,8 +25,10 @@ const restructureData = (data: dateProp[], defaultDataStructure: dateProp[]) => 
   return defaultDataStructure;
 }
 
+const graphHeight = 290;
+const halfIconWidth = 19;
+
 const findMaxInMonth = (data: dateProp[]) => {
-  console.log("data ", data)
   const maxCollection = data.map((item, idx) => {
    const monthObj = [
      { name: "positive", data: item.positive },
@@ -39,11 +41,29 @@ const findMaxInMonth = (data: dateProp[]) => {
    return {
      month: idx,
      mood: maxNo?.name,
-     posY: 290 - foundNo,
-     posX: positionX * idx - 19,
+     posY: foundNo,
+     posX: positionX * idx,
    }
   })
   return maxCollection;
+}
+
+const maxInMonthMoodIconPositions = (data: dateProp[]) => {
+  console.log("data: ", data)
+
+  const maxValues = findMaxInMonth(data);
+  console.log("prev max ", maxValues)
+  const maxValPositions = maxValues.map(item => {
+    return {
+      month: item.month,
+      mood: item.mood,
+      posY: graphHeight - item.posY,
+      posX: item.posX - halfIconWidth,
+      txtVal: item.posY,
+    }
+  })
+  console.log("max ", maxValPositions)
+  return maxValPositions;
 }
 
 const rotateData = (data: dateProp[]) => {
@@ -54,7 +74,7 @@ const rotateData = (data: dateProp[]) => {
     positive: positives,
     neutral: neutrals,
     negative: negatives,
-    max: findMaxInMonth(data),
+    max: maxInMonthMoodIconPositions(data),
   }
 }
 
