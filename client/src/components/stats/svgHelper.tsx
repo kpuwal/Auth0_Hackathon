@@ -10,13 +10,13 @@ export const renderMaxIcon = (
   posY: number,
   txt: number,
   key?: number,
-  maxMain?: boolean) => {
+  style?: string) => {
 
     switch (name) {
       case "positive":
         return (
-          <svg className={!maxMain ? "speech-bubble-graph" : "speech-bubble-graph-maxOne"}>
-            <g key={key}>
+          <svg key={key} className={style}>
+            <g>
               <rect x={posX} y={0} width={40} height={350} fill={rectBg} />
               <line x1={posX + 19} y1={posY} x2={posX+ 19} y2={360} style={{stroke: `${lineStroke}`, strokeWidth: "2px"}} />
               <HappyIcn {...{scale, posX, posY}} />
@@ -27,8 +27,8 @@ export const renderMaxIcon = (
         )
       case "neutral":
         return (
-          <svg className={!maxMain ? "speech-bubble-graph" : "speech-bubble-graph-maxOne"}>
-            <g key={key}>
+          <svg key={key} className={style}>
+            <g>
               <rect x={posX} y={0} width={40} height={350} fill={rectBg} />
               <line x1={posX + 19} y1={posY} x2={posX+ 19} y2={360} style={{stroke: `${lineStroke}`, strokeWidth: "2px"}} />
               <NeutralIcn {...{scale, posX, posY}} />
@@ -39,8 +39,8 @@ export const renderMaxIcon = (
         )
       case "negative":
         return (
-          <svg className={!maxMain ? "speech-bubble-graph" : "speech-bubble-graph-maxOne"}>
-            <g key={key}>
+          <svg key={key} className={style}>
+            <g>
               <rect x={posX} y={0} width={40} height={350} fill={rectBg} />
               <line x1={posX + 19} y1={posY} x2={posX+ 19} y2={360} style={{stroke: `${lineStroke}`, strokeWidth: "2px"}} />
               <NegativeIcn {...{scale, posX, posY}} />

@@ -7,6 +7,10 @@
   opacity: 1;
 }
 
+.speech-bubble-graph-maxTwo {
+  opacity: .2;
+}
+
 .speech-bubble-graph:hover {
   opacity: 1;
 }

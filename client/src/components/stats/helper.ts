@@ -56,21 +56,46 @@ type maxProp = {
   posX: number,
 }
 
-const findMaxMain = (data: maxProp[]) => {
+// const findMaxMain = (data: maxProp[]) => {
+//   const maxNo = Math.max.apply(Math, data.map(obj => {return obj.posY})) || 0;
+//   // const maxObj = data.splice(maxNo, 1);
+//   const maxObj = data.find(obj => {return obj.posY === maxNo}) || data[0];
+//   return {
+//     month: maxObj.month,
+//     mood: maxObj.mood,
+//     posY: graphHeight - maxObj.posY,
+//     posX: maxObj.posX - halfIconWidth,
+//     txtVal: maxObj.posY,
+//   }
+// }
+
+const findMaxIconHighlight = (data: maxProp[]) => {
   const maxNo = Math.max.apply(Math, data.map(obj => {return obj.posY})) || 0;
+  const remained = data.filter(item => item.posY !== maxNo);
+  const maxNo2 = Math.max.apply(Math, remained.map(obj => {return obj.posY})) || 0;
   const maxObj = data.find(obj => {return obj.posY === maxNo}) || data[0];
+  const maxObj2 = data.find(obj => {return obj.posY === maxNo2}) || data[0];
   return {
-    month: maxObj?.month,
-    mood: maxObj?.mood,
-    posY: graphHeight - maxObj.posY,
-    posX: maxObj.posX - halfIconWidth,
-    txtVal: maxObj?.posY,
+    main: {
+      month: maxObj.month,
+      mood: maxObj.mood,
+      posY: graphHeight - maxObj.posY,
+      posX: maxObj.posX - halfIconWidth,
+      txtVal: maxObj.posY
+    },
+    second: {
+      month: maxObj2.month,
+      mood: maxObj2.mood,
+      posY: graphHeight - maxObj2.posY,
+      posX: maxObj2.posX - halfIconWidth,
+      txtVal: maxObj2.posY
+    },
   }
 }
 
 const findGraphIconPoints = (data: dateProp[]) => {
   const maxValues = findMaxInMonth(data);
-  const maxMain = findMaxMain(maxValues);
+  const maxMain = findMaxIconHighlight(maxValues);
   const maxValPositions = maxValues.map(item => {
     return {
       month: item.month,
@@ -82,7 +107,7 @@ const findGraphIconPoints = (data: dateProp[]) => {
   })
   return {
     max: maxValPositions,
-    maxMain,
+    ...maxMain,
   };
 }
 
