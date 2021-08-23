@@ -15,6 +15,10 @@
   opacity: 1;
 }
 
+.speech-bubble-graph-maxTwo:hover {
+  opacity: 1;
+}
+
 .speech-bubble-graph-txt {
   fill: white;
   font-weight: bold;

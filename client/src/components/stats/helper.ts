@@ -1,5 +1,12 @@
 import { dateProp } from '../../redux/types';
 
+type maxProp = {
+  month: number,
+  mood: string | undefined,
+  posY: number,
+  posX: number,
+}
+
 const positionX = 80;
 
 const initValues: dateProp[] = [
@@ -49,32 +56,16 @@ const findMaxInMonth = (data: dateProp[]) => {
   return maxCollection;
 }
 
-type maxProp = {
-  month: number,
-  mood: string | undefined,
-  posY: number,
-  posX: number,
-}
-
-// const findMaxMain = (data: maxProp[]) => {
-//   const maxNo = Math.max.apply(Math, data.map(obj => {return obj.posY})) || 0;
-//   // const maxObj = data.splice(maxNo, 1);
-//   const maxObj = data.find(obj => {return obj.posY === maxNo}) || data[0];
-//   return {
-//     month: maxObj.month,
-//     mood: maxObj.mood,
-//     posY: graphHeight - maxObj.posY,
-//     posX: maxObj.posX - halfIconWidth,
-//     txtVal: maxObj.posY,
-//   }
-// }
-
 const findMaxIconHighlight = (data: maxProp[]) => {
   const maxNo = Math.max.apply(Math, data.map(obj => {return obj.posY})) || 0;
   const remained = data.filter(item => item.posY !== maxNo);
   const maxNo2 = Math.max.apply(Math, remained.map(obj => {return obj.posY})) || 0;
+  const remained2 = remained.filter(item => item.posY !== maxNo2);
+  const maxNo3 = Math.max.apply(Math, remained2.map(obj => {return obj.posY})) || 0;
   const maxObj = data.find(obj => {return obj.posY === maxNo}) || data[0];
   const maxObj2 = data.find(obj => {return obj.posY === maxNo2}) || data[0];
+  const maxObj3 = data.find(obj => {return obj.posY === maxNo3}) || data[0];
+
   return {
     main: {
       month: maxObj.month,
@@ -89,6 +80,13 @@ const findMaxIconHighlight = (data: maxProp[]) => {
       posY: graphHeight - maxObj2.posY,
       posX: maxObj2.posX - halfIconWidth,
       txtVal: maxObj2.posY
+    },
+    third: {
+      month: maxObj3.month,
+      mood: maxObj3.mood,
+      posY: graphHeight - maxObj3.posY,
+      posX: maxObj3.posX - halfIconWidth,
+      txtVal: maxObj3.posY
     },
   }
 }
