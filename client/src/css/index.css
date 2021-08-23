@@ -171,3 +171,16 @@ svg.emoji-label {
   padding-top: 30px;
   font-size: 10px;
 }
+
+.speech-bubble-graph {
+  opacity: 0;
+}
+
+.speech-bubble-graph:hover {
+  opacity: 1;
+}
+
+.speech-bubble-graph-txt {
+  fill: white;
+  font-weight: bold;
+}

@@ -39,7 +39,7 @@ const findMaxInMonth = (data: dateProp[]) => {
    return {
      month: idx,
      mood: maxNo?.name,
-     posY: foundNo,
+     posY: 290 - foundNo,
      posX: positionX * idx - 19,
    }
   })
