@@ -28,7 +28,7 @@ const GraphGrid = () => {
         )
       }
       {/* horizontal axis X */}
-      <line x1={-50} y1={360} x2={900} y2={360} style={{stroke: "#1f1f1f", strokeWidth: "2px"}} />
+      <line x1={-50} y1={360} x2={920} y2={360} style={{stroke: "#1f1f1f", strokeWidth: "2px"}} />
       {/* vertical axis Y */}
       <line x1={-40} y1={30} x2={-40} y2={370} style={{stroke: "#1f1f1f", strokeWidth: "1px"}} />
     </g>

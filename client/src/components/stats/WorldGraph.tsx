@@ -3,7 +3,7 @@ import { RootState } from '../../redux/store';
 import { prepData } from './helper';
 import { renderMaxIcon } from './svgHelper';
 import GraphGrid from './GraphGrid';
-
+import '../../css/worldgraph.css';
 
 const WorldGraph = () => {
   const dates = useSelector((state: RootState) => state.stats.byDates);
@@ -14,7 +14,7 @@ const WorldGraph = () => {
   // console.log(data.max)
 
   return (
-    <svg width="100%" height="200px" viewBox={`0 0 900 400`}>
+    <svg width="550px" height="200px" viewBox={`-20 0 940 400`}>
       <GraphGrid />
       {/* positive mood graph */}
       <g transform="matrix(1 0 0 -1 0 340)">
