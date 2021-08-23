@@ -1,10 +1,10 @@
 import { HappyIcn, NeutralIcn, NegativeIcn, SpeechBubble } from './Icons';
 
-const rectBg: string = "#fff";
+const rectBg: string = "#ffffff";
 const lineStroke: string = "#a9a9a9";
 const iconSize: number = 1.6;
 
-interface ImaxIconSelector {
+interface ImaxIcon {
   name: string;
   posX: number;
   posY: number;
@@ -12,7 +12,7 @@ interface ImaxIconSelector {
   maxStyle?: string;
 }
 
-const MaxIconSelector = ({name, posX, posY, txt, maxStyle}: ImaxIconSelector) => {
+const MaxIcon = ({name, posX, posY, txt, maxStyle}: ImaxIcon) => {
     switch (name) {
       case "positive":
         return (
@@ -55,4 +55,4 @@ const MaxIconSelector = ({name, posX, posY, txt, maxStyle}: ImaxIconSelector) =>
     }
 }
 
-export default MaxIconSelector;
+export default MaxIcon;
