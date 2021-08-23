@@ -9,11 +9,11 @@ const WorldGraph = () => {
   const dates = useSelector((state: RootState) => state.stats.byDates);
   const data = prepData(dates);
 
-  const peak = Math.max.apply(Math, data.max.map(obj => {return obj.posY}));
-  console.log(peak)
-  const maxNo = data.max.find(obj => {return obj.posY === peak});
+  // const peak = Math.max.apply(Math, data.max.map(obj => {return obj.posY}));
+  // console.log(peak)
+  // const maxNo = data.max.find(obj => {return obj.posY === peak});
 
-  console.log(maxNo)
+  // console.log(maxNo)
 
   return (
     <svg width="550px" height="200px" viewBox={`-20 0 940 400`}>
@@ -25,7 +25,7 @@ const WorldGraph = () => {
         renderMaxIcon(maxNo?.mood || "empty", 1.6, maxNo?.posX || 0, maxNo?.posY || 0, 0, true)
       } */}
       {/* positive mood graph */}
-      <g transform="matrix(1 0 0 -1 0 340)">
+      <g transform="matrix(1 0 0 -1 10 340)">
         <polyline points={data.posPoints} style={{fill: "none", opacity: .2, stroke: "#1f1f1f", strokeWidth: 5}} />
       </g>
       {/* neutral mood graph */}

@@ -36,7 +36,8 @@ const findMaxInMonth = (data: dateProp[]) => {
      { name: "negative", data: item.negative },
     ];
   
-   const foundNo = Math.max.apply(Math, monthObj.map(obj => {return obj.data}));const maxNo = monthObj.find(obj => {return obj.data === foundNo});
+   const foundNo = Math.max.apply(Math, monthObj.map(obj => {return obj.data}));
+   const maxNo = monthObj.find(obj => {return obj.data === foundNo});
    
    return {
      month: idx,
@@ -49,10 +50,7 @@ const findMaxInMonth = (data: dateProp[]) => {
 }
 
 const maxInMonthMoodIconPositions = (data: dateProp[]) => {
-  console.log("data: ", data)
-
   const maxValues = findMaxInMonth(data);
-  console.log("prev max ", maxValues)
   const maxValPositions = maxValues.map(item => {
     return {
       month: item.month,
@@ -62,7 +60,6 @@ const maxInMonthMoodIconPositions = (data: dateProp[]) => {
       txtVal: item.posY,
     }
   })
-  console.log("max ", maxValPositions)
   return maxValPositions;
 }
 
@@ -74,7 +71,6 @@ const rotateData = (data: dateProp[]) => {
     positive: positives,
     neutral: neutrals,
     negative: negatives,
-    max: maxInMonthMoodIconPositions(data),
   }
 }
 
@@ -88,9 +84,10 @@ const calculatePolylinePoints = (data: number[]) => {
 
 export const prepData = (data: dateProp[]) => {
   const restructured = restructureData(data, initValues);
+  const maxMonthArr = maxInMonthMoodIconPositions(restructured);
   const rotated = rotateData(restructured);
   const posPoints = calculatePolylinePoints(rotated.positive);
   const neuPoints = calculatePolylinePoints(rotated.neutral);
   const negPoints = calculatePolylinePoints(rotated.negative);
-  return {posPoints, neuPoints, negPoints, max: rotated.max};
+  return {posPoints, neuPoints, negPoints, max: maxMonthArr};
 }
