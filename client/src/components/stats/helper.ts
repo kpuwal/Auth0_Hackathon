@@ -130,9 +130,9 @@ const calculatePolylinePoints = (data: number[]) => {
 
 const findGraphPoints = (data: dateProp[]) => {
   const rotated = rotateData(data);
-  const posPoints = calculatePolylinePoints(rotated.positive);
-  const neuPoints = calculatePolylinePoints(rotated.neutral);
-  const negPoints = calculatePolylinePoints(rotated.negative);
+  const posPoints: string = calculatePolylinePoints(rotated.positive);
+  const neuPoints: string = calculatePolylinePoints(rotated.neutral);
+  const negPoints: string = calculatePolylinePoints(rotated.negative);
   return { posPoints, neuPoints, negPoints }
 }
 

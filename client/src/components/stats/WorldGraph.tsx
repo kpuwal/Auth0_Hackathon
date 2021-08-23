@@ -3,7 +3,7 @@ import { RootState } from '../../redux/store';
 import { prepData } from './helper';
 import GraphGrid from './GraphGrid';
 import GraphLegend from './GraphLegend';
-import MaxIcon from './MaxIcon';
+import MaxIconGrid from './MaxIconGrid';
 import '../../css/worldgraph.css';
 
 const WorldGraph = () => {
@@ -14,36 +14,11 @@ const WorldGraph = () => {
     <>
     <GraphLegend />
     <svg width="550px" height="200px" viewBox={`-20 0 940 400`}>
-      {
-        data.max.map((item, idx) => <MaxIcon
-          key={idx}
-          name={item.mood || "empty"}
-          posX={item.posX || 0}
-          posY={item.posY || 0}
-          txt={item.txtVal}
-          maxStyle={"speech-bubble-graph"}
-        />)
-      }
-      <MaxIcon
-        name={data.main.mood || "empty"}
-        posX={data.main.posX || 0}
-        posY={data.main.posY || 0}
-        txt={data.main.txtVal}
-        maxStyle={"speech-bubble-graph-maxOne"}/>
-
-      <MaxIcon
-        name={data.second.mood || "empty"}
-        posX={data.second.posX || 0}
-        posY={data.second.posY || 0}
-        txt={data.second.txtVal}
-        maxStyle={"speech-bubble-graph-maxTwo"}/>
-
-      <MaxIcon
-        name={data.third.mood || "empty"}
-        posX={data.third.posX || 0}
-        posY={data.third.posY || 0}
-        txt={data.third.txtVal}
-        maxStyle={"speech-bubble-graph-maxTwo"}/>
+      <MaxIconGrid
+        max={data.max}
+        main={data.main}
+        second={data.second}
+        third={data.third} />
       <GraphGrid />
 
       {/* positive mood graph */}

@@ -4,7 +4,7 @@ const rectBg: string = "#ffffff";
 const lineStroke: string = "#a9a9a9";
 const iconSize: number = 1.6;
 
-interface ImaxIcon {
+export interface ImaxIcon {
   name: string;
   posX: number;
   posY: number;
