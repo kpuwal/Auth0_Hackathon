@@ -4,6 +4,7 @@ import { prepData } from './helper';
 import { renderMaxIcon } from './svgHelper';
 import GraphGrid from './GraphGrid';
 import GraphLegend from './GraphLegend';
+import MaxIconSelector from './MaxIconSelector';
 import '../../css/worldgraph.css';
 
 const WorldGraph = () => {
@@ -15,17 +16,28 @@ const WorldGraph = () => {
     <GraphLegend />
     <svg width="550px" height="200px" viewBox={`-20 0 940 400`}>
       {
-        data.max.map((item, idx) => renderMaxIcon(item.mood || "empty", 1.6, item.posX || 0, item.posY || 0, item.txtVal, idx, "speech-bubble-graph"))
+        data.max.map((item, idx) => <MaxIconSelector
+          key={idx}
+          name={item.mood || "empty"}
+          posX={item.posX || 0}
+          posY={item.posY || 0}
+          txt={item.txtVal}
+          maxStyle={"speech-bubble-graph"}
+        />)
       }
-      {
-        renderMaxIcon(data.main.mood || "empty", 1.6, data.main.posX || 0, data.main.posY || 0, data.main.txtVal, 21, "speech-bubble-graph-maxOne")
-      }
-      {
+      <MaxIconSelector
+          name={data.main.mood || "empty"}
+          posX={data.main.posX || 0}
+          posY={data.main.posY || 0}
+          txt={data.main.txtVal}
+          maxStyle={"speech-bubble-graph-maxOne"}
+        />
+      {/* {
         renderMaxIcon(data.second.mood || "empty", 1.6, data.second.posX || 0, data.second.posY || 0, data.second.txtVal, 22, "speech-bubble-graph-maxTwo")
       }
        {
         renderMaxIcon(data.third.mood || "empty", 1.6, data.third.posX || 0, data.third.posY || 0, data.third.txtVal, 23, "speech-bubble-graph-maxTwo")
-      }
+      } */}
        <GraphGrid />
       {/* positive mood graph */}
       <g transform="matrix(1 0 0 -1 0 340)">
