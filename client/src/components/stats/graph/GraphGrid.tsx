@@ -22,7 +22,7 @@ const GraphGrid = () => {
       <circle cx={920} cy={360} r={3} stroke="#1f1f1f" strokeWidth="1" fill="#ffffff" />
 
       {/* vertical axis Y */}
-      <line x1={-40} y1={30} x2={-40} y2={370} style={{stroke: "#1f1f1f", strokeWidth: "1px"}} />
+      <line x1={-40} y1={30} x2={-40} y2={370} style={{stroke: "#1f1f1f", strokeWidth: 1}} />
       <circle cx={-40} cy={30} r={3} stroke="#1f1f1f" strokeWidth="1" fill="#ffffff" />
 
       {/* description axis Y */}

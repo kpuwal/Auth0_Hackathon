@@ -12,9 +12,9 @@ interface Ibar {
 }
 
 const Bar = ({mood, barX, valX, dominant, id}: Ibar) => {
-  const barOp = id === dominant ? 1 : .3;
+  const barOp = id === dominant ? 1 : .4;
   return (
-    <>
+    <svg className="bar">
       <g transform="matrix(1 0 0 -1 200 110)">
         {/* background bar */}
         <rect x={barX} y={0} width={width} height={height} fill={bgBar} rx="3" ry="3" />
@@ -24,9 +24,9 @@ const Bar = ({mood, barX, valX, dominant, id}: Ibar) => {
       </g>
       <g>
         {/* mood percentage value */}
-        <text className="mood-value" x={valX} y={!isNaN(mood) ? 105 - mood : -10} alignmentBaseline="middle" >{mood}%</text>
+        <text x={valX} y={!isNaN(mood) ? 105 - mood : -10} alignmentBaseline="middle" opacity={barOp}>{mood}%</text>
       </g>
-    </>
+    </svg>
   )
 }
 
