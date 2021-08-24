@@ -1,10 +1,10 @@
-type iconProp = {
-  scale: number,
-  posX: number,
-  posY: number,
+interface Iicon {
+  scale: number;
+  posX: number;
+  posY: number;
 };
 
-export const HappyIcn = ({scale, posX, posY}: iconProp) => {
+export const HappyIcn = ({scale, posX, posY}: Iicon) => {
   return (
     <g transform={`translate(${posX}, ${posY}) scale(${scale} ${scale})`}>
       <path d="M0 0h24v24H0V0z" fill="#ffffff"/>
@@ -15,7 +15,7 @@ export const HappyIcn = ({scale, posX, posY}: iconProp) => {
   )
 }
 
-export const NeutralIcn = ({scale, posX, posY}: iconProp) => {
+export const NeutralIcn = ({scale, posX, posY}: Iicon) => {
   return (
     <g transform={`translate(${posX}, ${posY}) scale(${scale} ${scale})`}>
       <path d="M0 0h24v24H0z" fill="#ffffff"/>
@@ -24,7 +24,7 @@ export const NeutralIcn = ({scale, posX, posY}: iconProp) => {
   )
 }
 
-export const NegativeIcn = ({scale, posX, posY}: iconProp) => {
+export const NegativeIcn = ({scale, posX, posY}: Iicon) => {
   return (
     <g transform={`translate(${posX}, ${posY}) scale(${scale} ${scale})`}>
       <path d="M0 0h24v24H0V0z" fill="#ffffff"/>
@@ -35,7 +35,7 @@ export const NegativeIcn = ({scale, posX, posY}: iconProp) => {
   )
 }
 
-export const SpeechBubble = ({scale, posX, posY}: iconProp) => {
+export const SpeechBubble = ({scale, posX, posY}: Iicon) => {
   return (
     <g transform={`translate(${posX + 30}, ${posY - 35}) scale(${scale + .2} ${scale + .2})`}>
       <path d="M0 0h24v24H0z" fill="none"/>

@@ -33,10 +33,10 @@ export const statsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchStatistics.fulfilled, (state, action) => {
+      console.log("fetched ", action.payload)
       state.byCountries = action.payload.byCountries
       state.byTitles = action.payload.byTitles
       state.byDates = action.payload.byDates
-
     })
   },
 })

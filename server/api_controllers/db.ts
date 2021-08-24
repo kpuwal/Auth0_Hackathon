@@ -2,7 +2,8 @@
 const { db } = require('../db/config');
 import { Request, Response } from 'express';
 import { Icountries, Ititles, Idates } from '../types';
-import { prepStatsCountries, prepStatsTitles, prepStatsDates } from '../services/prepStats'; 
+import { prepStatsTitles, prepStatsDates } from '../services/prepStats';
+import { prepStatsCountries } from '../services/prepStatsCountries';
 
 const fetchData = async (query: string) => {
   try {

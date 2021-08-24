@@ -29,13 +29,14 @@ const GraphGrid = () => {
           </g>
         )
       }
+
       {/* horizontal axis X */}
       <line x1={-50} y1={360} x2={920} y2={360} style={{stroke: "#1f1f1f", strokeWidth: "2px"}} />
-      <circle cx={920} cy={360} r={3} stroke="black" stroke-width="1" fill="#ffffff" />
+      <circle cx={920} cy={360} r={3} stroke="black" strokeWidth="1" fill="#ffffff" />
 
       {/* vertical axis Y */}
       <line x1={-40} y1={30} x2={-40} y2={370} style={{stroke: "#1f1f1f", strokeWidth: "1px"}} />
-      <circle cx={-40} cy={30} r={3} stroke="black" stroke-width="1" fill="#ffffff" />
+      <circle cx={-40} cy={30} r={3} stroke="black" strokeWidth="1" fill="#ffffff" />
 
       {/* description axis Y */}
       <text x={textPosX} y={textPosY * 4}>t
