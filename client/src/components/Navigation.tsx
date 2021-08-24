@@ -1,5 +1,6 @@
 import AuthNav from "./auth/AuthNav";
 import { useLocation } from "react-router-dom";
+import mainLogo from '../assets/newspaper-2.svg';
 
 const Navigation = () => {
   const { pathname } = useLocation();
@@ -7,7 +8,8 @@ const Navigation = () => {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-light bgColor">
       <div className="container-fluid">
-        <a className="logo" href="/">GradeNews</a>
+        <img  src={mainLogo} style={{width: 40, height: 40, marginRight: 5}} alt="newspaper logo"/>
+        <a className="logo" href="/">grade_news!</a>
         <button
           className="navbar-toggler"
           type="button"

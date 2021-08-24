@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:wght@400;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -22,6 +24,12 @@ body {
   background: #ffffff;
   border-bottom: 4px solid #1f1f1f;
   height: 12vh;
+}
+
+a.logo {
+  font-family: 'Righteous', cursive;
+  font-size: 28px;
+  color: #232b2b;
 }
 
 code {
@@ -128,11 +136,12 @@ a#inactive {
   /* overflow: scroll; */
   padding-top: 18vh;
   left: 3%;
+
 }
 
 .charts-container {
   overflow: auto;
-  margin-left: 30%;
+  margin-left: 35%;
 }
 
 .chart-box {
@@ -154,6 +163,11 @@ text.name-label {
 }
 
 text.mood-label {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+text.mood-value {
   font-size: 6px;
   font-weight: bold;
 }

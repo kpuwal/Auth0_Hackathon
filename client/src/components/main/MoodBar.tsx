@@ -30,6 +30,9 @@ const MoodBar = () => {
             <button
               className="moodButton"
               onClick={() => dispatch(activateMood(idx))} >
+                
+              <span className="badge" style={{color: "pink"}}>7</span>
+
               {mood.icon(idx === activeMood)}
             </button>
           </li>

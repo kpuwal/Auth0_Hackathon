@@ -11,7 +11,7 @@ const GraphPolyline = ({transformY, points, opacityLine, strokeWidth}: IgraphPol
       <polyline points={points} style={{fill: "none", opacity: opacityLine, stroke: "#1f1f1f", strokeWidth}} />
 
       {/* undergraph bg */}
-      <polyline points={points} style={{fill: "#1f1f1f", opacity: .03, stroke: "#1f1f1f", strokeWidth}} />
+      <polyline points={points} style={{fill: "#1f1f1f", opacity: .05, stroke: "#1f1f1f", strokeWidth}} />
     </g>
   )
 }
