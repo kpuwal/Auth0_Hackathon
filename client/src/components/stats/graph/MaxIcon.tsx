@@ -1,4 +1,4 @@
-import { HappyIcn, NeutralIcn, NegativeIcn, SpeechBubble } from './Icons';
+import { HappyIcn, NeutralIcn, NegativeIcn, SpeechBubble } from '../Icons';
 
 const rectBg: string = "#ffffff";
 const lineStroke: string = "#a9a9a9";

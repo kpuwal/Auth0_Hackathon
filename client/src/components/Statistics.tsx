@@ -3,7 +3,7 @@ import { RootState } from '../redux/store';
 import { COUNTRIES } from '../config/constants';
 
 import useFetchStats from '../hooks/useFetchStats';
-import BarGroup from './stats/chart/BarGroup';
+import BarGroup from './stats/BarGroup';
 import WorldGraph from './stats/WorldGraph';
 
 const findCountryLabel = (country: string) => {

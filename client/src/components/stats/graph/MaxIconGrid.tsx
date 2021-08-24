@@ -1,5 +1,5 @@
 import MaxIcon from "./MaxIcon";
-import { maxProp } from '../../redux/types';
+import { maxProp } from '../../../redux/types';
 
 interface ImaxIconGrid {
   max: maxProp[];

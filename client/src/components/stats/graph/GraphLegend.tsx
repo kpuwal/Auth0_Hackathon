@@ -1,4 +1,4 @@
-import { HappyIcn, NeutralIcn, NegativeIcn } from './Icons';
+import { HappyIcn, NeutralIcn, NegativeIcn } from '../Icons';
 
 const gap = 150;
 const gap2x = gap * 2;

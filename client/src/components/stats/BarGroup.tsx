@@ -1,5 +1,5 @@
-import { HappyIcn, NeutralIcn, NegativeIcn } from '../Icons';
-import Bar from './Bar';
+import { HappyIcn, NeutralIcn, NegativeIcn } from './Icons';
+import Bar from './chart/Bar';
 
 const posX = 35;
 const posY = 25;

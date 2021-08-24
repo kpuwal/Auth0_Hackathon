@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import GraphGrid from './GraphGrid';
-import GraphLegend from './GraphLegend';
-import GraphPolyline from './GraphPolyline';
-import MaxIconGrid from './MaxIconGrid';
+import GraphGrid from './graph/GraphGrid';
+import GraphLegend from './graph/GraphLegend';
+import GraphPolyline from './graph/GraphPolyline';
+import MaxIconGrid from './graph/MaxIconGrid';
 import '../../css/worldgraph.css';
 
 const WorldGraph = () => {

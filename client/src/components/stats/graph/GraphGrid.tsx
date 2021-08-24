@@ -1,4 +1,4 @@
-import { MONTHS } from '../../config/constants';
+import { MONTHS } from '../../../config/constants';
 
 const positionX = 80;
 const textPosX = -60;
