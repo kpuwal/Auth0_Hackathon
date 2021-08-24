@@ -1,5 +1,5 @@
 import { Icountries } from '../types';
-type dataProps = {mood: string, count: number};
+import { findSum, convertToPercent } from './helper';
 
 export const prepStatsCountries = (data: Icountries[]) => {
   const uniqueCountries = [...new Set(data.map((a) => a.country))];
@@ -21,16 +21,4 @@ export const prepStatsCountries = (data: Icountries[]) => {
     };
   })
   return flattened;
-}
-
-const findSum = (data: dataProps[]) => {
-  return data
-    .map(el => el.count)
-    .reduce((a,b) => a + b)
-}
-
-const convertToPercent = (data: dataProps[], sum: number) => {
-  return data.map(el => {
-    return {[el.mood]: ((el.count/sum)*100).toFixed(1)}
-  })
 }
