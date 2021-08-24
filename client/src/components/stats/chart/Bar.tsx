@@ -21,7 +21,7 @@ const Bar = ({mood, barX, valX}: Ibar) => {
       </g>
       <g>
         {/* mood percentage value */}
-        <text className="mood-value" x={valX} y={!isNaN(mood) ? 95 - mood : -10} alignmentBaseline="middle" >{mood}%</text>
+        <text className="mood-value" x={valX} y={!isNaN(mood) ? 105 - mood : -10} alignmentBaseline="middle" >{mood}%</text>
       </g>
     </>
   )

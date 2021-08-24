@@ -1,7 +1,8 @@
-import { HappyIcn, NeutralIcn, NegativeIcn } from './Icons';
-import Bar from './chart/Bar';
+import { HappyIcn, NeutralIcn, NegativeIcn } from '../Icons';
+import Bar from './Bar';
 
-const posX = 10;
+const posX = 35;
+const posY = 25;
 
 interface IbarGroup {
   moods: { 
@@ -29,11 +30,11 @@ const BarGroup = ({ moods, label, sum }: IbarGroup) => {
       <NegativeIcn scale={0.6} posX={183} posY={113} />
 
       <g>
-        <text className="name-label-bold" x={posX} y={posX}alignmentBaseline="middle">{label}</text>
-        <text className="name-label" x={posX} y={50} alignmentBaseline="middle">number of headlines </text>
-        <text className="name-label" x={posX} y={60} alignmentBaseline="middle">analysed: </text>
-        <text className="name-label-bold" x={posX + 38} y={62} alignmentBaseline="middle">{sum}</text>
-        <text className="name-label" x={posX} y={80} alignmentBaseline="middle">dominant mood: </text>
+        <text className="name-label-bold" x={posX} y={5}alignmentBaseline="middle">{label}</text>
+        <text className="name-label" x={posX} y={posY} alignmentBaseline="middle">number of headlines </text>
+        <text className="name-label" x={posX} y={posY + 10} alignmentBaseline="middle">analysed: </text>
+        <text className="name-label-bold" x={posX + 38} y={posY + 12} alignmentBaseline="middle">{sum}</text>
+        <text className="name-label" x={posX} y={posY + 30} alignmentBaseline="middle">dominant mood: </text>
       </g>
     </svg>
   )
