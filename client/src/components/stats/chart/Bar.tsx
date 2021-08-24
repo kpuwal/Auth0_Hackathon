@@ -12,7 +12,7 @@ interface Ibar {
 const Bar = ({mood, barX, valX}: Ibar) => {
   return (
     <>
-      <g transform="matrix(1 0 0 -1 200 100)">
+      <g transform="matrix(1 0 0 -1 200 110)">
         {/* background bar */}
         <rect x={barX} y={0} width={width} height={height} fill={bgBar} rx="3" ry="3" />
           
