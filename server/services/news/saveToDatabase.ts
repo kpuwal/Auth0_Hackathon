@@ -1,5 +1,5 @@
-const { db, pgp } = require('../db/config');
-import { INewsApiArticle, ISentimentAnalysis } from '../types';
+const { db, pgp } = require('../../db/config');
+import { INewsApiArticle, ISentimentAnalysis } from '../../types';
 
 const extractEssential = (items: INewsApiArticle[], mood: string, country: string) => {
   return items.map(item => {

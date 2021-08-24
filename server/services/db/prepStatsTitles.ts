@@ -1,4 +1,4 @@
-import { Ititles } from '../types';
+import { Ititles } from '../../types';
 import { findSum, convertToPercent } from './helper';
 
 export const prepStatsTitles = (data: Ititles[]) => {

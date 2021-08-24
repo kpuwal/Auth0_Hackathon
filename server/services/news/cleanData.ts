@@ -1,9 +1,21 @@
-import { INewsApiArticle } from '../types';
+import { INewsApiArticle } from '../../types';
+
+export const cleanResponse = (data: INewsApiArticle[]): INewsApiArticle[] => {
+  const nonNullData = data.filter(el => el.content !== null);
+  nonNullData.map(el => {
+    el.time = convertDate(el.publishedAt)
+    el.content = el.content !== null ? cleanData(el.content) : el.content
+  });
+
+  return nonNullData;
+}
 
 const correctZero = (data: number) => {
   if (data < 10) {
     return "0" + data.toString();
-  } else { return data };
+  } else {
+    return data 
+  };
 }
 
 const convertDate = (date: string) => {
@@ -15,6 +27,7 @@ const convertDate = (date: string) => {
   const cleanhour = correctZero(hour);
   const cleanminutes = correctZero(minutes)
   const cleanseconds = correctZero(seconds)
+  
   return cleanhour + ':' + cleanminutes + ':' + cleanseconds;
 }
 
@@ -31,13 +44,4 @@ const cleanData = (txt: string) => {
   const removedHTML = removeHTMLtags(txt);
   const trimmedContent =  trimContentTxt(removedHTML);
   return trimmedContent;
-}
-
-export const cleanResponse = (data: INewsApiArticle[]): INewsApiArticle[] => {
-  const nonNullData = data.filter(el => el.content !== null);
-  nonNullData.map(el => {
-    el.time = convertDate(el.publishedAt)
-    el.content = el.content !== null ? cleanData(el.content) : el.content
-  });
-  return nonNullData;
 }

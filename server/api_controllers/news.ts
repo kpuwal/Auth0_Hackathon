@@ -3,8 +3,8 @@ import axios from 'axios';
 import querystring from 'querystring';
 import sentimentAnalysis from '../services/sentiment';
 import { Request, Response } from 'express';
-import { saveToDatabase } from '../services/saveToDatabase';
-import { cleanResponse } from '../services/cleanData';
+import { saveToDatabase } from '../services/news/saveToDatabase';
+import { cleanResponse } from '../services/news/cleanData';
 import {
   INewsApiSourcesResponse,
   INewsApiHeadlinesResponse,
