@@ -6,11 +6,6 @@ import useFetchStats from '../hooks/useFetchStats';
 import BarGroup from './stats/BarGroup';
 import WorldGraph from './stats/WorldGraph';
 
-const findCountryLabel = (country: string) => {
-  const countryObj = COUNTRIES.find(obj => {return obj.iso === country});
-  return countryObj?.label || "";
-}
-
 const Statistics = () => {
   useFetchStats();
   const countries = useSelector((state: RootState) => state.stats.byCountries);
@@ -29,17 +24,22 @@ const Statistics = () => {
           </div>
           <div className="chart-box">
             {
-              countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} label={findCountryLabel(country.country)} sum={country.sum} />)
+              countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} label={findCountryLabel(country.country)} sum={country.sum} dominant={country.dominant} />)
             }
           </div>
           <div className="chart-box"></div>
             {
-              titles.map((country, idx) => <BarGroup key={idx} moods={country.moods} label={country.source} sum={country.sum} />)
+              titles.map((title, idx) => <BarGroup key={idx} moods={title.moods} label={title.source} sum={title.sum} dominant={title.dominant} />)
             }
           </div>
       </div>
     </div>
   );
 };
+
+const findCountryLabel = (country: string) => {
+  const countryObj = COUNTRIES.find(obj => {return obj.iso === country});
+  return countryObj?.label || "";
+}
 
 export default Statistics;

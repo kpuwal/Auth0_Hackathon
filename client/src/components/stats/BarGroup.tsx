@@ -12,9 +12,10 @@ interface IbarGroup {
   },
   label: string,
   sum: number,
+  dominant: {mood: string, count: number}
 }
 
-const BarGroup = ({ moods, label, sum }: IbarGroup) => {
+const BarGroup = ({ moods, label, sum, dominant }: IbarGroup) => {
   return (
     <svg width={300} height={210} viewBox={`0 0 200 170`}>
       {/* positive */}
@@ -34,7 +35,8 @@ const BarGroup = ({ moods, label, sum }: IbarGroup) => {
         <text className="name-label" x={posX} y={posY} alignmentBaseline="middle">number of headlines </text>
         <text className="name-label" x={posX} y={posY + 10} alignmentBaseline="middle">analysed: </text>
         <text className="name-label-bold" x={posX + 38} y={posY + 12} alignmentBaseline="middle">{sum}</text>
-        <text className="name-label" x={posX} y={posY + 30} alignmentBaseline="middle">dominant mood: </text>
+        <text className="name-label" x={posX} y={posY + 30} alignmentBaseline="middle">dominant mood:</text>
+        <text className="name-label-bold" x={posX} y={posY + 45} alignmentBaseline="middle">{dominant.mood}</text>
       </g>
     </svg>
   )

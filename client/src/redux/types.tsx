@@ -8,6 +8,10 @@ export type countryProp = {
     negative: number, 
   },
   sum: number,
+  dominant: {
+    mood: string,
+    count: number,
+  },
 }
 
 export type titleProp = {
@@ -18,6 +22,10 @@ export type titleProp = {
     negative: number,
   },
   sum: number,
+  dominant: {
+    mood: string,
+    count: number,
+  },
 }
 
 export type dateProp = {
