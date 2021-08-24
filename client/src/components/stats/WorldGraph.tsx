@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { prepData } from './helper';
 import GraphGrid from './GraphGrid';
 import GraphLegend from './GraphLegend';
 import GraphPolyline from './GraphPolyline';
@@ -8,8 +7,7 @@ import MaxIconGrid from './MaxIconGrid';
 import '../../css/worldgraph.css';
 
 const WorldGraph = () => {
-  const dates = useSelector((state: RootState) => state.stats.byDates);
-  const data = prepData(dates);
+  const data = useSelector((state: RootState) => state.stats.byDates);
 
   return (
     <>

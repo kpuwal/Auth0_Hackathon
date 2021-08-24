@@ -1,12 +1,5 @@
 import MaxIcon from "./MaxIcon";
-
-type maxProp = {
-  month: number,
-  mood: string | undefined,
-  posY: number,
-  posX: number,
-  txtVal: number,
-}
+import { maxProp } from '../../redux/types';
 
 interface ImaxIconGrid {
   max: maxProp[];

@@ -103,3 +103,10 @@ export type Idates = {
   mood: string,
   count: string,
 }
+
+export type dateProp = {
+  stamp: string,
+  positive: number,
+  neutral: number,
+  negative: number,
+}

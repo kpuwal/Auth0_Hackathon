@@ -1,10 +1,26 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { statsInitStateType } from '../types'; 
+import { statsInitStateType, maxProp } from '../types';
+
+const objInint: maxProp = {
+  month: 0,
+  mood: "",
+  posY: 0,
+  posX: 0,
+  txtVal: 0,
+}
 
 const initialState: statsInitStateType = {
   byCountries: [],
   byTitles: [],
-  byDates: []
+  byDates: {
+    posPoints: "",
+    neuPoints: "",
+    negPoints: "",
+    max: [],
+    main: objInint,
+    second: objInint,
+    third: objInint,
+  },
 }
 
 const fetchResource = async (url: string, token: string) => {

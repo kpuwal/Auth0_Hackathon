@@ -27,10 +27,28 @@ export type dateProp = {
   negative: number,
 }
 
+export type maxProp = {
+  month: number,
+  mood: string | undefined,
+  posY: number,
+  posX: number,
+  txtVal: number,
+}
+
+interface graphDateProp {
+  posPoints: string,
+  neuPoints: string,
+  negPoints: string,
+  max: maxProp[],
+  main: maxProp,
+  second: maxProp,
+  third: maxProp,
+}
+
 export interface statsInitStateType {
   byCountries: countryProp[],
   byTitles: titleProp[],
-  byDates: dateProp[],
+  byDates: graphDateProp,
 }
 
 export interface IData {

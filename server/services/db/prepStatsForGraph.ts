@@ -1,4 +1,4 @@
-import { dateProp } from '../../redux/types';
+import { dateProp } from '../../types';
 
 type maxProp = {
   month: number,
@@ -7,8 +7,17 @@ type maxProp = {
   posX: number,
 }
 
-const positionX = 80;
+export const prepStatsForGraph = (data: dateProp[]) => {
+  const restructured = restructureData(data, initValues);
+  const graphPoints = findGraphPoints(restructured);
+  const graphIconPoints = findGraphIconPoints(restructured);
+  
+  return {...graphPoints, ...graphIconPoints};
+}
 
+const positionX = 80;
+const graphHeight = 290;
+const halfIconWidth = 19;
 const initValues: dateProp[] = [
   {stamp: "0", positive: 0, neutral: 0, negative: 0},
   {stamp: "1", positive: 0, neutral: 0, negative: 0},
@@ -31,9 +40,6 @@ const restructureData = (data: dateProp[], defaultDataStructure: dateProp[]) => 
   })
   return defaultDataStructure;
 }
-
-const graphHeight = 290;
-const halfIconWidth = 19;
 
 const findMaxInMonth = (data: dateProp[]) => {
   const maxCollection = data.map((item, idx) => {
@@ -134,12 +140,4 @@ const findGraphPoints = (data: dateProp[]) => {
   const neuPoints: string = calculatePolylinePoints(rotated.neutral);
   const negPoints: string = calculatePolylinePoints(rotated.negative);
   return { posPoints, neuPoints, negPoints }
-}
-
-export const prepData = (data: dateProp[]) => {
-  const restructured = restructureData(data, initValues);
-  const graphPoints = findGraphPoints(restructured);
-  const graphIconPoints = findGraphIconPoints(restructured);
-  
-  return {...graphPoints, ...graphIconPoints};
 }

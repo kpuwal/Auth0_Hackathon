@@ -1,10 +1,13 @@
 import { Idates } from '../../types';
+import { prepStatsForGraph } from './prepStatsForGraph';
+
 type statsProp = {stamp: number, mood: string};
 
 export const prepStatsDates = (data: Idates[]) => {
   data.forEach(item => item.stamp = convertDate(item.stamp));
   const mapToObj = Object.fromEntries(groupByMonth(data));
-  return filterMoods(mapToObj);
+  const filtered = filterMoods(mapToObj);
+  return prepStatsForGraph(filtered);
 }
 
 const convertDate = (date: string | number) => {
