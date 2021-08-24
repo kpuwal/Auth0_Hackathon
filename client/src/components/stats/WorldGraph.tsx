@@ -3,6 +3,7 @@ import { RootState } from '../../redux/store';
 import { prepData } from './helper';
 import GraphGrid from './GraphGrid';
 import GraphLegend from './GraphLegend';
+import GraphPolyline from './GraphPolyline';
 import MaxIconGrid from './MaxIconGrid';
 import '../../css/worldgraph.css';
 
@@ -22,21 +23,28 @@ const WorldGraph = () => {
       <GraphGrid />
 
       {/* positive mood graph */}
-      <g transform="matrix(1 0 0 -1 0 340)">
-        <polyline points={data.posPoints} style={{fill: "none", opacity: .2, stroke: "#1f1f1f", strokeWidth: 5}} />
-        <polyline points={data.posPoints} style={{fill: "#1f1f1f", opacity: .03, stroke: "#1f1f1f", strokeWidth: 5}} />
-      </g>
+      <GraphPolyline
+        transformY={340}
+        points={data.posPoints}
+        opacityLine={.2}
+        strokeWidth={5}
+      />
+
       {/* neutral mood graph */}
-      <g transform="matrix(1 0 0 -1 0 346)">
-        <polyline points={data.neuPoints} style={{fill: "none", opacity: .4,stroke: "#1f1f1f", strokeWidth: 7}} />
-        <polyline points={data.neuPoints} style={{fill: "#1f1f1f", opacity: .03,stroke: "#1f1f1f", strokeWidth: 7}} />
-      </g>
+      <GraphPolyline
+        transformY={346}
+        points={data.neuPoints}
+        opacityLine={.4}
+        strokeWidth={7}
+      />
+
       {/* negative mood graph */}
-      <g transform="matrix(1 0 0 -1 0 351)">
-        <polyline points={data.negPoints} style={{fill: "none", opacity: 1, stroke: "#1f1f1f", strokeWidth: 5}} />
-        <polyline points={data.negPoints} style={{fill: "#1f1f1f", opacity: .03, stroke: "#1f1f1f", strokeWidth: 5}} />
-      </g>
-     
+      <GraphPolyline
+        transformY={351}
+        points={data.negPoints}
+        opacityLine={1}
+        strokeWidth={5}
+      />
     </svg>
     </>
   )
