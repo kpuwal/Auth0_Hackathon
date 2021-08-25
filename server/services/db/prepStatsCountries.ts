@@ -1,5 +1,5 @@
 import { Icountries } from '../../types';
-import { findSum, convertToPercent } from './helper';
+import { findSum, convertToPercent, findDominantMood } from './helper';
 
 export const prepStatsCountries = (data: Icountries[]) => {
   const uniqueCountries = [...new Set(data.map((a) => a.country))];
@@ -9,7 +9,8 @@ export const prepStatsCountries = (data: Icountries[]) => {
     const flatMood = data
       .filter(item => item.country.match(country))
       .map(a => {return {mood: a.mood, count: parseInt(a.count)}})
-
+    
+    const dominant = findDominantMood(flatMood);
     const sum = findSum(flatMood);
     const percentage = convertToPercent(flatMood, sum);
     const newObj = Object.assign(percentage[0], percentage[1], percentage[2]);
@@ -17,8 +18,10 @@ export const prepStatsCountries = (data: Icountries[]) => {
     return {
       country, 
       moods: newObj,
-      sum
+      sum,
+      dominant,
     };
   })
+
   return flattened;
 }
