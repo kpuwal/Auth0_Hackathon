@@ -1,0 +1,64 @@
+.bar {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+.bar:hover .bar-text-val {
+  opacity: 0;
+}
+
+.bar-text-rounded-val-label {
+  opacity: 0;
+  font-size: 4px;
+}
+
+.bar .bar-text-rounded-val {
+  opacity: 0;
+  font-size: 13px;
+}
+
+.bar:hover .bar-text-rounded-val {
+  opacity: 1;
+}
+
+.bar:hover .bar-text-rounded-val-label {
+  opacity: 1;
+}
+
+text.name-label {
+  font-size: 8px;
+}
+
+text.mood-label {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+text.mood-value {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+text.mood-value-dominant {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+text.name-label-bold {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+text.name-label-bold-big {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+svg.emoji-label {
+  position: absolute;
+}
+
+.positive-label {
+  padding-top: 30px;
+  font-size: 10px;
+}

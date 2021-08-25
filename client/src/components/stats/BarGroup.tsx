@@ -1,5 +1,6 @@
 import { HappyIcn, NeutralIcn, NegativeIcn } from './Icons';
 import Bar from './chart/Bar';
+import '../../css/bargroup.css';
 
 const posX: number = 35;
 const posY: number = 25;
