@@ -177,9 +177,17 @@ text.mood-value {
   font-weight: bold;
 }
 
-.bar:hover {
-  font-size: 16px;
-  font-weight: bold;
+.bar:hover .bar-text-val {
+  opacity: 0;
+}
+
+.bar .bar-text-rounded-val {
+  opacity: 0;
+  font-size: 13px;
+}
+
+.bar:hover .bar-text-rounded-val {
+  opacity: 1;
 }
 
 text.mood-value-dominant {

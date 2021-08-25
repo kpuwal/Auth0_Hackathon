@@ -23,11 +23,20 @@ const Bar = ({mood, barX, valX, dominant, id}: Ibar) => {
         <rect x={barX} y={0} width={width} height={!isNaN(mood) ? mood * 0.9 : 0} rx="3" ry="3" fill={bar} opacity={barOp} />
       </g>
       <g>
+        {/* css triggered mood percentage value */}
+        <text className="bar-text-rounded-val" fill={id === dominant ? "#1f1f1f" : "#787878"} x={valX + 1} y={!isNaN(mood) ? 105 - mood : -10} alignmentBaseline="middle" opacity={barOp}>{roundValues(mood)}</text>
+      </g>
+      <g>
         {/* mood percentage value */}
-        <text x={valX} y={!isNaN(mood) ? 105 - mood : -10} alignmentBaseline="middle" opacity={barOp}>{mood}%</text>
+        <text className="bar-text-val" x={valX} y={!isNaN(mood) ? 105 - mood : -10} alignmentBaseline="middle" opacity={barOp}>{mood}%</text>
       </g>
     </svg>
   )
+}
+
+const roundValues = (val: number) => {
+  const rounded = isNaN(val) ? 0 : Math.round(val);
+  return rounded;
 }
 
 export default Bar;

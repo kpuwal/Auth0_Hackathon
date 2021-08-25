@@ -17,24 +17,24 @@ interface IbarGroup {
 
 const BarGroup = ({ moods, label, sum, dominant }: IbarGroup) => {
   return (
-    <svg width={280} height={210} viewBox={`0 0 200 170`}>
+    <svg width={280} height={210} viewBox={`0 0 220 170`}>
       {/* positive */}
-      <Bar id="positive" mood={moods.positive} barX={-70} valX={131} dominant={dominant.mood} />
-      <HappyIcn scale={0.6} posX={132} posY={113} opacity={dominant.mood === "positive" ? 1 : .4} />
+      <Bar id="positive" mood={moods.positive} barX={-60} valX={141} dominant={dominant.mood} />
+      <HappyIcn scale={0.6} posX={142} posY={113} opacity={dominant.mood === "positive" ? 1 : .4} />
 
       {/* neutral */}
-      <Bar id="neutral" mood={moods.neutral} barX={-45} valX={156} dominant={dominant.mood} />
-      <NeutralIcn scale={0.6} posX={158} posY={113} opacity={dominant.mood === "neutral" ? 1 : .4} />
+      <Bar id="neutral" mood={moods.neutral} barX={-35} valX={166} dominant={dominant.mood} />
+      <NeutralIcn scale={0.6} posX={168} posY={113} opacity={dominant.mood === "neutral" ? 1 : .4} />
 
       {/* negative */}
-      <Bar id="negative" mood={moods.negative} barX={-20} valX={181} dominant={dominant.mood} />
-      <NegativeIcn scale={0.6} posX={183} posY={113} opacity={dominant.mood === "negative" ? 1 : .4} />
+      <Bar id="negative" mood={moods.negative} barX={-10} valX={191} dominant={dominant.mood} />
+      <NegativeIcn scale={0.6} posX={193} posY={113} opacity={dominant.mood === "negative" ? 1 : .4} />
 
       <g>
         <text className="name-label-bold" x={posX} y={5}alignmentBaseline="middle">{label}</text>
 
         <line x1={posX - 8} y1={13} x2={250} y2={13} style={{stroke: "#1f1f1f", strokeWidth: .5}} opacity={.2} />
-        <circle cx={211} cy={13} r={1.5} stroke="#a9a9a9" strokeWidth={.5} fill="#ffffff" />
+        <circle cx={221} cy={13} r={1.5} stroke="#e9e5dd" strokeWidth={.7} fill="#ffffff" />
 
         <text className="name-label" x={posX} y={posY} alignmentBaseline="middle">number of headlines </text>
 
