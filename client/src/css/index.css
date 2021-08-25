@@ -178,7 +178,7 @@ text.mood-value {
 }
 
 .bar:hover {
-  font-size: 8px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -188,7 +188,12 @@ text.mood-value-dominant {
 }
 
 text.name-label-bold {
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+text.name-label-bold-big {
+  font-size: 14px;
   font-weight: bold;
 }
 
