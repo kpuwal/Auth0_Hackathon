@@ -24,7 +24,9 @@ const Bar = ({mood, barX, valX, dominant, id}: Ibar) => {
       </g>
       <g>
         {/* css triggered mood percentage value */}
-        <text className="bar-text-rounded-val" fill={id === dominant ? "#1f1f1f" : "#787878"} x={valX + 1} y={!isNaN(mood) ? 105 - mood : -10} alignmentBaseline="middle" opacity={barOp}>{roundValues(mood)}</text>
+        <text className="bar-text-rounded-val" fill={id === dominant ? "#1f1f1f" : "#787878"} x={valX + 1} y={!isNaN(mood) ? 100 - mood : -10} alignmentBaseline="middle" opacity={barOp}>{roundValues(mood)}</text>
+        
+        <text className="bar-text-rounded-val-label" fill={id === dominant ? "#1f1f1f" : "#787878"} x={valX} y={!isNaN(mood) ? 108 - mood : -10} alignmentBaseline="middle" opacity={barOp}>PERCENT</text>
       </g>
       <g>
         {/* mood percentage value */}

@@ -181,6 +181,11 @@ text.mood-value {
   opacity: 0;
 }
 
+.bar-text-rounded-val-label {
+  opacity: 0;
+  font-size: 4px;
+}
+
 .bar .bar-text-rounded-val {
   opacity: 0;
   font-size: 13px;
@@ -189,6 +194,12 @@ text.mood-value {
 .bar:hover .bar-text-rounded-val {
   opacity: 1;
 }
+
+.bar:hover .bar-text-rounded-val-label {
+  opacity: 1;
+}
+
+
 
 text.mood-value-dominant {
   font-size: 6px;
