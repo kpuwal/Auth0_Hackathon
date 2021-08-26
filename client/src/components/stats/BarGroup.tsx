@@ -18,7 +18,7 @@ interface IbarGroup {
 
 const BarGroup = ({ moods, label, sum, dominant }: IbarGroup) => {
   return (
-    <svg width={280} height={210} viewBox={`0 0 220 170`}>
+    <svg width={280} height={210} viewBox={`0 0 220 170`} className="bar-group">
       {/* positive */}
       <Bar id="positive" mood={moods.positive} barX={-60} valX={141} dominant={dominant.mood} />
       <HappyIcn scale={0.6} posX={142} posY={113} opacity={dominant.mood === "positive" ? 1 : .4} />

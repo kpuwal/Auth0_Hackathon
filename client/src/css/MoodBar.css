@@ -1,75 +1,17 @@
-.icon {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
+.mood-label {
+  fill: #ffffff; 
+  /* font-size: 54px; */
+  font-weight: bold;
 }
 
-#activeIcon {
-  color: #1f1f1f;
-}
-
-#inactiveIcon {
-  color: #e9e5dd;
-}
-
-.speechBubble {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 10px;
-  color: #ffffff;
-  width: 52px;
-  height: 18px;
-  text-align: center;
-  position: relative;
-  border-width: 2px;
-  border-color: #1f1f1f;
-}
-
-.speechBubble::before {
-  content: '';
-	position: absolute;
-	bottom: 0;
-	left: 80%;
-	width: 0;
-	height: 0;
-	border: 10px solid transparent;
-	border-bottom: 0;
-	border-left: 0;
-	margin-left: -5px;
-	margin-bottom: -10px;
-}
-
-#active {
-  background: #1f1f1f;
-	border-top-color: #1f1f1f;
-}
-
-#active::before {
-	border-top-color: #1f1f1f;
-}
-
-#inactive {
-  background: #e9e5dd;
-}
-
-#inactive::before {
-	border-top-color: #e9e5dd;
-}
-
-.moodButton {
-  width: 50px;
-  margin-right: 10px;
+.mood-button {
+  width: 70px;
   right: 0;
+  left: 0;
   border-style: none;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: bold;
 }

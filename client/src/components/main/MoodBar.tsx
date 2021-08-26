@@ -1,45 +1,53 @@
 import { RootState, useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { activateMood } from '../../redux/slices/activeSlice';
-import '../../css/MoodBar.css'
+import { HappyIcn, NeutralIcn, NegativeIcn } from '../stats/Icons';
+import { IHeadlines } from '../../redux/types';
+import MoodButton from './MoodButton';
+import '../../css/moodbar.css';
 
-const posIcon = (active: boolean) => <span className="icon" id={active ? "activeIcon" : "inactiveIcon"}>sentiment_satisfied_alt</span>
-const neuIcon = (active: boolean) => <span className="icon" id={active ? "activeIcon" : "inactiveIcon"}>&#xE87C;</span>
-const negIcon = (active: boolean) => <span className="icon" id={active ? "activeIcon" : "inactiveIcon"}>sentiment_very_dissatisfied</span>
-
-const MOODS = [ 
-  { label: "positive", icon: posIcon }, 
-  { label: "neutral", icon: neuIcon },
-  { label: "negative", icon: negIcon },
+const MOODS = [
+  { name: "positive", icon: <HappyIcn scale={1} posX={20} posY={30} /> },
+  { name: "neutral", icon: <NeutralIcn scale={1} posX={20} posY={30} /> },
+  { name: "negative", icon: <NegativeIcn scale={1} posX={20} posY={30} /> },
 ];
 
 const MoodBar = () => {
   const activeMood = useSelector((state: RootState) => state.active.mood);
+  const headlines = useSelector((state: RootState) => state.news.headlines);
   const dispatch = useAppDispatch();
+
   return (
     <>
       <span className="barLabel">by mood</span>
-      <ul>
-        {MOODS.map((mood, idx) => 
-          <li className="inlineItem" key={idx}>
-            <div
-              className="speechBubble"
-              id={idx === activeMood ? "active" : "inactive"}>
-              {mood.label}
-            </div>
-            <button
-              className="moodButton"
-              onClick={() => dispatch(activateMood(idx))} >
-                
-              <span className="badge" style={{color: "pink"}}>7</span>
-
-              {mood.icon(idx === activeMood)}
-            </button>
-          </li>
-        )}
-      </ul>
+      {MOODS.map((mood, idx) => (
+        <button
+          className="mood-button"
+          onClick={() => dispatch(activateMood(idx))}>
+          <MoodButton
+            key={idx}
+            txt={mood.name} 
+            badgeVal={findBadgeValue(mood.name, headlines)} 
+            color={activeMood === idx ? 1 : .15}>
+            {mood.icon}
+          </MoodButton>
+        </button>
+      ))}
     </>
   );
+}
+
+const findBadgeValue = (mood: string, headlines: IHeadlines) => {
+  switch (mood) {
+    case "positive":
+      return headlines.positive.length;
+    case "neutral":
+      return headlines.neutral.length;
+    case "negative":
+      return headlines.negative.length;
+    default:
+      return 0;
+  }
 }
 
 export default MoodBar;

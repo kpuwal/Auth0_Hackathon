@@ -64,7 +64,7 @@ export interface IData {
   country: string,
 }
 
-interface IHeadlines {
+export interface IHeadlines {
   positive: INewsApiArticle[],
   neutral: INewsApiArticle[],
   negative: INewsApiArticle[],
