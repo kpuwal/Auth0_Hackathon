@@ -1,12 +1,10 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
-import { COUNTRIES } from '../config/constants';
-
 import useFetchStats from '../hooks/useFetchStats';
 import BarGroup from './stats/BarGroup';
 import WorldGraph from './stats/WorldGraph';
-
 import SideMenu from './stats/main/SideMenu';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
+import { COUNTRIES } from '../config/constants';
 
 const Statistics = () => {
   useFetchStats();
