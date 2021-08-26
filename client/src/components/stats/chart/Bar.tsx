@@ -1,4 +1,4 @@
-import { BackgroundBar, MainBar, MoodPercentageLabel } from './helper';
+import { BackgroundBar, MainBar, MoodPercentLabelMain, MoodPercentLabelShort } from './helper';
 
 interface Ibar {
   mood: number;
@@ -16,11 +16,10 @@ const Bar = ({mood, barX, valX, dominant, id}: Ibar) => {
         <BackgroundBar {...{barX}} />
         <MainBar {...{mood, barX, barOp}} />
       </g>
-      <MoodPercentageLabel {...{mood, valX, id, dominant, barOp}} />
+      <MoodPercentLabelMain {...{mood, valX, id, dominant, barOp}} />
+      <MoodPercentLabelShort {...{mood, valX, barOp}} />
     </svg>
   )
 }
-
-
 
 export default Bar;
