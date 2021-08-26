@@ -29,8 +29,9 @@ const MaxIconItem = ({children, posX, posY, txt, maxStyle}: ImaxIconItem) => {
           {children}
         <text
           className="speech-bubble-graph-txt"
-          x={posX + 38} y={posY - 10}>
-            {txt}
+          x={posX + 38} y={posY - 10}
+        >
+          {txt}
         </text>
       </g>
     </svg>

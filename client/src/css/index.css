@@ -203,3 +203,11 @@ a#inactive {
   vertical-align: text-bottom;
   display: inline-flex;
 }
+
+#presenter .smile {
+  opacity: 0;
+}
+
+#presenter:hover .smile {
+  opacity: 1;
+}
