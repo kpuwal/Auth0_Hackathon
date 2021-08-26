@@ -1,6 +1,6 @@
 import AuthNav from "./auth/AuthNav";
-import { useLocation } from "react-router-dom";
 import mainLogo from '../assets/newspaper-2.svg';
+import { useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const { pathname } = useLocation();
@@ -8,7 +8,15 @@ const Navigation = () => {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-light bgColor">
       <div className="container-fluid">
-        <img  src={mainLogo} style={{width: 40, height: 40, marginRight: 5}} alt="newspaper logo"/>
+        <img  
+          src={mainLogo}
+          style={{
+            width: 40,
+            height: 40,
+            marginRight: 5
+          }}
+          alt="newspaper logo"
+        />
         <a className="logo" href="/">grade_news!</a>
         <button
           className="navbar-toggler"
@@ -20,13 +28,24 @@ const Navigation = () => {
           aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse text-right align-button" id="navbarNavDropdown">
+        <div 
+          className="collapse navbar-collapse text-right align-button" id="navbarNavDropdown"
+        >
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link" id={pathname === '/' ? "active" : "inactive"} aria-current="page" href="/">home</a>
+              <a
+                className="nav-link"
+                id={pathname === '/' ? "active" : "inactive"} aria-current="page"
+                href="/">home
+              </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" id={pathname === '/about' ? "active" : "inactive"} aria-current="page" href="/about">about</a>
+              <a
+                className="nav-link"
+                id={pathname === '/about' ? "active" : "inactive"} aria-current="page"
+                href="/about">
+                  about
+              </a>
             </li>
             <li className="nav-item">
               <AuthNav />

@@ -53,6 +53,7 @@ button {
   background: #ffffff;
   border: .5px solid #a1a8b8;
   border-radius: 5px;
+  color: #1f1f1f;
   font-family: 'Open Sans', sans-serif;
   font-size: x-small;
   font-weight: 700;
@@ -110,7 +111,8 @@ a#inactive {
   font-size: 15px;
   /* color: #e9e5dd; */
   color: #1f1f1f;
-  padding-bottom: 3vh;
+  padding-bottom: 5vh;
+  padding-left: 3vh;
   font-family: 'Open Sans', sans-serif;
   line-height: 20px;
 }
@@ -161,28 +163,36 @@ a#inactive {
   font-weight: bold;
   text-decoration: none;
   opacity: .3;
-  line-height: 20px;
+  line-height: 18px;
+  /* font-family: 'Righteous', cursive; */
+  font-family: 'Newsreader', sans-serif;
   /* padding-left: 2vh; */
 }
 
 .sidebar-menu li p {
-  font-size: 12px;
+  color: #1f1f1f;
+  opacity: .3;
+  font-size: 14px;
   padding-left: 3vh;
 }
 
 .sidebar-menu-item {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .sidebar-menu-item:hover {
   opacity: 1;
 }
 
-#activated {
+#side-menu-activated {
   opacity: 1;
 }
 
-#deactivated {
+#side-menu-deactivated-p {
+  opacity: .5;
+}
+
+#side-menu-deactivated {
   opacity: 0;
 }
 

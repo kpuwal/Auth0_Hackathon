@@ -5,15 +5,15 @@ const SideMenu = () => {
       <ul className="sidebar-menu">
         <li>
           {/* <span className="material-icons-outlined" id="activated">language</span> */}
-          <span className="material-icons-outlined" id="activated">chevron_right</span>
-          <a className="sidebar-menu-item" id="activated" href='#statsworld'>
+          <span className="material-icons-outlined" id="side-menu-activated">chevron_right</span>
+          <a className="sidebar-menu-item" id="side-menu-activated" href='#statsworld'>
             world 
           </a>
-          <p>displays news mood for the world</p>
+          <p id="side-menu-activated-p">displays news mood for the world</p>
         </li>
         <li>
           {/* <span className="material-icons-outlined">flag</span> */}
-          <span className="material-icons-outlined" id="deactivated">chevron_right</span>
+          <span className="material-icons-outlined" id="side-menu-deactivated">chevron_right</span>
           <a className="sidebar-menu-item" href='#statscountries'>
             countries
           </a>
@@ -21,7 +21,7 @@ const SideMenu = () => {
         </li>
         <li>
           {/* <span className="material-icons-outlined">article</span> */}
-          <span className="material-icons-outlined" id="deactivated">chevron_right</span>
+          <span className="material-icons-outlined" id="side-menu-deactivated">chevron_right</span>
           <a className="sidebar-menu-item" href='#statstitles'>
             news titles 
           </a>

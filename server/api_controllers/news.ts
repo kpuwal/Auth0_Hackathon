@@ -48,6 +48,7 @@ export const headlinesRequest = async (request: Request, response: Response): Pr
     const cleaned = cleanResponse(apiResponse.articles);
     const analysed = sentimentAnalysis(cleaned);
     saveToDatabase(analysed, request.body.country);
+    console.log(analysed)
     response.send(analysed)
   } else { response.send('api server response error') }
 }

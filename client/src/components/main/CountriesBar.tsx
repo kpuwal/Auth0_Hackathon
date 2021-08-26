@@ -18,6 +18,7 @@ const CountriesBar = () => {
       <ul>
         {COUNTRIES.map((country, idx) => 
           <li className="inlineItem" key={idx}>
+            {console.log(country)}
             <button
               id={country.iso === activeCountry.iso ? "activated" : "deactivated"}
               onClick={() => getTitles(country)} >
