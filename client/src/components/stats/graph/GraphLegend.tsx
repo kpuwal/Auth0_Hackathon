@@ -44,8 +44,9 @@ const Description = ({start, end, opacity, strokeWidth, mood}: Idescription) => 
       />
       <text
         x={start} y={25}
-        alignmentBaseline="middle">
-          {mood}
+        alignmentBaseline="middle"
+      >
+        {mood}
       </text>
     </g>
   )
