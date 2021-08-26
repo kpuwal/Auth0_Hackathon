@@ -28,6 +28,7 @@ const SummaryMessage = ({maxMood}: IsummaryMessage) => {
             fill="#f1f1f1" 
             opacity={1}
           />
+          <polyline points="1175,140 1175,200 1210,140" fill="#f1f1f1" />
           <text
             x={1000} y={35}
             alignmentBaseline="middle"
@@ -45,6 +46,7 @@ const SummaryMessage = ({maxMood}: IsummaryMessage) => {
             fill="#1f1f1f" 
             opacity={1}
           />
+          <polyline points="1120,150 1120,200 1080,150" fill="#1f1f1f" />
           <text
             x={970} y={164} 
             style={{fontWeight: "bold", fontSize: "24px"}}
