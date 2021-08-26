@@ -29,7 +29,7 @@ const MoodBar = () => {
             txt={mood.name} 
             badgeVal={findBadgeValue(mood.name, headlines)} 
             color={activeMood === idx ? 1 : .15}>
-            {mood.icon}
+              {mood.icon}
           </MoodButton>
         </button>
       ))}

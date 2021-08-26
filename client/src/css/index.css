@@ -151,15 +151,12 @@ a#inactive {
 /* } */
 
 .info-container {
-  /* position: fixed; */
   width: 45%;
-  /* overflow: scroll; */
   padding-top: 18vh;
   left: 3%;
 }
 
 .sidebar-menu a {
-  /* list-style: none; */
   color: #1f1f1f;
   font-weight: bold;
   text-decoration: none;
@@ -169,8 +166,4 @@ a#inactive {
 
 .sidebar-menu-item:hover {
   opacity: 1;
-}
-
-.sidebar-menu-item:active {
-  color: "pink";
 }
