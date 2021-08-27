@@ -1,6 +1,6 @@
 import { INewsApiArticle } from '../../../server/types';
 
-export type countryProp = {
+export type countriesProp = {
   country: string,
   moods: { 
     positive: number,
@@ -12,6 +12,12 @@ export type countryProp = {
     mood: string,
     count: number,
   },
+}
+
+export type countryProp = {
+  countries: countriesProp[],
+  happy: string,
+  sad: string,
 }
 
 export type titleProp = {
@@ -60,7 +66,7 @@ interface graphDateProp {
 }
 
 export interface statsInitStateType {
-  byCountries: countryProp[],
+  byCountries: countryProp,
   byTitles: titleProp[],
   byDates: graphDateProp,
 }

@@ -1,4 +1,4 @@
-import { Icountries } from '../../types';
+import { Icountries, moodProps } from '../../types';
 import { findSum, convertToPercent, findDominantMood } from './helper';
 
 export const prepStatsCountries = (data: Icountries[]) => {
@@ -13,15 +13,27 @@ export const prepStatsCountries = (data: Icountries[]) => {
     const dominant = findDominantMood(flatMood);
     const sum = findSum(flatMood);
     const percentage = convertToPercent(flatMood, sum);
-    const newObj = Object.assign(percentage[0], percentage[1], percentage[2]);
+    const moodsObj = Object.assign(percentage[0], percentage[1], percentage[2]);
     
     return {
       country, 
-      moods: newObj,
+      moods: moodsObj,
       sum,
       dominant,
     };
   })
+  
+  return { 
+    countries: flattened, 
+    happy: findMood(flattened, "positive")?.country,
+    sad: findMood(flattened, "negative")?.country,
+  }
+}
 
-  return flattened;
+const findMood = (data: moodProps[], type: string) => {
+  const allType = data.filter(item => item.dominant.mood === type);
+  const negVal = Math.max.apply(Math, allType.map(obj => {return parseFloat(obj.moods[type])}));
+  const country = allType.find(obj => {
+    return parseFloat(obj.moods[type]) == negVal});
+  return country;
 }

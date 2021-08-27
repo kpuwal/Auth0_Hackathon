@@ -10,7 +10,11 @@ const objInint: maxProp = {
 }
 
 const initialState: statsInitStateType = {
-  byCountries: [],
+  byCountries: {
+    countries: [],
+    happy: "unknown yet",
+    sad: "unknown yet",
+  },
   byTitles: [],
   byDates: {
     posPoints: "",

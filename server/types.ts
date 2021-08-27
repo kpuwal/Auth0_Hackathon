@@ -110,3 +110,12 @@ export type dateProp = {
   neutral: number,
   negative: number,
 }
+
+export type moodProps = {
+  country: string;
+  moods: {[x: string]: string};
+  sum: number;
+  dominant: dataProps;
+}
+export type dataProps = {mood: string, count: number};
+

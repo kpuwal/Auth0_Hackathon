@@ -37,10 +37,23 @@
 }
 
 .summary-countries {
-  margin-bottom: 6vh;
-  padding-left: 2vh;
+  margin-bottom: 10vh;
+  /* padding-left: 1vh; */
   font-size: 11px;
 }
+
 .summary-countries li {
-  display: inline;
+  /* display: inline; */
+  width: 500px;
+  padding-left: 1vh;
+}
+
+.summary-countries span {
+  padding-left: 1vh;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+li#header {
+  font-size: 18px;
 }

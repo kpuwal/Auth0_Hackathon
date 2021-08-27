@@ -9,7 +9,7 @@ import { COUNTRIES } from '../config/constants';
 
 const Statistics = () => {
   useFetchStats();
-  const countries = useSelector((state: RootState) => state.stats.byCountries);
+  const cData = useSelector((state: RootState) => state.stats.byCountries);
   const titles = useSelector((state: RootState) => state.stats.byTitles);
   
   return (
@@ -31,11 +31,13 @@ const Statistics = () => {
             id="statscountries" 
             style={{height: window.innerHeight, paddingTop: "115px"}}
           >
-            <SummaryCountries />
+            <SummaryCountries
+              happy={findCountryLabel(cData.happy)}
+              sad={findCountryLabel(cData.sad)}
+            />
             {
-              countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} label={findCountryLabel(country.country)} sum={country.sum} dominant={country.dominant} />)
-            }
-            
+              cData.countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} label={findCountryLabel(country.country)} sum={country.sum} dominant={country.dominant} />)
+            }      
           </div>
           <div
             className="chart-box" 

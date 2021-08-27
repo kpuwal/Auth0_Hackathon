@@ -1,4 +1,6 @@
-type dataProps = {mood: string, count: number};
+import { dataProps } from '../../types';
+
+const defaultObj = {mood: "", count: 0};
 
 export const findSum = (data: dataProps[]) => {
   return data
@@ -14,5 +16,5 @@ export const convertToPercent = (data: dataProps[], sum: number) => {
 
 export const findDominantMood = (moods: dataProps[]) => {
   const foundNo = Math.max.apply(Math, moods.map(obj => {return obj.count}));
-  return moods.find(obj => {return obj.count === foundNo});
+  return  moods.find(obj => {return obj.count === foundNo}) || defaultObj;
 }
