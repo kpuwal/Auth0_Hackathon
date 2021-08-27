@@ -145,6 +145,7 @@ a#inactive {
 
 .charts-container {
   overflow: auto;
+  /* margin-top: 100px; */
   margin-left: 35%;
 }
 
