@@ -20,6 +20,10 @@ const initialState: statsInitStateType = {
     main: objInint,
     second: objInint,
     third: objInint,
+    totalWorldMood: {
+      name: "unknown",
+      data: 0
+    }
   },
 }
 

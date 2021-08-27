@@ -13,7 +13,6 @@ export const prepStatsForGraph = (data: dateProp[]) => {
   const restructured = restructureData(data, initValues);
   const graphPoints = findGraphPoints(restructured);
   const graphIconPoints = findGraphIconPoints(restructured);
-  
   return {...graphPoints, ...graphIconPoints};
 }
 
@@ -101,7 +100,9 @@ const findMaxIconHighlight = (data: maxProp[]) => {
 
 const findGraphIconPoints = (data: dateProp[]) => {
   const maxValues = findMaxInMonth(data);
-  const maxMain = findMaxIconHighlight(maxValues);
+  console.log(maxValues)
+  const maxIconHighlight = findMaxIconHighlight(maxValues);
+  const totalWorldMood = findWorldMood(data);
   const maxValPositions = maxValues.map(item => {
     return {
       month: item.month,
@@ -111,11 +112,30 @@ const findGraphIconPoints = (data: dateProp[]) => {
       txtVal: item.posY,
     }
   })
-  console.log(maxValPositions)
   return {
     max: maxValPositions,
-    ...maxMain,
+    ...maxIconHighlight,
+    totalWorldMood,
   };
+}
+
+const findWorldMood = (data: dateProp[]) => {
+  const positives = data.map(a => a.positive);
+  const neutrals = data.map(a => a.neutral);
+  const negatives = data.map(a => a.negative);
+
+  const sumPos = positives.reduce((x: any, y: any) => x + y);
+  const sumNeu = neutrals.reduce((x: any, y: any) => x + y);
+  const sumNeg = negatives.reduce((x: any, y: any) => x + y);
+
+  const newData = [
+    {name: "positive", data: sumPos},
+    {name: "neutral" , data: sumNeu},
+    {name: "negative", data: sumNeg},
+  ]
+  const foundNo = Math.max.apply(Math, newData.map(obj => {return obj.data}));
+  const worldMood = newData.find(obj => {return obj.data === foundNo});
+  return worldMood;
 }
 
 const rotateData = (data: dateProp[]) => {

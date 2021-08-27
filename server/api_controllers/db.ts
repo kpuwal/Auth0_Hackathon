@@ -5,8 +5,6 @@ import { Icountries, Ititles, Idates } from '../types';
 import { prepStatsCountries } from '../services/db/prepStatsCountries';
 import { prepStatsTitles } from '../services/db/prepStatsTitles';
 import { prepStatsDates } from '../services/db/prepStatsDates';
-import { prepStatsForGraph } from '../services/db/prepStatsForGraph';
-
 
 const fetchData = async (query: string) => {
   try {

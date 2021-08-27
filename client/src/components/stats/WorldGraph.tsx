@@ -59,7 +59,7 @@ console.log(data)
           strokeWidth={5}
         />
 
-        <SummaryMessage maxMood={data.main} />
+        <SummaryMessage maxMood={data.totalWorldMood} />
         <PresenterIcon />
       </svg>
       <AnalysisSummary />

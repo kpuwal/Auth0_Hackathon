@@ -51,6 +51,10 @@ interface graphDateProp {
   main: maxProp,
   second: maxProp,
   third: maxProp,
+  totalWorldMood: {
+    name: string,
+    data: number,
+  }
 }
 
 export interface statsInitStateType {
