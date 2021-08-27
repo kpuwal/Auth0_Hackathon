@@ -23,3 +23,24 @@
   fill: white;
   font-weight: bold;
 }
+
+.summary {
+  margin-top: 5vh;
+  padding-left: 2vh;
+  font-size: 11px;
+}
+
+
+.summary span {
+  padding-left: 2vh;
+  font-weight: bold;
+}
+
+.summary-countries {
+  margin-bottom: 6vh;
+  padding-left: 2vh;
+  font-size: 11px;
+}
+.summary-countries li {
+  display: inline;
+}

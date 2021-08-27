@@ -11,12 +11,14 @@ type maxProp = {
 
 export const prepStatsForGraph = (data: dateProp[]) => {
   const restructured = restructureData(data, initValues);
-  const graphPoints = findGraphPoints(restructured);
   const byMonth = findMaxInMonth(restructured);
+
+  const graphPoints = findGraphPoints(restructured);
+  const graphIconPoints = findGraphIconPoints(byMonth);
+  
   const best = findMaxWorldMoods(byMonth, "positive");
   const worst = findMaxWorldMoods(byMonth, "negative");
-  const graphIconPoints = findGraphIconPoints(byMonth);
-  const totalWorldMood = findMood(restructured);
+  const totalWorldMood = findWorldMood(restructured);
   return {
     ...graphPoints,
     ...graphIconPoints,
@@ -118,14 +120,7 @@ const findMaxWorldMoods = (data: maxProp[], type: string) => {
   return [mood.month, mood2.month];
 } 
 
-type dateIconProp = {
-  month: number;
-  mood: string | undefined;
-  posY: number;
-  posX: number;
-}
-
-const findGraphIconPoints = (data: dateIconProp[]) => {
+const findGraphIconPoints = (data: maxProp[]) => {
   const maxIconHighlight = findMaxIconHighlight(data);
   const maxValPositions = data.map(item => {
     return {
@@ -169,7 +164,7 @@ const findGraphPoints = (data: dateProp[]) => {
   return { posPoints, neuPoints, negPoints }
 }
 
-const findWorldMood = (pos: number[], neu: number[], neg: number[]) => {
+const findMood = (pos: number[], neu: number[], neg: number[]) => {
   const sumPos = pos.reduce((x: any, y: any) => x + y);
   const sumNeu = neu.reduce((x: any, y: any) => x + y);
   const sumNeg = neg.reduce((x: any, y: any) => x + y);
@@ -184,10 +179,10 @@ const findWorldMood = (pos: number[], neu: number[], neg: number[]) => {
   return worldMood;
 }
 
-const findMood = (data: dateProp[]) => {
+const findWorldMood = (data: dateProp[]) => {
   const positives = data.map(a => a.positive);
   const neutrals = data.map(a => a.neutral);
   const negatives = data.map(a => a.negative);
-  const worldMood = findWorldMood(positives, neutrals, negatives);
+  const worldMood = findMood(positives, neutrals, negatives);
   return worldMood;
 }

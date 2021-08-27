@@ -4,7 +4,7 @@ import GraphPolyline from './graph/GraphPolyline';
 import MaxIconGrid from './graph/MaxIconGrid';
 import SummaryMessage from './graph/SummaryMessage';
 import PresenterIcon from './graph/PresenterIcon';
-import AnalysisSummary from './graph/AnalysisSummary';
+import SummaryWorld from './graph/SummaryWorld';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import '../../css/worldgraph.css';
@@ -16,17 +16,16 @@ const WorldGraph = () => {
 console.log(data)
   return (
     <>
-      <h2 style={{paddingLeft: "3vh"}}>world mood graph</h2>
+      <h2 style={{paddingLeft: "2vh"}}>world mood graph</h2>
       <p
         style={{
-          paddingLeft: "3vh",
+          paddingLeft: "2vh",
           paddingBottom: "30px",
           fontSize: "12px"
         }}
       >
         number of analysed headers per month dictates current emotional trend
       </p>
-      <GraphLegend />
       <svg width="650px" height="200px" viewBox={`160 0 840 400`}>
         <MaxIconGrid
           max={data.max}
@@ -65,7 +64,8 @@ console.log(data)
         />
         <PresenterIcon />
       </svg>
-      <AnalysisSummary
+      <GraphLegend />
+      <SummaryWorld
         best={data.totalWorldMood.best}
         worst={data.totalWorldMood.worst}
       />

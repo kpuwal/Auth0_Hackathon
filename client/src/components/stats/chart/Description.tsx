@@ -30,7 +30,7 @@ const TitleLabel = ({label}: TitleLabelProps) => {
         </text>
         <line 
           x1={posX - 8} y1={13}
-          x2={250} y2={13}
+          x2={223} y2={13}
           style={{stroke: "#1f1f1f", strokeWidth: .5}}
           opacity={.2}
         />

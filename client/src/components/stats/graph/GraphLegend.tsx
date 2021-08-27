@@ -14,7 +14,7 @@ interface Idescription {
 
 const GraphLegend = () => {
   return (
-    <svg width="550px" height="50px" viewBox={`0 0 940 40`}>
+    <svg width="550px" height="50px" viewBox={`0 -30 940 40`}>
       <g>
         <HappyIcn scale={1.4} posX={x} posY={0} />
         <Description start={x + 45} end={135} opacity={.2} strokeWidth={"5px"} mood={"positive"} />

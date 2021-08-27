@@ -2,6 +2,7 @@ import useFetchStats from '../hooks/useFetchStats';
 import BarGroup from './stats/BarGroup';
 import WorldGraph from './stats/WorldGraph';
 import SideMenu from './stats/main/SideMenu';
+import SummaryCountries from './stats/SummaryCountries';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { COUNTRIES } from '../config/constants';
@@ -14,25 +15,27 @@ const Statistics = () => {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col-3 info-container fixed-top">
+        <div className="col-4 info-container fixed-top">
           <SideMenu />
         </div>
-        <div className="col-9 charts-container">
+        <div className="col-8 charts-container">
           <div 
             className="chart-box"
             id="statsworld"
-            style={{height: window.innerHeight, paddingTop: "80px"}}
+            style={{height: window.innerHeight, paddingTop: "0px"}}
           >
             <WorldGraph />
           </div>
           <div 
             className="chart-box" 
             id="statscountries" 
-            style={{height: window.innerHeight, paddingTop: "155px"}}
+            style={{height: window.innerHeight, paddingTop: "115px"}}
           >
+            <SummaryCountries />
             {
               countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} label={findCountryLabel(country.country)} sum={country.sum} dominant={country.dominant} />)
             }
+            
           </div>
           <div
             className="chart-box" 
