@@ -2,18 +2,19 @@ const posX: number = 950;
 const posY: number = 40;
 
 interface IsummaryMessage {
-  maxMood: { name: string, data: number };
+  name: string;
+  data: number;
 }
 
-const SummaryMessage = ({maxMood}: IsummaryMessage) => {
-  switch (maxMood.name) {
+const SummaryMessage = ({name, data}: IsummaryMessage) => {
+  switch (name) {
     case "positive":
       return (
         <g>
           <MainBubble
             exclamation={"HURRAY!"}
-            headersNo={maxMood.data}
-            moodName={maxMood.name}
+            headersNo={data}
+            moodName={name}
           />
           <MoodBubble mood={"P O S I T I V E"} />
         </g>
@@ -23,8 +24,8 @@ const SummaryMessage = ({maxMood}: IsummaryMessage) => {
         <g>
           <MainBubble
             exclamation={"WELL..."}
-            headersNo={maxMood.data}
-            moodName={maxMood.name}
+            headersNo={data}
+            moodName={name}
           />
           <MoodBubble mood={"N E U T R A L"} />
         </g>
@@ -34,8 +35,8 @@ const SummaryMessage = ({maxMood}: IsummaryMessage) => {
         <g>
           <MainBubble
             exclamation={"WARNING!"}
-            headersNo={maxMood.data}
-            moodName={maxMood.name}
+            headersNo={data}
+            moodName={name}
           />
           <MoodBubble mood={"N E G A T I V E"} />
         </g>
@@ -45,8 +46,8 @@ const SummaryMessage = ({maxMood}: IsummaryMessage) => {
         <g>
           <MainBubble
             exclamation={"!"}
-            headersNo={maxMood.data}
-            moodName={maxMood.name}
+            headersNo={data}
+            moodName={name}
           />
           <MoodBubble mood={"NO NEWS YET"} />
         </g>
@@ -75,12 +76,12 @@ const MainBubble = ({exclamation, headersNo, moodName}: MainBubbleProps) => {
         fill="#1f1f1f"
         style={{fontSize: "24px"}}
       >
-        <tspan x={posX} y={posY} style={{fontWeight: "bold"}}>
+        <tspan x={posX + 10} y={posY} style={{fontWeight: "bold"}}>
           {exclamation}
         </tspan>
-        <tspan x={posX } y={posY + 35}>with {headersNo} of total</tspan>
-        <tspan x={posX} y={posY + 65}>{moodName} headers</tspan>
-        <tspan x={posX} y={posY + 95}>the world mood is</tspan>
+        <tspan x={posX + 10} y={posY + 35}>with {headersNo} of total</tspan>
+        <tspan x={posX + 10} y={posY + 65}>{moodName} headers</tspan>
+        <tspan x={posX + 10} y={posY + 95}>the world mood is</tspan>
         {/* <tspan x={posX} y={posY + 30}>current mood trend</tspan>
         <tspan x={posX} y={posY + 60}>in the world news</tspan>
         <tspan x={posX} y={posY + 90}>with total headers</tspan>

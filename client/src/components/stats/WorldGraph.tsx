@@ -59,10 +59,16 @@ console.log(data)
           strokeWidth={5}
         />
 
-        <SummaryMessage maxMood={data.totalWorldMood} />
+        <SummaryMessage
+          name={data.totalWorldMood.name}
+          data={data.totalWorldMood.data}
+        />
         <PresenterIcon />
       </svg>
-      <AnalysisSummary />
+      <AnalysisSummary
+        best={data.totalWorldMood.best}
+        worst={data.totalWorldMood.worst}
+      />
     </>
   )
 }

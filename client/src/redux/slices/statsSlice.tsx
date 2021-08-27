@@ -22,7 +22,9 @@ const initialState: statsInitStateType = {
     third: objInint,
     totalWorldMood: {
       name: "unknown",
-      data: 0
+      data: 0,
+      best: [0, 0],
+      worst: [0, 0],
     }
   },
 }

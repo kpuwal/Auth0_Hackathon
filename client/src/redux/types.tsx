@@ -54,6 +54,8 @@ interface graphDateProp {
   totalWorldMood: {
     name: string,
     data: number,
+    best: number[],
+    worst: number[],
   }
 }
 

@@ -24,3 +24,18 @@ export const MONTHS: string[] = [
   "Nov",
   "Dec",
 ];
+
+export const MONTHS_LONG: string[] = [
+  "January",
+  "Febuart",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
