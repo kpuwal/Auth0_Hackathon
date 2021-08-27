@@ -42,16 +42,10 @@
   font-size: 11px;
 }
 
-.summary-countries li {
-  /* display: inline; */
-  width: 500px;
-  padding-left: 1vh;
-}
-
 .summary-countries span {
-  padding-left: 1vh;
+  padding-left: .5vh;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 li#header {
