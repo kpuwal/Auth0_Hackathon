@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import '../../css/worldgraph.css';
 
-const scale = 0;
+const posY: number = 340;
 
 const WorldGraph = () => {
   const data = useSelector((state: RootState) => state.stats.byDates);
@@ -24,10 +24,10 @@ console.log(data)
           fontSize: "12px"
         }}
       >
-        total number of analysed headers per month dictates current emotional trend
+        number of analysed headers per month dictates current emotional trend
       </p>
       <GraphLegend />
-      <svg width="650px" height="200px" viewBox={`160 0 840 400`} style={{background: "pink"}}>
+      <svg width="650px" height="200px" viewBox={`160 0 840 400`}>
         <MaxIconGrid
           max={data.max}
           main={data.main}
@@ -37,7 +37,7 @@ console.log(data)
 
         {/* positive mood graph */}
         <GraphPolyline
-          transformY={340 + scale}
+          transformY={posY}
           points={data.posPoints}
           opacityLine={.2}
           strokeWidth={5}
@@ -45,7 +45,7 @@ console.log(data)
 
         {/* neutral mood graph */}
         <GraphPolyline
-          transformY={346 + scale}
+          transformY={posY + 6}
           points={data.neuPoints}
           opacityLine={.4}
           strokeWidth={7}
@@ -53,7 +53,7 @@ console.log(data)
 
         {/* negative mood graph */}
         <GraphPolyline
-          transformY={351 + scale}
+          transformY={posY + 12}
           points={data.negPoints}
           opacityLine={1}
           strokeWidth={5}

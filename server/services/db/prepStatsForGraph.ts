@@ -1,5 +1,7 @@
 import { dateProp } from '../../types';
 
+const scale: number = 0.7;
+
 type maxProp = {
   month: number,
   mood: string | undefined,
@@ -76,21 +78,21 @@ const findMaxIconHighlight = (data: maxProp[]) => {
     main: {
       month: maxObj.month,
       mood: maxObj.mood,
-      posY: graphHeight - maxObj.posY,
+      posY: graphHeight - maxObj.posY * scale,
       posX: maxObj.posX - halfIconWidth,
       txtVal: maxObj.posY
     },
     second: {
       month: maxObj2.month,
       mood: maxObj2.mood,
-      posY: graphHeight - maxObj2.posY,
+      posY: graphHeight - maxObj2.posY * scale,
       posX: maxObj2.posX - halfIconWidth,
       txtVal: maxObj2.posY
     },
     third: {
       month: maxObj3.month,
       mood: maxObj3.mood,
-      posY: graphHeight - maxObj3.posY,
+      posY: graphHeight - maxObj3.posY * scale,
       posX: maxObj3.posX - halfIconWidth,
       txtVal: maxObj3.posY
     },
@@ -104,7 +106,7 @@ const findGraphIconPoints = (data: dateProp[]) => {
     return {
       month: item.month,
       mood: item.mood,
-      posY: graphHeight - item.posY,
+      posY: graphHeight - item.posY * scale,
       posX: item.posX - halfIconWidth,
       txtVal: item.posY,
     }
@@ -130,7 +132,7 @@ const rotateData = (data: dateProp[]) => {
 const calculatePolylinePoints = (data: number[]) => {
   let collection: any = [];
   data.forEach((item, idx) => {
-    collection.push(`${positionX * idx}, ${item} `)
+    collection.push(`${positionX * idx}, ${item * scale} `)
   })
   return collection.join(" ");
 }
