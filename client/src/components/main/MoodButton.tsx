@@ -54,7 +54,7 @@ const Badge = ({badgeVal}: BadgeProps) => {
   return (
     <g>
 		  <text
-        x={12} y={28}
+        x={15} y={30}
         alignmentBaseline="middle"
         fill={badgeVal !== 0 ? activeCol : inactiveCol}
         className="badge" >

@@ -109,6 +109,7 @@ const findGraphIconPoints = (data: dateProp[]) => {
       txtVal: item.posY,
     }
   })
+  console.log(maxValPositions)
   return {
     max: maxValPositions,
     ...maxMain,

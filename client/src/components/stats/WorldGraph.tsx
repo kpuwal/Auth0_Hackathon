@@ -17,9 +17,17 @@ console.log(data)
   return (
     <>
       <h2 style={{paddingLeft: "3vh"}}>world mood graph</h2>
-      <p style={{paddingLeft: "3vh", paddingBottom: "30px", fontSize: "12px"}}>total number of analysed headers per month dictates current emotional trend</p>
+      <p
+        style={{
+          paddingLeft: "3vh",
+          paddingBottom: "30px",
+          fontSize: "12px"
+        }}
+      >
+        total number of analysed headers per month dictates current emotional trend
+      </p>
       <GraphLegend />
-      <svg width="800px" height="200px" viewBox={`230 0 940 400`}>
+      <svg width="650px" height="200px" viewBox={`160 0 840 400`} style={{background: "pink"}}>
         <MaxIconGrid
           max={data.max}
           main={data.main}

@@ -14,10 +14,10 @@ const Statistics = () => {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col-4 info-container fixed-top">
+        <div className="col-3 info-container fixed-top">
           <SideMenu />
         </div>
-        <div className="col-8 charts-container">
+        <div className="col-9 charts-container">
           <div 
             className="chart-box"
             id="statsworld"

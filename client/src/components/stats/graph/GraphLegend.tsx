@@ -2,6 +2,7 @@ import { HappyIcn, NeutralIcn, NegativeIcn } from '../Icons';
 
 const gap: number = 150;
 const gap2x: number = gap * 2;
+const x: number = 10;
 
 interface Idescription {
   start: number;
@@ -15,16 +16,16 @@ const GraphLegend = () => {
   return (
     <svg width="550px" height="50px" viewBox={`0 0 940 40`}>
       <g>
-        <HappyIcn scale={1.4} posX={40} posY={0} />
-        <Description start={85} end={135} opacity={.2} strokeWidth={"5px"} mood={"positive"} />
+        <HappyIcn scale={1.4} posX={x} posY={0} />
+        <Description start={x + 45} end={135} opacity={.2} strokeWidth={"5px"} mood={"positive"} />
       </g>
       <g>
-        <NeutralIcn scale={1.4} posX={40 + gap} posY={0} />
-        <Description start={85 + gap} end={135 + gap} opacity={.4} strokeWidth={"7px"} mood={"neutral"} />
+        <NeutralIcn scale={1.4} posX={x + gap} posY={0} />
+        <Description start={x + 45 + gap} end={135 + gap} opacity={.4} strokeWidth={"7px"} mood={"neutral"} />
       </g>
       <g>
-        <NegativeIcn scale={1.4} posX={40 + gap2x} posY={0} />
-        <Description start={85 + gap2x} end={135 + gap2x} opacity={1} strokeWidth={"5px"} mood={"negative"} />
+        <NegativeIcn scale={1.4} posX={x + gap2x} posY={0} />
+        <Description start={x + 45 + gap2x} end={135 + gap2x} opacity={1} strokeWidth={"5px"} mood={"negative"} />
       </g>
     </svg>
   )
