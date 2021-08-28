@@ -3,6 +3,9 @@ import { MONTHS } from '../../../config/constants';
 const positionX: number = 80;
 const textPosX: number = -60;
 const textPosY: number = 20;
+const mainCol: string = "#ebe8e5";
+const secCol: string = "#1f1f1f";
+const lineCol: string = "#232b2b";
 
 const GraphGrid = () => {
   return (
@@ -23,12 +26,19 @@ const MonthsLabels = () => {
           <line
             x1={positionX * idx} y1={30}
             x2={positionX * idx} y2={370}
-            style={{stroke: "#e9e5dd", opacity: .4, strokeWidth: "2px"}}
+            style={{
+              stroke: `${lineCol}`,
+              opacity: .08,
+              strokeWidth: "2px"
+            }}
           />
           <line
             x1={positionX * idx} y1={360}
             x2={positionX * idx} y2={370}
-            style={{stroke: "#1f1f1f", strokeWidth: "2px"}}
+            style={{
+              stroke: `${secCol}`,
+              strokeWidth: "2px"
+            }}
           />
           <text
             x={positionX * idx} y={390}
@@ -47,12 +57,17 @@ const AxisX = () => {
       <line
         x1={-50} y1={360}
         x2={920} y2={360}
-        style={{stroke: "#1f1f1f", strokeWidth: "2px"}}
+        style={{
+          stroke: `${secCol}`,
+          strokeWidth: "2px"
+        }}
       />
       <circle
         cx={920} cy={360}
         r={3}
-        stroke="#1f1f1f" strokeWidth="1" fill="#ffffff"
+        stroke={secCol}
+        strokeWidth={1}
+        fill={mainCol}
       />
     </>
   )
@@ -64,12 +79,17 @@ const AxisY = () => {
       <line
         x1={-40} y1={30}
         x2={-40} y2={370}
-        style={{stroke: "#1f1f1f", strokeWidth: 1}}
+        style={{
+          stroke: `${secCol}`, 
+          strokeWidth: "1"
+        }}
       />
       <circle
         cx={-40} cy={30}
         r={3}
-        stroke="#1f1f1f" strokeWidth="1" fill="#ffffff"
+        stroke={secCol}
+        strokeWidth={1}
+        fill={mainCol}
       />
     </>
   )

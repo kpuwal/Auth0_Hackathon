@@ -28,7 +28,7 @@ const Statistics = () => {
             <WorldGraph />
           </div>
           <div 
-            className="chart-box" 
+            className="chart-box"
             id="statscountries" 
             style={{ paddingTop: "115px"}}
           > 

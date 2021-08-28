@@ -1,4 +1,4 @@
-const bgBar: string = "#f1f1f1";
+const bgBar: string = "#e0dbd7";
 const bar: string = "#1f1f1f";
 const bar2: string = "#787878";
 const width: number = 20;
@@ -13,7 +13,9 @@ export const BackgroundBar = ({barX}: BackgroundBarProps) => {
       rx={3} ry={3}
       width={width}
       height={height}
-      fill={bgBar}  />
+      fill={bgBar}
+      opacity={.6}
+    />
   )
 }
 

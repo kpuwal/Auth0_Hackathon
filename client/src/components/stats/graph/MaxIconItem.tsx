@@ -1,4 +1,4 @@
-const rectBg: string = "#ffffff";
+const rectBg: string = "#ebe8e5";
 const lineStroke: string = "#a9a9a9";
 
 interface ImaxIconItem {
@@ -24,7 +24,10 @@ const MaxIconItem = ({children, posX, posY, txt, maxStyle}: ImaxIconItem) => {
           y1={posY}
           x2={posX + 19}
           y2={360}
-          style={{stroke: `${lineStroke}`, strokeWidth: "2px"}}
+          style={{
+            stroke: `${lineStroke}`,
+            strokeWidth: "2px"
+          }}
         />
           {children}
         <text

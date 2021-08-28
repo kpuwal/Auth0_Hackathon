@@ -5,13 +5,20 @@ interface IsummaryCountry {
 
 const SummaryCountries = ({happy, sad}: IsummaryCountry) => {
   return (
-    <div className="summary-countries">
+    <div className="summary-container">
       <h6>summary</h6>
-      <ol>
-        <li> the <span>happiest</span> news comes from <span>{happy}</span></li>
-        <li>the <span>saddest</span> news are written in <span>{sad}</span>
+      <ul>
+        <li>
+          <div className="summary-box">
+            the <span>happiest</span> news comes from: <br/><span id="important">{happy}</span>
+          </div>
         </li>
-      </ol>
+        <li>
+        <div className="summary-box second">
+            the <span>saddest</span> news comes from: <br/><span id="important">{sad}</span>
+          </div>
+        </li>
+      </ul>
     </div>
   )
 }

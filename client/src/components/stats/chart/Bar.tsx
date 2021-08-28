@@ -1,4 +1,9 @@
-import { BackgroundBar, MainBar, MoodPercentLabelMain, MoodPercentLabelShort } from './helper';
+import {
+  BackgroundBar,
+  MainBar,
+  MoodPercentLabelMain,
+  MoodPercentLabelShort
+} from './helper';
 
 interface Ibar {
   mood: number;

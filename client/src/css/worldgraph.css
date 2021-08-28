@@ -24,7 +24,7 @@
   font-weight: bold;
 }
 
-.summary {
+/* .summary {
   margin-top: 5vh;
   padding-left: 2vh;
   font-size: 11px;
@@ -34,22 +34,11 @@
 .summary span {
   padding-left: 2vh;
   font-weight: bold;
-}
+} */
 
-.summary-countries {
-  margin-bottom: 10vh;
-  font-size: 11px;
-}
 
-.summary-countries li {
-  padding-bottom: 1vh;
-}
 
-.summary-countries span {
-  padding-left: .5vh;
-  font-weight: bold;
-  font-size: 13px;
-}
+
 
 li#header {
   font-size: 18px;
@@ -59,4 +48,36 @@ li#header {
   display: inline-block;
   padding-left: 2vh;
   padding-bottom: 3vh;
+}
+
+.summary-container {
+  margin-bottom: 10vh;
+  font-size: 11px;
+}
+
+.summary-container li {
+  display: inline-block;
+  margin-right: 5vh;
+}
+
+.summary-box {
+  background: #f1f1f1;
+  width: 150px;
+  height: 80px;
+  border-radius: 10px;
+  padding: 1.5vh 0 0 2.5vh;
+}
+
+.summary-box.second {
+  background: #f1f1f1;
+}
+
+.summary-box span {
+  /* padding-left: .5vh; */
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#important {
+  font-size: 18px;
 }

@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  background: #ebe8e5;
   padding-top: 18vh;
   font-family: 'Open Sans', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -21,8 +22,8 @@ body {
   left: 0;
   margin-left: 4%;
   margin-right: 4%;
-  background: #ffffff;
-  border-bottom: 2px solid #1f1f1f;
+  background: #ebe8e5;
+  /* border-bottom: 2px solid #1f1f1f; */
   height: 12vh;
 }
 
@@ -50,7 +51,7 @@ ul {
 }
 
 button {
-  background: #ffffff;
+  background: #ebe8e5;
   border: .5px solid #a1a8b8;
   border-radius: 5px;
   color: #1f1f1f;
@@ -66,12 +67,12 @@ button {
 button#activated {
   background: #1f1f1f;
   border: .5px solid #1f1f1f;
-  color: #ffffff;
+  color: #ebe8e5;
 }
 
 button#deactivated {
   /* background: #f7f5f3; */
-  background: #ffffff;
+  background: #ebe8e5;
   color: #030303;
 }
 
@@ -82,11 +83,11 @@ a {
 a#active {
   color: #1f1f1f;
   font-weight: bold;
-  background: #ffffff;
+  background: #ebe8e5;
 }
 
 a#inactive {
-  background: #ffffff;
+  background: #ebe8e5;
 }
 
 /* .logo {
