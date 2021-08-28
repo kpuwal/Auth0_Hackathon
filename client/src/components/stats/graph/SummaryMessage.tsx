@@ -45,14 +45,7 @@ const SummaryMessage = ({name, data}: IsummaryMessage) => {
       )
     default:
       return (
-        <g>
-          {/* <MainBubble
-            exclamation={"!"}
-            headersNo={data}
-            moodName={name}
-          />
-          <MoodBubble mood={"NO NEWS YET"} /> */}
-        </g>
+        <g></g>
       )
   }
 }

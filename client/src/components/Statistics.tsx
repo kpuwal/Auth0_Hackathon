@@ -32,7 +32,16 @@ const Statistics = () => {
             id="statscountries" 
             style={{ paddingTop: "115px"}}
           > 
-            <h2>countries moods</h2>
+            <h2>country by mood</h2>
+            <p
+              style={{
+              // paddingLeft: "2vh",
+              // paddingBottom: "30px",
+              fontSize: "12px"
+            }}
+            >
+              shows news temperature for each of the nations calculated as percentage
+            </p>
             <SummaryCountries
               happy={findCountryLabel(countries.happy)}
               sad={findCountryLabel(countries.sad)}
@@ -46,7 +55,7 @@ const Statistics = () => {
             id="statstitles"
             style={{paddingTop: "120px"}}
           >
-            <h2>sa_mood by title</h2>
+            <h2>titles by mood</h2>
             <SummaryTitles
               happy={titles.happy}
               sad={titles.sad}
