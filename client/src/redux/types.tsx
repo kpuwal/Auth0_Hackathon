@@ -15,12 +15,12 @@ export type countriesProp = {
 }
 
 export type countryProp = {
-  countries: countriesProp[],
+  data: countriesProp[],
   happy: string,
   sad: string,
 }
 
-export type titleProp = {
+export type titlesProp = {
   source: string,
   moods: { 
     positive: number,
@@ -32,6 +32,12 @@ export type titleProp = {
     mood: string,
     count: number,
   },
+}
+
+export type titleProp = {
+  data: titlesProp[],
+  happy: string[],
+  sad: string[],
 }
 
 export type dateProp = {
@@ -67,7 +73,7 @@ interface graphDateProp {
 
 export interface statsInitStateType {
   byCountries: countryProp,
-  byTitles: titleProp[],
+  byTitles: titleProp,
   byDates: graphDateProp,
 }
 

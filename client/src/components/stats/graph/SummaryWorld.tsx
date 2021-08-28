@@ -9,10 +9,10 @@ const SummaryWorld = ({best, worst}: IanalysisSummary) => {
   return (
     <div className="summary">
       <h6>summary:</h6>
-      <ul>
-        <li>the happiest months: <span>{MONTHS_LONG[best[0]]}</span>, <span>{MONTHS_LONG[best[1]]}</span></li>
-        <li>the saddest months: <span>{MONTHS_LONG[worst[0]]}</span>, <span>{MONTHS_LONG[worst[1]]}</span></li>
-      </ul>
+      <ol>
+        <li>the <span>happiest</span> months: <span>{MONTHS_LONG[best[0]]}</span>, <span>{MONTHS_LONG[best[1]]}</span></li>
+        <li>the <span>saddest</span> months: <span>{MONTHS_LONG[worst[0]]}</span>, <span>{MONTHS_LONG[worst[1]]}</span></li>
+      </ol>
     </div>
   )
 }

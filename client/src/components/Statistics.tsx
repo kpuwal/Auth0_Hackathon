@@ -10,7 +10,7 @@ import { COUNTRIES } from '../config/constants';
 
 const Statistics = () => {
   useFetchStats();
-  const cData = useSelector((state: RootState) => state.stats.byCountries);
+  const countries = useSelector((state: RootState) => state.stats.byCountries);
   const titles = useSelector((state: RootState) => state.stats.byTitles);
   
   return (
@@ -31,13 +31,14 @@ const Statistics = () => {
             className="chart-box" 
             id="statscountries" 
             style={{ paddingTop: "115px"}}
-          >
+          > 
+            <h2 style={{paddingLeft: "0vh"}}>countries moods</h2>
             <SummaryCountries
-              happy={findCountryLabel(cData.happy)}
-              sad={findCountryLabel(cData.sad)}
+              happy={findCountryLabel(countries.happy)}
+              sad={findCountryLabel(countries.sad)}
             />
             {
-              cData.countries.map((country, idx) => <BarGroup key={idx} moods={country.moods} label={findCountryLabel(country.country)} sum={country.sum} dominant={country.dominant} />)
+              countries.data.map((country, idx) => <BarGroup key={idx} moods={country.moods} label={findCountryLabel(country.country)} sum={country.sum} dominant={country.dominant} />)
             }      
           </div>
           <div
@@ -45,9 +46,13 @@ const Statistics = () => {
             id="statstitles"
             style={{paddingTop: "120px"}}
           >
-            <SummaryTitles />
+            <h2 style={{paddingLeft: "0vh"}}>titles moods</h2>
+            <SummaryTitles
+              happy={titles.happy}
+              sad={titles.sad}
+            />
             {
-              titles.map((title, idx) => <BarGroup key={idx} moods={title.moods} label={title.source} sum={title.sum} dominant={title.dominant} />)
+              titles.data.map((title, idx) => <BarGroup key={idx} moods={title.moods} label={title.source} sum={title.sum} dominant={title.dominant} />)
             }
           </div>
         </div>

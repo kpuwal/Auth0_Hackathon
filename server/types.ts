@@ -112,7 +112,8 @@ export type dateProp = {
 }
 
 export type moodProps = {
-  country: string;
+  country?: string;
+  source?: string;
   moods: {[x: string]: string};
   sum: number;
   dominant: dataProps;

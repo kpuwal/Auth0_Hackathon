@@ -38,8 +38,11 @@
 
 .summary-countries {
   margin-bottom: 10vh;
-  /* padding-left: 1vh; */
   font-size: 11px;
+}
+
+.summary-countries li {
+  padding-bottom: 1vh;
 }
 
 .summary-countries span {
@@ -50,4 +53,10 @@
 
 li#header {
   font-size: 18px;
+}
+
+.sub-list li {
+  display: inline-block;
+  padding-left: 2vh;
+  padding-bottom: 3vh;
 }
