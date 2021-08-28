@@ -5,27 +5,44 @@ interface IsummaryTitles {
 
 const SummaryTitles = ({happy, sad}: IsummaryTitles) => {
   return (
-    <div className="summary-countries">
+    <div className="summary-container">
       <h6>summary</h6>
-      <ol>
+      <ul>
         <li>
-          the most <span>positive</span> news comes from
-          <ul className="sub-list">
-            {happy.map(el => <li><span>{cleanData(el)}</span></li>)}
-          </ul>
+          <div className="summary-box titles">
+            <ul id="sub-list">
+              <li>
+                the most <br/><span>positive</span> <br/> news <br/> providers
+              </li>
+              <li>
+                <ol className="ordered-list">
+                  {happy.map(el => <li><span>{cleanData(el)}</span></li>)}
+                </ol>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>news titles to <span>avoid</span> are
-          <ul className="sub-list">
-            {sad.map(el => <li><span>{cleanData(el)}</span></li>)}
-          </ul>
+        <li>
+        <div className="summary-box titles">
+            <ul id="sub-list">
+              <li>
+                the most <br/><span>negative</span> <br/> news <br/> providers
+              </li>
+              <li>
+                <ol className="ordered-list">
+                  {sad.map(el => <li><span>{cleanData(el)}</span></li>)}
+                </ol>
+              </li>
+            </ul>
+          </div>
         </li>
-      </ol>
+      </ul>
     </div>
   )
 }
 
 const cleanData = (element: string) => {
-  return element.replaceAll("-", " ")
+  return element.replaceAll("-", " ");
 }
 
 export default SummaryTitles;
