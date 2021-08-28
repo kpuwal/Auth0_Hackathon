@@ -1,4 +1,4 @@
-const posX: number = 950;
+const posX: number = 990;
 const posY: number = 40;
 
 interface IsummaryMessage {
@@ -44,12 +44,12 @@ const SummaryMessage = ({name, data}: IsummaryMessage) => {
     default:
       return (
         <g>
-          <MainBubble
+          {/* <MainBubble
             exclamation={"!"}
             headersNo={data}
             moodName={name}
           />
-          <MoodBubble mood={"NO NEWS YET"} />
+          <MoodBubble mood={"NO NEWS YET"} /> */}
         </g>
       )
   }
@@ -82,10 +82,6 @@ const MainBubble = ({exclamation, headersNo, moodName}: MainBubbleProps) => {
         <tspan x={posX + 10} y={posY + 35}>with {headersNo} of total</tspan>
         <tspan x={posX + 10} y={posY + 65}>{moodName} headers</tspan>
         <tspan x={posX + 10} y={posY + 95}>the world mood is</tspan>
-        {/* <tspan x={posX} y={posY + 30}>current mood trend</tspan>
-        <tspan x={posX} y={posY + 60}>in the world news</tspan>
-        <tspan x={posX} y={posY + 90}>with total headers</tspan>
-        <tspan x={posX} y={posY + 120}>number of {headersNo}</tspan> */}
       </text>
     </>
   )

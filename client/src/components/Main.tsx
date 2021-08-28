@@ -10,7 +10,7 @@ const Main = () => {
     <div className="container">
       <div className="row">
         <div className="col-6 filter-container fixed-top">
-          <div className="headerLabel">Filter:</div>
+          <div className="headerLabel">Access Headlines:</div>
           <MoodBar />
           <CountriesBar />
           <TitlesBar />

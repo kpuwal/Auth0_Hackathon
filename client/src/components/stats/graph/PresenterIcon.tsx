@@ -1,6 +1,6 @@
 const PresenterIcon = () => {
   return (
-    <g transform="translate(1000 250)">
+    <g transform="translate(1050 250)">
       <svg id="presenter" width="130" height="130" viewBox="0 0 511.935 511.935">
         <g>
           <rect x={0} y={0} width="100%" height="100%" fill="#ffffff" />
