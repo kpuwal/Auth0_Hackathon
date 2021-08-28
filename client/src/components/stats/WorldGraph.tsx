@@ -16,16 +16,6 @@ const WorldGraph = () => {
 console.log(data)
   return (
     <>
-      <h2 style={{paddingLeft: "2vh"}}>world mood graph</h2>
-      <p
-        style={{
-          paddingLeft: "2vh",
-          paddingBottom: "30px",
-          fontSize: "12px"
-        }}
-      >
-        number of analysed headers per month dictates current emotional trend
-      </p>
       <svg width="650px" height="200px" viewBox={`160 0 840 400`}>
         <MaxIconGrid
           max={data.max}
