@@ -25,7 +25,7 @@ const Statistics = () => {
             id="statsworld"
             style={{height: window.innerHeight, paddingTop: "0px"}}
           >
-            <h2 style={{paddingLeft: "2vh"}}>the_world_&_mood</h2>
+            <h2 style={{paddingLeft: "2vh"}}>the world</h2>
               <p
                 style={{
                   paddingLeft: "2vh",
@@ -42,7 +42,7 @@ const Statistics = () => {
             id="statscountries" 
             style={{ paddingTop: "115px"}}
           > 
-            <h2>country_&_mood</h2>
+            <h2>countries</h2>
             <p style={{fontSize: "12px"}}>
               shows news temperature for each of the nations calculated as percentage
             </p>
@@ -59,7 +59,7 @@ const Statistics = () => {
             id="statstitles"
             style={{paddingTop: "120px"}}
           >
-            <h2>title_&_mood</h2>
+            <h2>news titles</h2>
             <p style={{fontSize: "12px"}}>
               shows the dominant news mood for each of the titles calculated as percentage
             </p>

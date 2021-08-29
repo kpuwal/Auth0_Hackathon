@@ -30,7 +30,6 @@ const LoginButton = ({signup, activated}: IloginButton) => {
         Log In
       </button>
     }
-    {/* // <button className="nav-button" id="activated" onClick={() => loginWithRedirect()}>Log In</button> */}
     </>
   )
 };

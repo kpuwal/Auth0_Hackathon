@@ -74,7 +74,7 @@ const MainBubble = ({exclamation, headersNo, moodName}: MainBubbleProps) => {
         <tspan x={posX + 10} y={posY} style={{fontWeight: "bold"}}>
           {exclamation}
         </tspan>
-        <tspan x={posX + 10} y={posY + 35}>with {headersNo} of total</tspan>
+        <tspan x={posX + 10} y={posY + 35}>with total of {headersNo}</tspan>
         <tspan x={posX + 10} y={posY + 65}>{moodName} headers</tspan>
         <tspan x={posX + 10} y={posY + 95}>the world mood is</tspan>
       </text>
