@@ -1,6 +1,6 @@
 import { dateProp } from '../../types';
 
-const scale: number = 0.7;
+const scale: number = 0.5;
 
 type maxProp = {
   month: number,

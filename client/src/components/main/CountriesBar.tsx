@@ -13,8 +13,8 @@ const CountriesBar = () => {
   }
 
   return (
-    <div className="buttonsContainer">
-      <div className="barLabel">by coutries</div>
+    <div className="buttons-container">
+      <h6 className="bar-label">2. country</h6>
       <ul>
         {COUNTRIES.map((country, idx) => 
           <li className="inlineItem" key={idx}>

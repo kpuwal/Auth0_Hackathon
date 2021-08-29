@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux/store';
-import { activateTitle } from '../../redux/slices/activeSlice';
+import { activateTitle, activateMain } from '../../redux/slices/activeSlice';
 import { fetchHeadlines } from '../../redux/slices/newsSlice';
 
 const TitlesBar = () => {
@@ -12,22 +12,24 @@ const TitlesBar = () => {
   const handleHeadlines = (title: string) => {
     dispatch(fetchHeadlines({ title, country }));
     dispatch(activateTitle(title));
+    dispatch(activateMain(false));
   }
 
   return (
-    <div className="buttonsContainer">
+    <div className="buttons-container titles">
       {TITLES.length !== 0 ?
       <>
-        <span className="barLabel">by titles</span>
+        <h6 className="bar-label">3. titles</h6>
         <ul>
-          {TITLES.map((title: string, idx: number) => 
-            <li className="inlineItem" key={idx}>
-              <button
-                id={title === activeTitle ? "activated" : "deactivated"}
-                onClick={() => handleHeadlines(title)}>
-                {title}
-              </button>
-            </li>)
+          {
+            TITLES.map((title: string, idx: number) => 
+              <li className="inlineItem" key={idx}>
+                <button
+                  id={title === activeTitle ? "activated" : "deactivated"}
+                  onClick={() => handleHeadlines(title)}>
+                  {title}
+                </button>
+              </li>)
           }
         </ul>
       </>

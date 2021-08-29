@@ -10,7 +10,7 @@ html {
 
 body {
   background: #ebe8e5;
-  padding-top: 18vh;
+  margin-top: 15vh;
   font-family: 'Open Sans', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -112,41 +112,104 @@ a#inactive {
   font-size: 15px;
   /* color: #e9e5dd; */
   color: #1f1f1f;
-  padding-bottom: 5vh;
-  padding-left: 3vh;
+  padding-bottom: 2vh;
+  /* padding-left: 3vh; */
   font-family: 'Open Sans', sans-serif;
-  line-height: 20px;
+  /* line-height: 20px; */
 }
 
-.barLabel {
+.header-description {
+  margin-bottom: 5vh;
+  font-size: 12px;
+  width: 30vh;;
+}
+
+.bar-label {
   font-weight: 700;
   font-size: 11px;
-  color: #e9e5dd;
+  opacity: .5;
   font-family: 'Open Sans', sans-serif;
 }
 
-.buttonsContainer {
+.buttons-container {
+  padding-top: 1vh;
+  padding-bottom: 5vh;
+}
+
+.buttons-container.titles {
   padding-top: 1vh;
   padding-bottom: 1vh;
+  width: 95%;
+  overflow: scroll;
 }
 
 .headlines-container {
+  /* background: green; */
   overflow: auto;
-  margin-left: 50%;
+  /* margin-left: 40%; */
+  padding: 2vh 15vh 0vh 0vh;
 }
 
 .filter-container {
   /* position: fixed; */
-  width: 45%;
-  /* overflow: scroll; */
-  padding-top: 18vh;
-  left: 3%;
-
+  /* width: 45%; */
+  /* background: pink; */
+  overflow: scroll;
+  padding-top: 5vh;
+  /* left: 1%; */
+  overflow: auto;
+  padding-right: 2vh;
 }
+
+.main-bg-container {
+  margin-top: 5vh;
+
+  /* padding-top: 10vh; */
+  padding-left: 10vh;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  font-family: 'Newsreader', sans-serif;
+}
+
+.main-bg-box-container {
+  /* display: inline-block; */
+  /* width: 60vh; */
+  margin-top: 10vh;
+}
+
+.main-bg-box {
+  border: .5px solid #cac2ba;
+  border-radius: 8px;
+  width: 30vh;
+  height: 30vh;
+  /* display: flex; */
+  float: left;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  margin-right: 5vh;
+  padding: 3vh;
+  
+}
+
+.main-bg-box img {
+  margin-bottom: 3vh;
+}
+
+.main-bg-box h6 {
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+.main-bg-box p {
+  font-size: 1.5vh;
+}
+
 
 .charts-container {
   overflow: auto;
-  /* margin-top: 100px; */
+  margin-top: 100px;
   margin-left: 35%;
 }
 

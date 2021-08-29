@@ -1,10 +1,18 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ICountries } from '../types'; 
+import { ICountries } from '../types';
 
-const initialState = {
+interface IactiveSlice {
+  mood: number,
+  country: {iso: string, label: string},
+  title: string,
+  main: boolean,
+}
+
+const initialState: IactiveSlice = {
   mood: 0,
   country: { iso: "", label: "" },
   title: "",
+  main: true,
 }
 
 export const activeSlice = createSlice({
@@ -20,8 +28,11 @@ export const activeSlice = createSlice({
     activateTitle: (state, action: PayloadAction<string>) => {
       state.title = action.payload
     },
+    activateMain: (state, action: PayloadAction<boolean>) => {
+      state.main = action.payload
+    },
   },
 })
 
-export const { activateMood, activateCountry, activateTitle } = activeSlice.actions;
+export const { activateMood, activateCountry, activateTitle, activateMain } = activeSlice.actions;
 export default activeSlice.reducer;

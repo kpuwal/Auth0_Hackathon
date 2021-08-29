@@ -19,13 +19,13 @@ const MoodBar = () => {
 
   return (
     <>
-      <span className="barLabel">by mood</span>
+      <h6 className="bar-label">1. mood</h6>
       {MOODS.map((mood, idx) => (
         <button
+          key={idx}
           className="mood-button"
           onClick={() => dispatch(activateMood(idx))}>
           <MoodButton
-            key={idx}
             txt={mood.name} 
             badgeVal={findBadgeValue(mood.name, headlines)} 
             color={activeMood === idx ? 1 : .15}>
