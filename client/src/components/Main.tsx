@@ -11,6 +11,7 @@ const Main = () => {
   useFetchStats();
   const isActive = useSelector((state: RootState) => state.active.main);
   return (
+    <div className="background-container">
     <div className="container">
       <div className="row">
         <div className="col-4 filter-container">
@@ -29,6 +30,7 @@ const Main = () => {
           
         </div>
       </div>
+    </div>
     </div>
   );
 }
