@@ -193,7 +193,7 @@ a#inactive {
   border: .5px solid #cac2ba;
   border-radius: 8px;
   width: 30vh;
-  height: 30vh;
+  height: 35vh;
   /* display: flex; */
   float: left;
   text-align: center;
@@ -220,7 +220,6 @@ a#inactive {
 
 .charts-container {
   overflow: auto;
-  margin-top: 100px;
   margin-left: 35%;
 }
 

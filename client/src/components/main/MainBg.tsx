@@ -1,10 +1,11 @@
 import classificationIcn from '../../assets/classification.png';
 import statsIcn from '../../assets/stats.png';
+import LoginButton from '../auth/LoginButton';
 
 const MainBg = () => {
   return (
     <div className="main-bg-container">
-      <h1>Sentiment Analysis <br/> powered news reader</h1><br/>
+      <h1>Sentiment Analysis <br/> powered News Reader</h1><br/>
       <h5>helps avoid bad news and be happy</h5>
       <div className="main-bg-box-container">
         <div className="main-bg-box">
@@ -30,6 +31,7 @@ const MainBg = () => {
           />
           <h6>statistics</h6>
           <p>create an account and enjoy a comfort of an informed choice</p>
+          <LoginButton signup={true} />
         </div>
       </div>
     </div>

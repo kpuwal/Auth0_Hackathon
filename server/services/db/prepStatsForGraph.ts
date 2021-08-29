@@ -17,6 +17,7 @@ export const prepStatsForGraph = (data: dateProp[]) => {
   const graphIconPoints = findGraphIconPoints(byMonth);
   
   const best = findMaxWorldMoods(byMonth, "positive");
+  console.log(best)
   const worst = findMaxWorldMoods(byMonth, "negative");
   const totalWorldMood = findWorldMood(restructured);
   return {

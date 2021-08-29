@@ -4,6 +4,8 @@ interface IsummaryCountry {
 };
 
 const SummaryCountries = ({happy, sad}: IsummaryCountry) => {
+  console.log("happy ", happy, " sad ", sad);
+  const happy2 = happy === "" ? "does not exist" : happy;
   return (
     <div className="summary-container">
       <h6>summary</h6>
@@ -11,7 +13,7 @@ const SummaryCountries = ({happy, sad}: IsummaryCountry) => {
         <li>
           <div className="summary-box">
             the <span>happiest</span> news is from: <br/>
-            <span id="important">{happy}</span>
+            <span id="important">{happy2}</span>
           </div>
         </li>
         <li>

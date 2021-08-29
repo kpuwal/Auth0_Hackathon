@@ -27,10 +27,12 @@ export const prepStatsCountries = (data: Icountries[]) => {
       dominant,
     };
   })
+
+  const happy = findMood(flattened, "positive")?.country;
   
   return { 
     data: flattened, 
-    happy: findMood(flattened, "positive")?.country,
+    happy,
     sad: findMood(flattened, "negative")?.country,
   }
 }

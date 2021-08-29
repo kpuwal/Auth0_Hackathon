@@ -16,7 +16,7 @@ const SummaryTitles = ({happy, sad}: IsummaryTitles) => {
               </li>
               <li>
                 <ol className="ordered-list">
-                  {happy.map(el => <li><span>{cleanData(el)}</span></li>)}
+                  {happy.map((el, idx) => <li key={idx}><span>{cleanData(el)}</span></li>)}
                 </ol>
               </li>
             </ul>
@@ -30,7 +30,7 @@ const SummaryTitles = ({happy, sad}: IsummaryTitles) => {
               </li>
               <li>
                 <ol className="ordered-list">
-                  {sad.map(el => <li><span>{cleanData(el)}</span></li>)}
+                  {sad.map((el, idx) => <li key={idx}><span>{cleanData(el)}</span></li>)}
                 </ol>
               </li>
             </ul>

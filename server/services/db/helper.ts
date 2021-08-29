@@ -1,3 +1,4 @@
+import { response } from 'express';
 import { dataProps, moodProps } from '../../types';
 
 const defaultObj = {mood: "", count: 0};
@@ -23,6 +24,6 @@ export const findMood = (data: moodProps[], type: string) => {
   const allType = data.filter(item => item.dominant.mood === type);
   const val = Math.max.apply(Math, allType.map(obj => {return parseFloat(obj.moods[type])}));
   const source = allType.find(obj => {
-    return parseFloat(obj.moods[type]) == val});
+      return parseFloat(obj.moods[type]) == val});
   return source;
 }
