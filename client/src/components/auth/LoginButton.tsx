@@ -2,10 +2,10 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 interface IloginButton {
   signup?: boolean;
-
+  activated?: boolean;
 }
 
-const LoginButton = ({signup}: IloginButton) => {
+const LoginButton = ({signup, activated}: IloginButton) => {
   const { loginWithRedirect } = useAuth0();
 
   return (
@@ -24,7 +24,7 @@ const LoginButton = ({signup}: IloginButton) => {
       :
       <button 
         className="nav-button"
-        id="activated"
+        id={activated ? "activated" : "inactive"}
         onClick={() => loginWithRedirect()}
       >
         Log In
