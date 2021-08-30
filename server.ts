@@ -29,7 +29,7 @@ app.use(helmet());
 app.use(hpp());
 
 app.use('/', appRouter);
-app.use(csurf());
+// app.use(csurf());
 app.use(limiter);
 
 app.listen(PORT, () => {
