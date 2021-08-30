@@ -28,5 +28,5 @@ export const saveToDatabase = async (data: ISentimentAnalysis, country: string):
 
   try {
     await db.none(query)
-  } catch(err) {return err}
+  } catch(err) {console.log(err)}
 }

@@ -27,7 +27,6 @@ app.get('*', function(req:any, res:any) {
   res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')});
 });
 
-
 /* Security Configs */
 app.use(helmet());
 app.use(hpp());
