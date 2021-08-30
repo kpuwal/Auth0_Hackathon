@@ -7,7 +7,7 @@ import PresenterIcon from './graph/PresenterIcon';
 import SummaryWorld from './graph/SummaryWorld';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import '../../css/worldgraph.css';
+import '../../css/WorldGraph.css';
 
 const posY: number = 340;
 

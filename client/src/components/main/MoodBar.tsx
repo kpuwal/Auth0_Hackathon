@@ -4,7 +4,7 @@ import { activateMood } from '../../redux/slices/activeSlice';
 import { HappyIcn, NeutralIcn, NegativeIcn } from '../stats/Icons';
 import { IHeadlines } from '../../redux/types';
 import MoodButton from './MoodButton';
-import '../../css/moodbar.css';
+import '../../css/MoodBar.css';
 
 const MOODS = [
   { name: "positive", icon: <HappyIcn scale={1} posX={20} posY={30} /> },
