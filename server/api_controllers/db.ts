@@ -21,7 +21,7 @@ export const aggregateStats = async (request: Request, response: Response): Prom
   const countries: Icountries[] = await fetchData(countriesQuery);
   const titles: Ititles[] = await fetchData(titlesQuery);
   const dates: Idates[] = await fetchData(dateQuery);
-
+console.log("is it working?")
   response.send({
     byCountries: prepStatsCountries(countries),
     byTitles: prepStatsTitles(titles),

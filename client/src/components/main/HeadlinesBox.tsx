@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { INewsApiArticle } from '../../../../server/types';
-import '../../css/HeadlinesBox.css';
+// import '../../css/HeadlinesBox.css';
 
 const HeadlinesBox = () => {
   const activeTab = useSelector((state: RootState) => state.active.mood);

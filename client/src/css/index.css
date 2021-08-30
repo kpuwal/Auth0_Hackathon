@@ -286,3 +286,200 @@ a#inactive {
 #presenter:hover .smile {
   opacity: 1;
 }
+
+/* BAR GROUP */
+
+.bar-group {
+  margin-right: 10vh;
+}
+
+.bar {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+.bar:hover .bar-text-val {
+  opacity: 0;
+}
+
+.bar-text-rounded-val-label {
+  opacity: 0;
+  font-size: 4px;
+}
+
+.bar .bar-text-rounded-val {
+  opacity: 0;
+  font-size: 13px;
+}
+
+.bar:hover .bar-text-rounded-val {
+  opacity: 1;
+}
+
+.bar:hover .bar-text-rounded-val-label {
+  opacity: 1;
+}
+
+text.name-label {
+  font-size: 8px;
+}
+
+text.mood-label {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+text.mood-value {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+text.mood-value-dominant {
+  font-size: 6px;
+  font-weight: bold;
+}
+
+text.name-label-bold {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+text.name-label-bold-big {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+svg.emoji-label {
+  position: absolute;
+}
+
+.positive-label {
+  padding-top: 30px;
+  font-size: 10px;
+}
+
+
+/* MOOD BAR CSS */
+.mood-label {
+  fill: #ffffff;
+  font-weight: bold;
+}
+
+.mood-button {
+  width: 70px;
+  right: 0;
+  margin-left: -8px;
+  border-style: none;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+
+/* HEADLINES BOX CSS */
+.articleContainer {
+  border-bottom: .5px solid #1f1f1f;
+  padding-bottom: 1vh;
+  padding-top: 3vh;
+}
+
+.headlineSource {
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 2vh;
+  font-size: small;
+}
+
+.headlineTime {
+  color: #a1a8b8;
+}
+
+.headlineTitle {
+  font-family: 'Newsreader', sans-serif;
+  font-weight: 700;
+  font-size: x-large;
+  padding-bottom: 2vh;
+}
+
+.headlineContent {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+
+/* WORLD GRAPH CSS */
+.speech-bubble-graph {
+  opacity: 0;
+  transition: opacity .7s;
+}
+
+.speech-bubble-graph-maxOne {
+  opacity: 1;
+}
+
+.speech-bubble-graph-maxTwo {
+  opacity: .2;
+}
+
+.speech-bubble-graph:hover {
+  opacity: 1;
+}
+
+.speech-bubble-graph-maxTwo:hover {
+  opacity: 1;
+}
+
+.speech-bubble-graph-txt {
+  fill: white;
+  font-weight: bold;
+}
+
+li#header {
+  font-size: 18px;
+}
+
+.summary-container {
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  font-size: 11px;
+}
+
+.summary-container li {
+  display: inline-block;
+  /* margin-right: 5vh; */
+}
+
+.summary-box {
+  width: 200px;
+  height: 80px;
+  border: .5px solid #cac2ba;
+  border-radius: 10px;
+  padding: 1.5vh 0 0 2.5vh;
+  margin-right: 5vh;
+
+}
+
+.summary-box.titles {
+  width: 280px;
+  height: 115px;
+  padding: 1.3vh 0 0 4vh;
+}
+
+.summary-box span {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#sub-list {
+  display: inline-flex;
+}
+
+#important {
+  font-size: 18px;
+}
+
+.ordered-list li {
+  display: block;
+}
+
