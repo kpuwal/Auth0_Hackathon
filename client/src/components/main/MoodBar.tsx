@@ -1,10 +1,10 @@
-import { RootState, useAppDispatch } from '../../redux/store';
+import { RootState, useAppDispatch } from './../../redux/store';
 import { useSelector } from 'react-redux';
-import { activateMood } from '../../redux/slices/activeSlice';
+import { activateMood } from './../../redux/slices/activeSlice';
 import { HappyIcn, NeutralIcn, NegativeIcn } from '../stats/Icons';
-import { IHeadlines } from '../../redux/types';
+import { IHeadlines } from './../../redux/types';
 import MoodButton from './MoodButton';
-import '../../css/MoodBar.css';
+import './../../css/MoodBar.css';
 
 const MOODS = [
   { name: "positive", icon: <HappyIcn scale={1} posX={20} posY={30} /> },

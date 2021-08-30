@@ -1,7 +1,7 @@
 import Bar from './chart/Bar';
 import Description from './chart/Description';
 import { HappyIcn, NeutralIcn, NegativeIcn } from './Icons';
-import '../../css/BarGroup.css';
+import './../../css/BarGroup.css';
 
 interface IbarGroup {
   moods: { positive: number, neutral: number, negative: number },
