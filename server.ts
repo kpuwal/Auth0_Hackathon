@@ -23,6 +23,10 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors({ origin: clientOrigins }))
 app.use(express.static(path.resolve("./") + "/build/client"));
+app.get('*', function(req:any, res:any) {
+  res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')});
+});
+
 
 /* Security Configs */
 app.use(helmet());

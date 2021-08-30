@@ -12,5 +12,9 @@ export const authenticated = jwt({
 }),
 audience,
 issuer: `https://${domain}/`,
-algorithms: ['RS256']
+algorithms: ['RS256'],
+getToken: (req:any)=>{
+  console.log(`trying to get token ${JSON.stringify(req.cookies["token"])}`)
+  return req.cookies["token"];
+}
 });
