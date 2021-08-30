@@ -7,10 +7,6 @@ import Auth0ProviderWithHistory from './components/auth/Auth0ProviderWithHistory
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import './css/index.css';
-import './css/BarGroup.css';
-import './css/HeadlinesBox.css';
-import './css/MoodBar.css';
-import './css/WorldGraph.css';
 
 ReactDOM.render(
   <Provider store={store}>
