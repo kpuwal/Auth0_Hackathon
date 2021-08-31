@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { statsInitStateType, maxProp } from '../types';
 
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+
 const objInint: maxProp = {
   month: 0,
   mood: "",
@@ -54,7 +56,7 @@ const fetchResource = async (url: string, token: string) => {
 export const fetchStatistics = createAsyncThunk(
   'stats',
   async (token: string) => {
-    return fetchResource('/statistics', token);
+    return fetchResource(`${serverUrl}/statistics`, token);
   }
 )
 
