@@ -18,14 +18,13 @@ const App = () => {
   return (
     <>
       <Navigation />
-        <Switch>
-          <Route exact path="/" component={Main} >
-          <Route path="/about" component={About} />
-          <ProtectedRoute path="statistics" component={Statistics} />
-          <ProtectedRoute path="/profile" component={Profile} />
-          <Route render={() => <h1>404: page not found</h1>} />
-          </Route>
-        </Switch>
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route path="/about" component={About} />
+        <ProtectedRoute path="/statistics" component={Statistics} />
+        <ProtectedRoute path="/profile" component={Profile} />
+        <Route render={() => <h1>404: page not found</h1>} />
+      </Switch>
     </>
   );
 }

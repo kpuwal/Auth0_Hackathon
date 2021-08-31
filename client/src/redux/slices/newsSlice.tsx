@@ -29,14 +29,14 @@ const fetchData = async (url: string, data: string, country?: string) => {
 export const fetchTitles = createAsyncThunk(
   'sources',
   async (country: string) => {
-    return fetchData('/sources', country);
+    return fetchData('/api/sources', country);
   }
 )
 
 export const fetchHeadlines = createAsyncThunk(
   'authHeadlines',
   async (data: IData) => {
-    return fetchData('/headlines', data.title, data.country);
+    return fetchData('/api/headlines', data.title, data.country);
   }
 )
 
