@@ -7,7 +7,7 @@ const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_P
 const conStrProd = `postgresql://${process.env.DB_USER_PROD}:${process.env.DB_PASSWORD_PROD}@${process.env.DB_HOST_PROD}:${process.env.DB_PORT_PROD}/${process.env.DB_DATABASE_PROD}`
 
 const db = pgp({
-  connectionString: conStrProd,
+  connectionString: isProduction ? process.env.DATABASE_URL : conStrProd,
   ssl: {
     rejectUnauthorized: false
   },
