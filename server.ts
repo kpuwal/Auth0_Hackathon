@@ -31,10 +31,19 @@ app.use(express.static(path.resolve("./") + "/build/client"));
 //   res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')});
 // });
 
-app.get('*', (req:any, res:any) => (
-  res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')})
-))
+// app.get('*', (req:any, res:any) => (
+//   res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')})
+// ))
+// if (process.env.NODE_ENV === 'production') {
+  
+
 app.use('/', appRouter);
+
+  app.get('*', function (req:any, res:any) {
+   	res.sendFile(path.join(__dirname, '../build/client', 'index.html'));
+  });
+// }
+
 // if (process.env.NODE_ENV === 'production') {
 //   // Serve any static files
 //   app.use(express.static(path.join(__dirname, 'build/client')));
@@ -45,7 +54,7 @@ app.use('/', appRouter);
 // }
 
 /* Security Configs */
-// app.use(helmet());
+app.use(helmet());
 app.use(hpp());
 
 // app.use(csurf());

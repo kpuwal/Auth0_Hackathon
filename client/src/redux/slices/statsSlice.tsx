@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { statsInitStateType, maxProp } from '../types';
 
-const serverUrl = process.env.REACT_APP_SERVER_URL;
-
 const objInint: maxProp = {
   month: 0,
   mood: "",

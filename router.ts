@@ -6,13 +6,13 @@ const { sourcesRequest, headlinesRequest } = require('./server/api_controllers/n
 const Router = require('express-promise-router');
 const router = new Router();
 
-router.get('/statistics', authenticated, aggregateStats);
+router.get('/api/statistics', authenticated, aggregateStats);
 
 // app.get('/*', function(req:any, res:any) {
 //   res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')});
 // });
 
-router.post('/sources', sourcesRequest);
-router.post('/headlines', headlinesRequest);
+router.post('/api/sources', sourcesRequest);
+router.post('/api/headlines', headlinesRequest);
 
 module.exports = router;

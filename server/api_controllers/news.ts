@@ -27,6 +27,8 @@ const getData = async (url: string, config: configType) => {
 }
 
 export const sourcesRequest = async (request: Request, response: Response): Promise<void> => {
+  console.log("sees sources")
+
   const country = request.body.data;
   const apiUrl = `${url}/sources`;
   const config = { country, apiKey };
@@ -39,6 +41,7 @@ export const sourcesRequest = async (request: Request, response: Response): Prom
 }
 
 export const headlinesRequest = async (request: Request, response: Response): Promise<void> => {
+  console.log("sees headlines")
   const title = request.body.data;
   const apiUrl = `${url}/top-headlines`;
   const config = { sources: title, sortBy: 'top', apiKey }
