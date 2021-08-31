@@ -446,13 +446,13 @@ li#header {
 }
 
 .summary-container li {
-  display: inline-block;
+  display: inline-flex;
   /* margin-right: 5vh; */
 }
 
 .summary-box {
   width: 200px;
-  height: 80px;
+  height: 12vh;
   border: .5px solid #cac2ba;
   border-radius: 10px;
   padding: 1.5vh 0 0 2.5vh;
@@ -462,7 +462,7 @@ li#header {
 
 .summary-box.titles {
   width: 280px;
-  height: 115px;
+  height: 120px;
   padding: 1.3vh 0 0 4vh;
 }
 
@@ -471,7 +471,7 @@ li#header {
   font-size: 13px;
 }
 
-#sub-list {
+.sub-list {
   display: inline-flex;
 }
 

@@ -10,30 +10,30 @@ const SummaryTitles = ({happy, sad}: IsummaryTitles) => {
       <ul>
         <li>
           <div className="summary-box titles">
-            <ul id="sub-list">
-              <li>
+            <div className="sub-list">
+              <div>
                 the most <br/><span>positive</span> <br/> news <br/> providers
-              </li>
-              <li>
+              </div>
+              <div>
                 <ol className="ordered-list">
                   {happy.map((el, idx) => <li key={idx}><span>{cleanData(el)}</span></li>)}
                 </ol>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </li>
         <li>
         <div className="summary-box titles">
-            <ul id="sub-list">
-              <li>
+            <div className="sub-list">
+              <div>
                 the most <br/><span>negative</span> <br/> news <br/> providers
-              </li>
-              <li>
+              </div>
+              <div>
                 <ol className="ordered-list">
                   {sad.map((el, idx) => <li key={idx}><span>{cleanData(el)}</span></li>)}
                 </ol>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </li>
       </ul>

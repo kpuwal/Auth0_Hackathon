@@ -12,7 +12,7 @@ const SummaryCountries = ({happy, sad}: IsummaryCountry) => {
         <li>
           { 
             happy === "" ?
-            <EmptyBox />
+            <EmptyBoxHappy />
             :
             <div className="summary-box">
               the <span>happiest</span> news is from: <br/>
@@ -23,7 +23,7 @@ const SummaryCountries = ({happy, sad}: IsummaryCountry) => {
         <li>
           {
             sad === "" ?
-            <EmptyBox />
+            <EmptyBoxSad />
             :
             <div className="summary-box">
               the <span>saddest</span> news is from: <br/>          
@@ -36,10 +36,18 @@ const SummaryCountries = ({happy, sad}: IsummaryCountry) => {
   )
 }
 
-const EmptyBox = () => {
+const EmptyBoxHappy = () => {
   return (
     <div className="summary-box">
-      oops! nothing to see here yet...
+      <span>oh no! <br/>nothing to see here...</span>
+    </div>
+  )
+}
+
+const EmptyBoxSad = () => {
+  return (
+    <div className="summary-box">
+      <span>hurray! <br/>nothing to see here</span>
     </div>
   )
 }
