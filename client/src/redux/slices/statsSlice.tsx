@@ -38,7 +38,6 @@ const initialState: statsInitStateType = {
 }
 
 const fetchResource = async (url: string, token: string) => {
-  console.log("token ", token)
   try {
     const statsData = await fetch(url, {
       method: 'GET',
