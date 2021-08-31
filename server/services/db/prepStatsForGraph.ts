@@ -17,7 +17,7 @@ export const prepStatsForGraph = (data: dateProp[]) => {
   const graphIconPoints = findGraphIconPoints(byMonth);
   
   const best = findMaxWorldMoods(byMonth, "positive");
-  console.log(best)
+  console.log(best, "best")
   const worst = findMaxWorldMoods(byMonth, "negative");
   const totalWorldMood = findWorldMood(restructured);
   return {
@@ -112,13 +112,18 @@ const findMaxIconHighlight = (data: maxProp[]) => {
 const findMaxWorldMoods = (data: maxProp[], type: string) => {
   const newData = [...data];
   const foundType = newData.filter(item => item.mood === type);
+  
   const maxPos = Math.max.apply(Math, foundType.map(obj => {return obj.posY}));
   const mood = newData.find(obj => {return obj.posY === maxPos}) || data[0];
   const idx = newData.findIndex(item => item.posY === mood.posY);
   newData.splice(idx, 1);
+  
   const maxPos2 = Math.max.apply(Math, foundType.map(obj => {return obj.posY}));
   const mood2 = newData.find(obj => {return obj.posY === maxPos2}) || data[0];
-  return [mood.month, mood2.month];
+  
+  const mood2Real = mood.posY - mood2.posY > 5 ? 13 : mood2.month;
+  console.log("mood real ", mood2Real)
+  return [mood.month, mood2Real];
 } 
 
 const findGraphIconPoints = (data: maxProp[]) => {

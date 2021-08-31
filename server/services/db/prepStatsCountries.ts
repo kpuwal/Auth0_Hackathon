@@ -28,11 +28,9 @@ export const prepStatsCountries = (data: Icountries[]) => {
     };
   })
 
-  const happy = findMood(flattened, "positive")?.country;
-  
   return { 
     data: flattened, 
-    happy,
+    happy: findMood(flattened, "positive")?.country,
     sad: findMood(flattened, "negative")?.country,
   }
 }
