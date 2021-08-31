@@ -21,19 +21,32 @@ const PORT = process.env.PORT || 3000;
 app.set('trust proxy', 1);
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(cors({ origin: clientOrigins }))
+app.use(cors({ origin: clientOrigins }));
+
+// app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.resolve("./") + "/build/client"));
-// app.use(express.static(path.resolve("/about") + "/build/client"));
-// app.get('*', function(req:any, res:any) {
-//   console.log(req.headers.authorization)
-//   res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')});
-// });
+
+
+
+app.get('*', function(req:any, res:any) {
+  console.log(req.headers.authorization)
+  res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')});
+});
+app.use('/', appRouter);
+
+// if (process.env.NODE_ENV === 'production') {
+//   // Serve any static files
+//   app.use(express.static(path.join(__dirname, 'build/client')));
+//   // Handle React routing, return all requests to React app
+//   app.get('*', function(req:any, res:any) {
+//     res.sendFile(path.join(__dirname, 'build/client', 'index.html'));
+//   });
+// }
 
 /* Security Configs */
-app.use(helmet());
+// app.use(helmet());
 app.use(hpp());
 
-app.use('/', appRouter);
 // app.use(csurf());
 app.use(limiter);
 
