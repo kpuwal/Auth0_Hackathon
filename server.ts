@@ -23,35 +23,13 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors({ origin: clientOrigins }));
 
-// app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.resolve("./") + "/build/client"));
-
-
-// app.get('*', function(req:any, res:any) {
-//   res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')});
-// });
-
-// app.get('*', (req:any, res:any) => (
-//   res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')})
-// ))
-// if (process.env.NODE_ENV === 'production') {
-  
 
 app.use('/', appRouter);
 
-  app.get('*', function (req:any, res:any) {
-   	res.sendFile(path.join(__dirname, '../build/client', 'index.html'));
-  });
-// }
-
-// if (process.env.NODE_ENV === 'production') {
-//   // Serve any static files
-//   app.use(express.static(path.join(__dirname, 'build/client')));
-//   // Handle React routing, return all requests to React app
-//   app.get('*', function(req:any, res:any) {
-//     res.sendFile(path.join(__dirname, 'build/client', 'index.html'));
-//   });
-// }
+app.get('*', function (req:any, res:any) {
+  res.sendFile(path.join(__dirname, '../build/client', 'index.html'));
+});
 
 /* Security Configs */
 app.use(helmet());
