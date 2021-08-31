@@ -38,6 +38,7 @@ const initialState: statsInitStateType = {
 }
 
 const fetchResource = async (url: string, token: string) => {
+  console.log("token ", token)
   try {
     const statsData = await fetch(url, {
       method: 'GET',
@@ -53,7 +54,7 @@ const fetchResource = async (url: string, token: string) => {
 export const fetchStatistics = createAsyncThunk(
   'stats',
   async (token: string) => {
-    return fetchResource('/statistics', token);
+    return fetchResource('http://localhost:5000/statistics', token);
   }
 )
 

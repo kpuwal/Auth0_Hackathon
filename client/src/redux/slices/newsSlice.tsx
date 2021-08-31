@@ -15,7 +15,9 @@ const fetchData = async (url: string, data: string, country?: string) => {
   const config = {
     method: 'POST',
     body: JSON.stringify({data, country}),
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 
+      'Content-Type': 'application/json',
+     }
   } 
   
   try {

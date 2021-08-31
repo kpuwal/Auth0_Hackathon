@@ -43,7 +43,7 @@ export const headlinesRequest = async (request: Request, response: Response): Pr
   const apiUrl = `${url}/top-headlines`;
   const config = { sources: title, sortBy: 'top', apiKey }
   const apiResponse:INewsApiHeadlinesResponse = await getData(apiUrl, config);
-
+  
   if (apiResponse.status === 'ok') {
     const cleaned = cleanResponse(apiResponse.articles);
     const analysed = sentimentAnalysis(cleaned);
