@@ -26,13 +26,13 @@ app.use(cors({ origin: clientOrigins }));
 // app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.resolve("./") + "/build/client"));
 
+app.use('/', appRouter);
 
 
 app.get('*', function(req:any, res:any) {
   console.log(req.headers.authorization)
   res.sendFile('index.html', {root: path.join(__dirname, '../build/client/')});
 });
-app.use('/', appRouter);
 
 // if (process.env.NODE_ENV === 'production') {
 //   // Serve any static files
