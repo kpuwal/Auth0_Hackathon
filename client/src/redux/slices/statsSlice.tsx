@@ -54,7 +54,7 @@ const fetchResource = async (url: string, token: string) => {
 export const fetchStatistics = createAsyncThunk(
   'stats',
   async (token: string) => {
-    return fetchResource('http://localhost:5000/statistics', token);
+    return fetchResource('/statistics', token);
   }
 )
 
