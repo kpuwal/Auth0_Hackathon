@@ -18,7 +18,7 @@ const MainBg = () => {
               }}
             />
           <h6>classification</h6>
-          <p>for an easy navigation the news are classified into three mood categories </p>
+          <p>for easy navigation the news are classified into three mood categories </p>
         </div>
         <div className="main-bg-box">
           <img
