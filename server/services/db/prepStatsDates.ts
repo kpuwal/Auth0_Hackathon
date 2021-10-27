@@ -12,8 +12,7 @@ export const prepStatsDates = (data: Idates[]) => {
 
 const convertDate = (date: string | number) => {
   const mydate = new Date(date);
-  const month =  mydate.getMonth();
-  return month;
+  return  mydate.getMonth();
 }
 
 const groupByMonth = (dates: Idates[]) => {

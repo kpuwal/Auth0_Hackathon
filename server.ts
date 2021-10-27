@@ -1,15 +1,17 @@
 require('dotenv').config();
 const express = require('express');
+import { Request, Response } from 'express';
 const path = require('path');
 const app = express();
 const rateLimit = require("express-rate-limit");
 const helmet = require('helmet');
 const hpp = require('hpp');
-const csurf = require('csurf');
+// const csrf = require('csurf');
 const cors = require('cors');
 const appRouter = require('./router');
 
 const clientOrigins = process.env.CLIENT_ORIGIN_URL;
+// var csrfProtection = csrf({ cookie: true })
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -25,9 +27,13 @@ app.use(cors({ origin: clientOrigins }));
 
 app.use(express.static(path.resolve("./") + "/build/client"));
 
-app.use('/', appRouter);
+app.use('/',  appRouter);
 
-app.get('*', function (req:any, res:any) {
+// app.get('*', function (req: Request, res: Response) {
+//   res.sendFile(path.join(__dirname, '../build/client', 'index.html'));
+// });
+
+app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../build/client', 'index.html'));
 });
 

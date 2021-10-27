@@ -8,6 +8,7 @@ import { cleanResponse } from '../services/news/cleanData';
 import {
   INewsApiSourcesResponse,
   INewsApiHeadlinesResponse,
+  INewsApiSourceItem,
   axiosRequestType,
   configType
 } from '../types';
@@ -27,30 +28,37 @@ const getData = async (url: string, config: configType) => {
 }
 
 export const sourcesRequest = async (request: Request, response: Response): Promise<void> => {
-  console.log("sees sources")
-
   const country = request.body.data;
   const apiUrl = `${url}/sources`;
   const config = { country, apiKey };
-  const  apiResponse: INewsApiSourcesResponse = await getData(apiUrl, config);
+  const  apiResponse: INewsApiSourcesResponse | any = await getData(apiUrl, config);
 
-  if (apiResponse.status === 'ok') {
-    const titles = apiResponse.sources.map((item) => item.id);
-    response.send(titles);
-  } else { response.send('api server response error') }
+  // if (apiResponse.status === 'ok') {
+  //   const titles = apiResponse.sources.map((item: INewsApiSourceItem) => item.id);
+  //   response.send(titles);
+  // } else { response.send('api server response error') }
+
+  if (apiResponse.status === 'error') {response.status(500).send('api server errror')};
+  const titles = apiResponse.sources.map((item: INewsApiSourceItem) => item.id);
+  response.status(200).send(titles);
 }
 
 export const headlinesRequest = async (request: Request, response: Response): Promise<void> => {
-  console.log("sees headlines")
   const title = request.body.data;
   const apiUrl = `${url}/top-headlines`;
   const config = { sources: title, sortBy: 'top', apiKey }
-  const apiResponse:INewsApiHeadlinesResponse = await getData(apiUrl, config);
+  const apiResponse: INewsApiHeadlinesResponse | any = await getData(apiUrl, config);
   
-  if (apiResponse.status === 'ok') {
-    const cleaned = cleanResponse(apiResponse.articles);
-    const analysed = sentimentAnalysis(cleaned);
-    saveToDatabase(analysed, request.body.country);
-    response.send(analysed)
-  } else { response.send('api server response error') }
+  // if (apiResponse.status === 'ok') {
+  //   const cleaned = cleanResponse(apiResponse.articles);
+  //   const analysed = sentimentAnalysis(cleaned);
+  //   saveToDatabase(analysed, request.body.country);
+  //   response.send(analysed)
+  // } else { response.send('api server response error') }
+
+  if (apiResponse.status === 'error') {response.send('api server response error')};
+  const cleaned = cleanResponse(apiResponse.articles);
+  const analysed = sentimentAnalysis(cleaned);
+  saveToDatabase(analysed, request.body.country);
+  response.send(analysed);
 }

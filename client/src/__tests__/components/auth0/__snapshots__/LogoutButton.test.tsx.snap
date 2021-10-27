@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logout Button renders logout button 1`] = `
+<button
+  className="nav-button"
+  id="activated"
+  onClick={[Function]}
+>
+  Log Out
+</button>
+`;

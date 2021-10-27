@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Button renders login button 1`] = `
+<Fragment>
+  <button
+    className="nav-button"
+    id="inactive"
+    onClick={[Function]}
+  >
+    Log In
+  </button>
+</Fragment>
+`;

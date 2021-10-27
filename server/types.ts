@@ -118,5 +118,6 @@ export type moodProps = {
   sum: number;
   dominant: dataProps;
 }
+
 export type dataProps = {mood: string, count: number};
 

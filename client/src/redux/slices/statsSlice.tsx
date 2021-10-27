@@ -38,7 +38,6 @@ const initialState: statsInitStateType = {
 }
 
 const fetchResource = async (url: string, token: string) => {
-  console.log("try to fetch")
   try {
     const statsData = await fetch(url, {
       method: 'GET',
@@ -64,7 +63,6 @@ export const statsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchStatistics.fulfilled, (state, action) => {
-      console.log("fetched ", action.payload)
       state.byCountries = action.payload.byCountries
       state.byTitles = action.payload.byTitles
       state.byDates = action.payload.byDates

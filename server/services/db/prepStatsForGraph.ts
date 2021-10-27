@@ -73,15 +73,20 @@ const findMaxInMonth = (data: dateProp[]) => {
   return maxCollection;
 }
 
-const findMaxIconHighlight = (data: maxProp[]) => {
+const findHighlight = (data: maxProp[]) => {
   const maxNo = Math.max.apply(Math, data.map(obj => {return obj.posY})) || 0;
-  const remained = data.filter(item => item.posY !== maxNo);
-  const maxNo2 = Math.max.apply(Math, remained.map(obj => {return obj.posY})) || 0;
-  const remained2 = remained.filter(item => item.posY !== maxNo2);
-  const maxNo3 = Math.max.apply(Math, remained2.map(obj => {return obj.posY})) || 0;
-  const maxObj = data.find(obj => {return obj.posY === maxNo}) || data[0];
-  const maxObj2 = data.find(obj => {return obj.posY === maxNo2}) || data[0];
-  const maxObj3 = data.find(obj => {return obj.posY === maxNo3}) || data[0];
+  const remainedData = data.filter(item => item.posY !== maxNo);
+  return { maxNo, remainedData };
+}
+
+const findMaxIconHighlight = (data: maxProp[]) => {
+  const firstHighlight = findHighlight(data);
+  const secondHighlight = findHighlight(firstHighlight.remainedData);
+  const thirdHighlight = findHighlight(secondHighlight.remainedData);
+
+  const maxObj = data.find(obj => {return obj.posY === firstHighlight.maxNo}) || data[0];
+  const maxObj2 = data.find(obj => {return obj.posY === secondHighlight.maxNo}) || data[0];
+  const maxObj3 = data.find(obj => {return obj.posY === thirdHighlight.maxNo}) || data[0];
 
   return {
     main: {
@@ -108,20 +113,27 @@ const findMaxIconHighlight = (data: maxProp[]) => {
   }
 }
 
+const findMoodItem = (typeData: maxProp[], data: maxProp[]) => {
+  const maxPos = Math.max.apply(Math, typeData.map(obj => {return obj.posY}));
+  const mood = data.find(obj => {return obj.posY === maxPos}) || data[0];
+  return { maxPos, mood };
+}
+
 const findMaxWorldMoods = (data: maxProp[], type: string) => {
   const newData = [...data];
   const foundType = newData.filter(item => item.mood === type);
   
-  const maxPos = Math.max.apply(Math, foundType.map(obj => {return obj.posY}));
-  const mood = newData.find(obj => {return obj.posY === maxPos}) || data[0];
-  const idx = newData.findIndex(item => item.posY === mood.posY);
+  const firstMaxMood = findMoodItem(foundType, newData);
+  // const maxPos = Math.max.apply(Math, foundType.map(obj => {return obj.posY}));
+  // const mood = newData.find(obj => {return obj.posY === maxPos}) || data[0];
+  const idx = newData.findIndex(item => item.posY === firstMaxMood.mood.posY);
   newData.splice(idx, 1);
+  const secondMaxMood = findMoodItem(foundType, newData);
+  // const maxPos2 = Math.max.apply(Math, foundType.map(obj => {return obj.posY}));
+  // const mood2 = newData.find(obj => {return obj.posY === maxPos2}) || data[0];
   
-  const maxPos2 = Math.max.apply(Math, foundType.map(obj => {return obj.posY}));
-  const mood2 = newData.find(obj => {return obj.posY === maxPos2}) || data[0];
-  
-  const mood2Real = mood.posY - mood2.posY > 5 ? 13 : mood2.month;
-  return [mood.month, mood2Real];
+  const mood2Real = firstMaxMood.mood.posY - secondMaxMood.mood.posY > 5 ? 13 : secondMaxMood.mood.month;
+  return [firstMaxMood.mood.month, mood2Real];
 } 
 
 const findGraphIconPoints = (data: maxProp[]) => {

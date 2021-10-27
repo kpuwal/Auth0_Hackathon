@@ -3,3 +3,5 @@ node_modules
 build
 .DS_Store
 grade_news_dump
+server/__tests__
+client/__tests__

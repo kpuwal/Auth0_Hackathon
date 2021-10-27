@@ -7,13 +7,12 @@ import PresenterIcon from './graph/PresenterIcon';
 import SummaryWorld from './graph/SummaryWorld';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-// import '../../css/WorldGraph.css';
 
 const posY: number = 340;
 
 const WorldGraph = () => {
   const data = useSelector((state: RootState) => state.stats.byDates);
-console.log(data)
+
   return (
     <>
       <svg width="650px" height="200px" viewBox={`160 0 840 400`}>

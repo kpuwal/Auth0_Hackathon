@@ -42,6 +42,5 @@ const trimContentTxt = (txt: string) => {
 
 const cleanData = (txt: string) => {
   const removedHTML = removeHTMLtags(txt);
-  const trimmedContent =  trimContentTxt(removedHTML);
-  return trimmedContent;
+  return trimContentTxt(removedHTML);
 }

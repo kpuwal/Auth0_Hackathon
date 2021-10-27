@@ -4,6 +4,7 @@ import { dataProps, moodProps } from '../../types';
 const defaultObj = {mood: "", count: 0};
 
 export const findSum = (data: dataProps[]) => {
+  console.log(data, " DATA")
   return data
     .map(el => el.count)
     .reduce((a,b) => a + b)
