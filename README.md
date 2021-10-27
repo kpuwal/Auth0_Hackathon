@@ -4,9 +4,17 @@
 
 [Description](#description) | [Motivation](#motivation) | [Run Locally](#runlocally) | [Tech Stack](#techstack) | [Licence](#licence)
 
+### [🔗 Heroku Demo](https://grade-news.herokuapp.com)
+
+### [🔗 Hashnode Article](https://kpuwal.hashnode.dev/introducing-gradenews-sentiment-analysis-powered-news-reader)
+
 ## <a name="runlocally">**Description**</a>
 
+Sentiment Analysis driven News Reader created for Auth0 and Hashnode Hackathone. SA algorithm accuracy - 78%. So far.
+
 ## <a name="motivation">**Motivation**</a>
+
+
 
 ## <a name="runlocally">**Run Locally**</a>
 
