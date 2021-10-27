@@ -1,6 +1,6 @@
 # grade_news!
 
-<img alt="screenshot" src="client/public/Screenshot.png">
+<img alt="screenshot" src="client/public/grade_news.png">
 
 [Description](#description) | [Motivation](#motivation) | [Run Locally](#runlocally) | [Tech Stack](#techstack) | [Licence](#licence)
 
