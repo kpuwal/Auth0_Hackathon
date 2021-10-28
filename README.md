@@ -10,11 +10,7 @@
 
 ## <a name="runlocally">**Description**</a>
 
-Sentiment Analysis driven News Reader created for Auth0 and Hashnode Hackathone. SA algorithm accuracy - 78%. So far.
-
-## <a name="motivation">**Motivation**</a>
-
-
+Sentiment Analysis driven News Reader created for Auth0 and Hashnode Hackathon. SA algorithm accuracy - 78%. So far.
 
 ## <a name="runlocally">**Run Locally**</a>
 
